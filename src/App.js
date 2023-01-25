@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import About from './pages/About';
-import Technologies from './pages/Technologies';
+import Knowledges from './pages/Knowledges/Knowledges';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
@@ -14,12 +14,16 @@ const App = () => {
         <Routes>
           <Route path="/" exact element={<Home/>}/>
           <Route path="/about" element={<About/>}/>
-          <Route path="/technologies" element={<Technologies/>}/>
+          <Route path="/Knowledges" element={<Knowledges/>}/>
           <Route path="/portfolio" element={<Portfolio/>}/>
           <Route path="/contact" element={<Contact/>}/>
           <Route element={NotFound}/>
         </Routes>
       </BrowserRouter>
+      <About/>
+      <Knowledges/>
+      <Portfolio/>
+      <Contact/>
     </>
   );
 }

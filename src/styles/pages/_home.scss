@@ -6,17 +6,15 @@
 .hello {
     &__pre{
         color: map-get($colors, "green");
-        font-family: $font-texts;
-        font-size: 19px;
+        font: 1.1875rem $font-texts;
     }
     &__title{
         color: map-get($colors, "titles");
-        // font-family: $font-main-title;
-        font:  bold 96px $font-main-title;
+        font: bold 6rem $font-main-title;
     }
     &__subtitle{
         color: map-get($colors, "main-sub-title");
-        font-family: 1.1875rem $font-texts;
+        font: 1.1875rem $font-texts;
 
     }
 }

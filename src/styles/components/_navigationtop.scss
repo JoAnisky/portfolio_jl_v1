@@ -5,9 +5,9 @@
         display: inline-block;
     }
     a {
-        font-family:$font-menu;
+        font-family:$font-menu-title;
     }
     &__nav{
-
+        content:'';
     }
 }
