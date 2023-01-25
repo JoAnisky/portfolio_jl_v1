@@ -1,0 +1,13 @@
+.menu-top{
+    @include rightAlign;
+    gap: 0.5rem;
+    li {
+        display: inline-block;
+    }
+    a {
+        font-family:$font-menu;
+    }
+    &__nav{
+
+    }
+}

@@ -1,0 +1,27 @@
+//  *** Theme colors *** \\
+
+$color-background:#141415; // Main background
+$color-text: #DEDEDE; // Paragraphs, contact sub title
+$color-menu-titles: #F5F5F5; // Menu links, Loader, Main Title, H2, H3
+$color-main-sub-title: #B5B5B5; // Only on "Developpeur web ..."
+$color-components-background:#1D1D1D; // Technos , portfolio 
+$color-components-stroke: #A4A4A4; // Technos/portfolio stroke, form field, date, last work, work description
+$color-green: #9CFF1E; // Dots, hello, CV, BTN
+$color-error: #E70000; // Error messages
+
+// Colors map
+$colors: (
+    "background": $color-background,
+    "paragraphs": $color-text,
+    "titles": $color-menu-titles,
+    "main-sub-title": $color-main-sub-title,
+    "components-background": $color-components-background,
+    "components-stroke": $color-components-stroke,
+    "green": $color-green,
+    "error": $color-error
+);
+
+// Font family
+$font-main-title: 'Montserrat Alternates', sans-serif;
+$font-menu: 'MintSans Regular', sans-serif;
+$font-texts: 'Poppins', sans-serif;

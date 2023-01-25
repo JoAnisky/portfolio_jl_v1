@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600;700&family=Poppins:ital,wght@0,200;0,400;0,600;0,700;1,100;1,200;1,300&display=swap');
+@font-face {
+    font-family: "MintSans Regular";   /*Can be any text*/
+    src: local("MintSans"),
+      url("../../assets/fonts/MintSansRegular.ttf") format("truetype");
+  }
+html{ 
+    font-size: 1px;/*for using REM units*/
+}
