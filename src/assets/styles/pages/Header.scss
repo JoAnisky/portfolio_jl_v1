@@ -1,0 +1,54 @@
+.keyart {
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 1000px;
+    z-index: 10;
+    &_layer{
+        position: absolute;
+        width: 100%;
+        height: 1000px;
+        background-position: bottom center;
+        background-size: auto 1038px;
+        background-repeat: repeat-x;
+    }
+    .parallax{
+        position:fixed;
+    }
+}
+
+
+#keyart-0{
+    background-image: url('../../assets/img/background/parallax0.png');
+}
+#keyart-1{
+    background-image: url('../../assets/img/background/parallax1.png');
+}
+#keyart-2{
+    background-image: url('../../assets/img/background/parallax2.png');
+}
+#keyart-3{
+    background-image: url('../../assets/img/background/parallax3.png');
+}
+
+#keyart-4{
+    background-image: url('../../assets/img/background/parallax4.png');
+}
+
+#keyart-5{
+    background-image: url('../../assets/img/background/parallax5.png');
+}
+#keyart-6{
+    background-image: url('../../assets/img/background/parallax6.png');
+}
+
+ 
+.myName{
+    position: relative;
+    color: #fafafa;
+    font-size: 5em;
+    z-index: 1;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
