@@ -1,6 +1,16 @@
+// Import Montserrat Alternates & Poppins
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600;700&family=Poppins:ital,wght@0,200;0,400;0,600;0,700;1,100;1,200;1,300&display=swap');
+// Import MintSans local (.ttf)
 @font-face {
-    font-family: "MintSans Regular";   /*Can be any text*/
+    font-family: "MintSans Regular";   /*Regular*/
     src: local("MintSans"),
       url("../../assets/fonts/MintSansRegular.ttf") format("truetype");
-  }
+
+    font-family: "MintSans Bold";   /*Bold*/
+    src: local("MintSans Bold"),
+      url("../../assets/fonts/MintSansBold.ttf") format("truetype");
+
+    font-family: "MintSans ExtraLight";   /*Extra Light*/
+    src: local("MintSans ExtraLight"),
+      url("../../assets/fonts/MintSansExtraLight.ttf") format("truetype");
+}

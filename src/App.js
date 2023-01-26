@@ -14,18 +14,20 @@ const App = () => {
         <Routes>
           <Route path="/" exact element={<Home/>}/>
           <Route path="/about" element={<About/>}/>
-          <Route path="/Knowledges" element={<Knowledges/>}/>
+          <Route path="/competences" element={<Knowledges/>}/>
           <Route path="/portfolio" element={<Portfolio/>}/>
           <Route path="/contact" element={<Contact/>}/>
           <Route element={NotFound}/>
         </Routes>
       </BrowserRouter>
-      <main>
-        <About/>
-        <Knowledges/>
-        <Portfolio/>
-        <Contact/>
-      </main>
+      <div className="page-wrapper">
+        <main>
+          <About/>
+          <Knowledges/>
+          <Portfolio/>
+          <Contact/>
+        </main>
+      </div>
     </>
   );
 }

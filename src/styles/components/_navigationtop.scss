@@ -5,7 +5,7 @@
         display: inline-block;
     }
     a {
-        font-family:$font-menu-title;
+        font-family:map-get($font-menu-titles, "regular");
     }
     &__nav{
         content:'';

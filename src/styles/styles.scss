@@ -16,13 +16,16 @@
 /* LAYOUTS */
 
 @import 
+    './layout/page-wrapper',
+    './layout/main',
     './layout/grid',
     './layout/sections';
 
 /* COMPONENTS */
 
 @import 
-    './components/navigationtop';
+    './components/navigationtop',
+    './components/sectionstitles';
 
 /* PAGES */
 

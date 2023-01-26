@@ -1,4 +1,4 @@
-//  *** Theme colors *** \\
+//  ---------- COLORS ---------- \\
 
 $color-background:#141415; // Main background
 $color-text: #DEDEDE; // Paragraphs, contact sub title
@@ -6,10 +6,10 @@ $color-menu-titles: #F5F5F5; // Menu links, Loader, Main Title, H2, H3
 $color-main-sub-title: #B5B5B5; // Only on "Developpeur web ..."
 $color-components-background:#1D1D1D; // Technos , portfolio 
 $color-components-stroke: #A4A4A4; // Technos/portfolio stroke, form field, date, last work, work description
-$color-green: #9CFF1E; // Dots, hello, CV, BTN
+$color-green: #58fd1cf0; // Dots, hello, CV, BTN
 $color-error: #E70000; // Error messages
 
-// Colors map
+// Colors map \\
 $colors: (
     "background": $color-background,
     "paragraphs": $color-text,
@@ -21,7 +21,24 @@ $colors: (
     "error": $color-error
 );
 
-// Font family
+// ---------- FONTS ---------- \\
+// Main title
 $font-main-title: 'Montserrat Alternates', sans-serif;
-$font-menu-title: 'MintSans Regular', sans-serif;
+// Corps <p>
 $font-texts: 'Poppins', sans-serif;
+
+$font-menu-h2-tech-regular: 'MintSans Regular', sans-serif;
+$font-menu-h2-tech-bold: 'MintSans Bold', sans-serif;
+$font-menu-h2-tech-extralight: 'MintSans ExtraLight', sans-serif;
+
+$font-menu-titles: (
+    "regular": $font-menu-h2-tech-regular,
+    "bold": $font-menu-h2-tech-bold,
+    "extralight" : $font-menu-h2-tech-extralight
+);
+
+/* Sizes */
+$font-size-h2: 1.25rem;
+
+
+

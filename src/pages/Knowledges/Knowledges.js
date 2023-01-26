@@ -1,15 +1,12 @@
 import React from 'react';
 import Skills from './Skills';
-
+import SectionsTitles from '../../components/SectionsTitles';
 
 const Knowledges = () => {
     return (
         <section className='knowledges'>
-            <div className='sections-title-containers'>
-                <h2 className='sections-titles'>Comp&eacute;tences</h2>
-            </div>
+            <SectionsTitles name="Compétences"/>
             <Skills/>
-
         </section>
     );
 }

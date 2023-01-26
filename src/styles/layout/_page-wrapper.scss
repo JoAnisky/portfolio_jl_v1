@@ -1,0 +1,4 @@
+.page-wrapper {
+    @include verticalCenter;
+    flex-direction: column;
+}

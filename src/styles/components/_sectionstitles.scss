@@ -1,0 +1,32 @@
+.sections-titles-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    font: 400 $font-size-h2 map-get($font-menu-titles, "regular");
+    text-align:center;
+    text-transform: uppercase;
+    color: map-get($colors, "titles");
+    letter-spacing: .1rem;
+    &__line{
+        display: inline-block;
+        height: .0625rem;
+        width: 40%;
+        background:map-get($colors, "green");
+    }
+
+}    
+    // &::before, &::after{
+    //     content:'';
+    //     display:inline-block;
+    //     position: absolute;
+    //     width: calc(100% - ($font-size-h2 * 35));
+    //     height: .0625rem;
+    //     background:map-get($colors, "green");
+    // }
+    // &::before{
+    //     left:0;
+    // }    
+    // &::after{
+    //     right:0;
+    // }
