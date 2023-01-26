@@ -16,19 +16,21 @@
 /* LAYOUTS */
 
 @import 
-    './layout/page-wrapper',
+    './layout/page',
     './layout/main',
     './layout/grid',
-    './layout/sections';
+    './layout/sections/sections',
+    './layout/sections/about';
 
 /* COMPONENTS */
 
-@import 
+@import
+    './components/header',
+    './components/btnresume',
     './components/navigationtop',
     './components/sectionstitles';
 
 /* PAGES */
 
 @import 
-        './pages/home.scss',
-        './pages/header.scss';
+        './pages/home.scss';

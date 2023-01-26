@@ -5,6 +5,7 @@ import About from './pages/About';
 import Knowledges from './pages/Knowledges/Knowledges';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
+import Footer from './pages/Footer';
 import NotFound from './pages/NotFound';
 
 const App = () => {
@@ -17,16 +18,19 @@ const App = () => {
           <Route path="/competences" element={<Knowledges/>}/>
           <Route path="/portfolio" element={<Portfolio/>}/>
           <Route path="/contact" element={<Contact/>}/>
-          <Route element={NotFound}/>
+          <Route element={<NotFound/>}/>
         </Routes>
       </BrowserRouter>
-      <div className="page-wrapper">
-        <main>
-          <About/>
-          <Knowledges/>
-          <Portfolio/>
-          <Contact/>
-        </main>
+      <div className="layout__page">
+        <div className="content">
+          <main>
+            <About/>
+            <Knowledges/>
+            <Portfolio/>
+            <Contact/>
+          </main>
+        </div>
+        <Footer/>
       </div>
     </>
   );
