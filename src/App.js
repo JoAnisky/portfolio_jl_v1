@@ -20,10 +20,12 @@ const App = () => {
           <Route element={NotFound}/>
         </Routes>
       </BrowserRouter>
-      <About/>
-      <Knowledges/>
-      <Portfolio/>
-      <Contact/>
+      <main>
+        <About/>
+        <Knowledges/>
+        <Portfolio/>
+        <Contact/>
+      </main>
     </>
   );
 }
