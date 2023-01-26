@@ -1,15 +1,13 @@
 import React from 'react';
-import Languages from './Languages';
-import Frameworks from './Frameworks';
-import SoftwareSkills from './SoftwareSkills';
+import Skills from './Skills';
+
 
 const Knowledges = () => {
     return (
         <section className='knowledges'>
             <h2 className='sections-titles'>Comp&eacute;tences</h2>
-            <Languages/>
-            <Frameworks/>
-            <SoftwareSkills/>
+            <Skills/>
+
         </section>
     );
 }
