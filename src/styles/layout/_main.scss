@@ -1,9 +1,13 @@
 main {
     @media (max-width: 1080px){
-        padding: 0px 100px;
+        padding: 0px 6.25rem;
+    }
+    @media (max-width: 768px){
+        padding: 0px 3.125rem;
     }
     margin: 0px auto;
     width: 100%;
-    max-width: 1600px;
+    max-width: 100rem;
     min-height: 100vh;
+    padding: 0 9.375rem;
 }

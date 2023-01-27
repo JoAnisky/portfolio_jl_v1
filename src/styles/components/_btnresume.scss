@@ -1,7 +1,7 @@
 .resume-button{
     color: map-get($colors, "green");
     border : 1px solid map-get($colors, "green");
-    border-radius: 5px;
+    border-radius: $border-radius-size;
     padding: .75rem 17px;
     margin-left: $margin-menu;
     text-decoration: none;
