@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home/Home';
+import Header from './pages/Home/components/Header';
+
 import About from './pages/About';
 import Knowledges from './pages/Knowledges/Knowledges';
 import Portfolio from './pages/Portfolio';
@@ -12,8 +14,9 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
+      <Header/>
         <Routes>
-          <Route path="/" exact element={<Home/>}/>
+          <Route path="/home" exact element={<Home/>}/>
           <Route path="/about" element={<About/>}/>
           <Route path="/competences" element={<Knowledges/>}/>
           <Route path="/portfolio" element={<Portfolio/>}/>
@@ -24,6 +27,7 @@ const App = () => {
       <div className="layout__page">
         <div className="content">
           <main>
+            <Home/>
             <About/>
             <Knowledges/>
             <Portfolio/>
