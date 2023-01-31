@@ -1,0 +1,19 @@
+
+.skill-type {
+    display: flex;
+    flex-direction: column;
+    &__title{
+        margin: 0 0 30px;
+    }
+}
+.skill-components {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 0 30px;
+    &__skill {
+        @include verticalCenterColumn;
+        > p {
+            text-transform: capitalize;
+        }
+    }
+}
