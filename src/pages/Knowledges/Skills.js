@@ -1,12 +1,27 @@
 import SkillComponent from './SkillComponent';
 import skillsData from '../../data/skillsData.json';
+import { Component } from 'react';
 
-const Skills = () => {
+export default class Skills extends Component {
 
-    return (
-        <div className='knowledges__container'>
-            {skillsData.map((skills, index) => <SkillComponent key={index} values={skills}/>)}
-        </div>
-    );    
+    state = {
+        projects: skillsData
+    }
+
+    render() {
+        
+        let {projects} = this.state;
+        return (
+            <div className='knowledges__container'>
+                {
+                    projects.map((item, index) => {
+                        return (
+                            <SkillComponent key={index} item={item}/>
+                        )
+                    })
+                }
+            </div>
+        );    
+    }
+
 }
-export default Skills
