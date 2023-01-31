@@ -1,9 +1,10 @@
-
-.skill-type {
+.skill-category {
     display: flex;
     flex-direction: column;
+    margin: 50px 0px 0;
     &__title{
         margin: 0 0 30px;
+        font-weight:400;
     }
 }
 .skill-components {
@@ -12,8 +13,19 @@
     margin: 0 0 30px;
     &__skill {
         @include verticalCenterColumn;
-        > p {
+        background-color: map-get($colors, "components-background");
+        border: 1px solid map-get($colors, "components-stroke");
+        border-radius: 5px;
+        width: $components-size;
+        height: $components-size;
+        p {
             text-transform: capitalize;
+            font: $font-size-component-skills map-get($font-menu-titles, "regular");
+        }
+        &__logo{
+            display:flex;
+            height:70%;
+            align-items:center;
         }
     }
 }
