@@ -1,6 +1,6 @@
 import React from 'react';
-import Skills from './Skills';
 import SectionsTitles from '../../components/SectionsTitles';
+import Skills from './Skills';
 
 const Knowledges = () => {
     return (

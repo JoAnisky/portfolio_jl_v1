@@ -13,6 +13,15 @@ li a {
 p {
     color: map-get($colors, "paragraphs");
 }
+
+h3 {
+    font: 400 $font-size-h2-clamp map-get($font-menu-titles, "poppins");
+    text-transform: capitalize;
+    text-align:center;
+    color: map-get($colors, "titles");
+    letter-spacing: .1rem;
+}
+
 .links {
     color: map-get($colors, "green");
     font-weight: 500;

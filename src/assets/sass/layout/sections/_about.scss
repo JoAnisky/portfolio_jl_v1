@@ -1,8 +1,13 @@
 .about {
     max-width: 900px;
-    &__container{
+    &__inner{
         display: grid;
         grid-template-columns: 3fr 2fr;
         gap: 50px;
+    }
+
+    &about__picture-container{
+        position: relative;
+        max-width: 300px;
     }
 }
