@@ -1,0 +1,26 @@
+[
+    {
+        "title" : "Languages",
+        "values" : [
+            "javascript",
+            "php",
+            "sass"
+        ]
+    },
+    {
+        "title" : "Frameworks et librairies",
+        "values" : [
+            "react",
+            "threeJS",
+            "sass"
+        ]
+    },
+    {
+        "title" : "Logiciels",
+        "values" : [
+            "photoshop",
+            "figma",
+            "git"
+        ]
+    }
+]
