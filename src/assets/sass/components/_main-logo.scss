@@ -2,8 +2,19 @@
     @include verticalCenter;
     -webkit-box-pack: center;
     -webkit-box-align: center;
+
     a {
         width: 42px;
         height: 42px;
+        fill: transparent;
+
+    }
+    svg{
+        user-select: none;
+        fill: transparent;
+        transition: $menu-transition;
+    }
+    a svg:hover #logo-bg {
+        fill: map-get($colors, "btn-hover");
     }
 }

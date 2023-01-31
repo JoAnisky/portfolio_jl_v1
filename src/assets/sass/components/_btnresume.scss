@@ -3,9 +3,8 @@
     background-color: transparent;
     border : 1px solid map-get($colors, "green");
     border-radius: $border-radius-size;
-    padding: 9px 1rem;
+    padding: 7px 1rem;
     margin-left: $margin-menu;
-    text-decoration: none;
     cursor: pointer;
     transition: $menu-transition;
     &:hover{
