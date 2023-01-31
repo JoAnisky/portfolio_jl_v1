@@ -1,26 +1,29 @@
 [
-    {
-        "title" : "Languages",
-        "values" : [
-            "javascript",
-            "php",
-            "sass"
+    {   
+        "catId": 1,
+        "catTitle": "Languages",
+        "stack": [
+            {"name":"javascript", "width":"50"},
+            {"name":"php", "width":"50"},
+            {"name":"sass", "width":"50"}
         ]
     },
     {
-        "title" : "Frameworks et librairies",
-        "values" : [
-            "react",
-            "threeJS",
-            "sass"
+        "catId": 2,
+        "catTitle" : "Frameworks et librairies",
+        "stack": [
+            {"name":"react", "width":"50"},
+            {"name":"nodejs", "width":"50"},
+            {"name":"threejs", "width":"50"}
         ]
     },
     {
-        "title" : "Logiciels",
-        "values" : [
-            "photoshop",
-            "figma",
-            "git"
+        "catId": 2,
+        "catTitle" : "logiciels",
+        "stack": [
+            {"name":"figma", "width":"50"},
+            {"name":"photoshop", "width":"50"},
+            {"name":"git", "width":"Cooper"}
         ]
     }
 ]
