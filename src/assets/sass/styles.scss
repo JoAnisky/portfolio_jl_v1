@@ -19,19 +19,21 @@
     './layout/page',
     './layout/main',
     './layout/grid',
-    './layout/sections/sections',
-    './layout/sections/about';
+    './layout/sections';
+
 
 /* COMPONENTS */
 
 @import
     './components/header',
+    './components/main-logo',
     './components/btnresume',
-    './components/navigationtop',
+    './components/menu-top',
     './components/sectionstitles',
     './components/skill';
 
 /* PAGES */
 
 @import 
-        './pages/home.scss';
+    './pages/home.scss',
+    './pages/about';

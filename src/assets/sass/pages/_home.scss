@@ -19,6 +19,10 @@
     &__subtitle{
         color: map-get($colors, "main-sub-title");
         font: clamp(1.25rem, 4vw, 2.8125rem) $font-texts;
-
+    }
+    &__container{
+        div{
+            display:flex;
+        }
     }
 }

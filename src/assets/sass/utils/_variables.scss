@@ -8,7 +8,7 @@ $color-components-background:#1D1D1D; // Technos , portfolio
 $color-components-stroke: #A4A4A4; // Technos/portfolio stroke, form field, date, last work, work description
 $color-green: #58fd1cf0; // Dots, hello, CV, BTN
 $color-error: #E70000; // Error messages
-
+$color-btn-hover:rgba(88, 253, 28, 0.1);
 // Colors map \\
 $colors: (
     "background": $color-background,
@@ -18,7 +18,8 @@ $colors: (
     "components-background": $color-components-background,
     "components-stroke": $color-components-stroke,
     "green": $color-green,
-    "error": $color-error
+    "error": $color-error,
+    "btn-hover": $color-btn-hover
 );
 
 // ---------- FONTS ---------- \\
@@ -27,7 +28,6 @@ $colors: (
 $font-main-title: 'Montserrat Alternates', sans-serif;
 // Corps <p>
 $font-texts: 'Poppins', sans-serif;
-
 $font-menu-h2-tech-regular: 'MintSans Regular', sans-serif;
 $font-menu-h2-tech-bold: 'MintSans Bold', sans-serif;
 $font-menu-h2-tech-extralight: 'MintSans ExtraLight', sans-serif;
@@ -50,3 +50,6 @@ $margin-menu: .9375rem;
 
 /* Others */
 $border-radius-size: .3125rem;
+
+/* Effects */
+$menu-transition: all 0.25s cubic-bezier(0.64, 0.05, 0.30, 1);
