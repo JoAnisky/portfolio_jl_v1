@@ -1,5 +1,6 @@
 import React from 'react';
 import Logo from '../../../components/MainLogo';
+import MenuBurger from '../../../components/MenuBurger';
 import MenuTop from "../../../components/MenuTop";
 import BtnResume from './BtnResume';
 
@@ -12,6 +13,7 @@ const Header = () => {
                 <Logo/>
                 <div className='header-nav__menu'>
                     <MenuTop/>
+                    <MenuBurger/>
                     <BtnResume/>
                 </div>
             </nav>
