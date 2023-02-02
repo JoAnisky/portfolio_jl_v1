@@ -2,13 +2,21 @@ import React from 'react';
 import Logo from './MainLogo';
 import MenuBurger from './MenuBurger';
 import BtnResume from './BtnResume';
+import { useState } from 'react';
 
 const Navbar = () => {
+
+    const [showLinks, setShowLinks] = useState(false);
+
+    const handleShowLinks = () => {
+        setShowLinks(!showLinks)
+    }
+
     return (
         <nav className="navbar">
-            <MenuBurger/>
+            <MenuBurger handleShow={handleShowLinks}/>
             <Logo/>
-            <div className='navbar__container'>
+            <div className={`navbar__container ${showLinks ? "show-nav" : "hide-nav"}`}>
                 <ul className='navbar__links'>
                     <li className='navbar__item'>
                         <a href="/#about" className='navbar__link'>A propos</a>
