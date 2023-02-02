@@ -63,7 +63,7 @@
         @include phone{
             font-size: 1rem;
             display:block;
-            padding: 2rem;
+            padding: $menu-padding-mobile;
         }
     }
 }

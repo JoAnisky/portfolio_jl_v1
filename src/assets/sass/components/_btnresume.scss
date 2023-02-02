@@ -6,7 +6,7 @@
     padding: 7px 1rem;
     margin-left: $margin-menu;
     @include phone{
-        margin: 0;
+        margin: ($menu-padding-mobile*2) 0 0 0;
     }
     cursor: pointer;
     transition: $menu-transition;
