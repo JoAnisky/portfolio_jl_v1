@@ -19,7 +19,7 @@ const Navbar = () => {
                         <a href="/#portfolio" className='header-nav__link'>Portfolio</a>
                     </li>
                     <li className='nav-menu__item'>
-                        <a href="/#about" className='header-nav__link'>Contact</a>
+                        <a href="/#contact" className='header-nav__link'>Contact</a>
                     </li>
                 </ul>
                 <MenuBurger/>

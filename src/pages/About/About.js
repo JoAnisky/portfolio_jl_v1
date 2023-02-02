@@ -4,7 +4,7 @@ import ProfilePictures from './ProfilePictures';
 
 const About = () => {
     return (
-        <section className='about'>
+        <section className='about' id="about">
             <SectionsTitles name="A Propos"/>
             <div className="about__inner">
                     <div className='about__prez'>

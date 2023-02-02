@@ -2,7 +2,7 @@ import React from 'react';
 
 const Home = () => {
     return (
-        <section className='hello'>
+        <section className='hello' id="home">
             <div className="hello__container">
                 <div className="fadein-welcome">
                     <p className='hello__hi'>Bonjour, je suis</p>

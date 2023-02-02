@@ -4,7 +4,7 @@ import Skills from './Skills';
 
 const Knowledges = () => {
     return (
-        <section className='knowledges'>
+        <section className='knowledges' id="knowledges">
             <SectionsTitles name="Compétences"/>
             <Skills/>
         </section>

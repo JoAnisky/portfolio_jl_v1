@@ -2,7 +2,7 @@ import React from 'react';
 import SectionsTitles from '../components/SectionsTitles';
 const Portfolio = () => {
     return (
-        <section className='portfolio'>
+        <section className='portfolio' id="portfolio">
             <SectionsTitles name="Portfolio"/>
         </section>
     );

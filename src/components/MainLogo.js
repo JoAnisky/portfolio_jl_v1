@@ -3,7 +3,7 @@ import React from 'react';
 const MainLogo = () => {
     return (
         <div className='main-logo'>
-            <a href="/" aria-label="home">
+            <a href="/#home" aria-label="home">
                 <svg id="main-logo" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 46 51">
                     <title>Logo</title>
                     <path id="logo-bg"d="M1 37.132V13.044L22 1l21 12.044v24.088L22 49.176 1 37.132Z" strokeWidth="1.5" stroke="#58FD1C"/>
