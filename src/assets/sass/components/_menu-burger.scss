@@ -1,16 +1,17 @@
 .menu-burger{
     &__btn{
-        @include verticalCenterColumn;
-        position: relative;
         z-index: 10;
         margin-right: -15px;
         padding: 15px;
         border: 0px;
         background-color:transparent;
+        @include phone{
+            align-self: flex-end;
+        }
     }
 }
 .burger-box {
-    display: inline-block;
+    display: block;
     position: relative;
     width: 30px;
     height: 24px;

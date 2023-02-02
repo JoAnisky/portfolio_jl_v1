@@ -9,11 +9,22 @@
     position: relative;
     width: 100%;
     gap: 0.5rem;
-
+    @include phone{
+        flex-direction: column;
+    }
     // <div> container
     &__container{ 
         display:flex;
         align-items:center;
+        @include phone{
+            flex-direction:column;
+            justify-content: center;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 100vh;
+            width: 100vw;
+        }
     }
 
     // <li>
@@ -31,6 +42,15 @@
         align-items: center;
         padding: 0;
         margin: 0;
+        @include phone{
+            flex-direction:column;
+            justify-content: center;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 20vh;
+        }
+
     }
     // <a>
     &__link {
@@ -39,6 +59,10 @@
         transition: $menu-transition;
         &:hover{
             color:map-get($colors, "green");
+        }
+        @include phone{
+            display:block;
+            padding: 1.5rem;
         }
     }
 }
