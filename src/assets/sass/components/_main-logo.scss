@@ -2,8 +2,8 @@
     @include verticalCenter;
     -webkit-box-pack: center;
     -webkit-box-align: center;
-    @include phone{
-        display:none;
+    &.hide-logo {
+        display: none;
     }
     a {
         width: 42px;

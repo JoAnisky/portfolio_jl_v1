@@ -1,8 +1,9 @@
 import React from 'react';
 
-const MainLogo = () => {
+const MainLogo = (props) => {
+    console.log(props)
     return (
-        <div className='main-logo'>
+        <div className={`main-logo ${props.visible ? "hide-logo" : "show-logo" }`}>
             <a href="/#home" aria-label="home">
                 <svg id="main-logo" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 46 51">
                     <title>Logo</title>

@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from './MainLogo';
+import MainLogo from './MainLogo';
 import MenuBurger from './MenuBurger';
 import BtnResume from './BtnResume';
 import { useState } from 'react';
@@ -13,9 +13,9 @@ const Navbar = () => {
     }
 
     return (
-        <nav className="navbar">
+        <nav className={`navbar ${showLinks ? "align-center" : "hide-nav"}`}>
             <MenuBurger handleShow={handleShowLinks}/>
-            <Logo/>
+            <MainLogo visible={showLinks}/>
             <div className={`navbar__container ${showLinks ? "show-nav" : "hide-nav"}`}>
                 <ul className='navbar__links'>
                     <li className='navbar__item'>
