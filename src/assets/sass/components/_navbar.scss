@@ -16,6 +16,9 @@
     &__container{ 
         display:flex;
         align-items:center;
+        background-color: map-get($colors, "background");
+        opacity: 0.9;
+        backdrop-filter: blur(10px);
         @include phone{
             position:inherit;
             flex-direction:column;

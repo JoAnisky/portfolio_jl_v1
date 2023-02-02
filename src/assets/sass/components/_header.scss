@@ -6,9 +6,6 @@
     padding: 0px 100px;
     width: 100%;
     min-height: 80px;
-    background-color: map-get($colors, "background");
-    opacity: 0.9;
-    backdrop-filter: blur(10px);
     @include phone{
         padding: 0 40px;
     }

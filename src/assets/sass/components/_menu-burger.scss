@@ -18,40 +18,22 @@
     position: relative;
     width: 30px;
     height: 24px;
-
     &__inner{
         position: absolute;
         top: 50%;
         right: 0px;
-        width: 30px;
+        width: 25px;
         height: 2px;
         background-color: map-get($colors, "green");
 
     }
     &__inner {
         &::before{
-            background-color: map-get($colors, "green");
-            content:" ";
-            display: block;
-            position: absolute;
-            left: auto;
-            right: 0px;
-            width: 30px;
-            height: 2px;
-            width: 120%;
-            border-radius: 4px;
+            @include burger-before-after;
             top: -10px;
         }
         &::after{
-            background-color: map-get($colors, "green");
-            content:" ";
-            display: block;
-            position: absolute;
-            left: auto;
-            right: 0px;
-            width: 120%;            
-            height: 2px;
-            border-radius: 4px;
+            @include burger-before-after;
             bottom: -10px;
         }
     }
