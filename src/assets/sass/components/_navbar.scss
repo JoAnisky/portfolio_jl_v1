@@ -15,6 +15,7 @@
         align-items:flex-start;
         flex-direction: column;
     }
+
     // <div> container
     &__container{ 
         display:flex;
@@ -33,6 +34,7 @@
             &.show-nav{
                 width: 100vw;
                 right: 0;
+                top: 55px;
                 visibility: visible;
             }
         }
@@ -76,6 +78,25 @@
             font-size: 1rem;
             display:block;
             padding: $menu-padding-mobile;
+        }
+    }
+}
+.navbar-mobile{
+        @include phone {
+            position:fixed;
+            width:98vw;
+            height: 55px;
+            top: 0;
+            background-color: rgba(20, 20, 21, .9);
+        }
+    
+    &__container{
+        display: flex;
+        height:100%;
+        align-items: center;
+        justify-content: space-between;
+        &.justify-end{
+            justify-content: flex-end;
         }
     }
 }

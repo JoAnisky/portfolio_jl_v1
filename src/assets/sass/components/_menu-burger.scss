@@ -2,11 +2,9 @@
     &__btn{
         display:none;
         @include phone{
-            position:fixed;
+            
             display:block;
             z-index: 10;
-            margin-right: -15px;
-            padding: 15px;
             border: 0px;
             background-color:transparent;
             align-self: flex-end;

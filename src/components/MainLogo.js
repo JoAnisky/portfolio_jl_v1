@@ -1,7 +1,6 @@
 import React from 'react';
 
 const MainLogo = (props) => {
-    console.log(props)
     return (
         <div className={`main-logo ${props.visible ? "hide-logo" : "show-logo" }`}>
             <a href="/#home" aria-label="home">

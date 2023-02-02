@@ -14,8 +14,12 @@ const Navbar = () => {
 
     return (
         <nav className={`navbar ${showLinks ? "align-center" : "hide-nav"}`}>
-            <MenuBurger handleShow={handleShowLinks}/>
-            <MainLogo visible={showLinks}/>
+            <div className="navbar-mobile">
+                <div className={`navbar-mobile__container ${showLinks ? "justify-end" : "hide-nav"}`}>                                 
+                    <MainLogo visible={showLinks}/>
+                    <MenuBurger handleShow={handleShowLinks}/>
+                </div>
+            </div>
             <div className={`navbar__container ${showLinks ? "show-nav" : "hide-nav"}`}>
                 <ul className='navbar__links'>
                     <li className='navbar__item'>
