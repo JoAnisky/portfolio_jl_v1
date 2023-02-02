@@ -30,8 +30,8 @@ const Navbar = () => {
                     <li className='navbar__item'>
                         <a href="/#contact" className='navbar__link'>Contact</a>
                     </li>
+                    <BtnResume/>
                 </ul>
-                <BtnResume/>
 
             </div>
 
