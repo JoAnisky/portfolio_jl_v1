@@ -7,19 +7,19 @@ const Navbar = () => {
     return (
         <nav className="navbar">
             <Logo/>
-            <div className='nav-menu'>
-                <ul className='nav-menu__links'>
-                    <li className='nav-menu_item'>
-                        <a href="/#about" className='header-nav__link'>A propos</a>
+            <div className='navbar__container'>
+                <ul className='navbar__links'>
+                    <li className='navbar__item'>
+                        <a href="/#about" className='navbar__link'>A propos</a>
                     </li>
-                    <li className='nav-menu__item'>
-                        <a href="/#knowledges" className='header-nav__link'>Compétences</a>
+                    <li className='navbar__item'>
+                        <a href="/#knowledges" className='navbar__link'>Compétences</a>
                     </li>                
-                    <li className='nav-menu__item'>
-                        <a href="/#portfolio" className='header-nav__link'>Portfolio</a>
+                    <li className='navbar__item'>
+                        <a href="/#portfolio" className='navbar__link'>Portfolio</a>
                     </li>
-                    <li className='nav-menu__item'>
-                        <a href="/#contact" className='header-nav__link'>Contact</a>
+                    <li className='navbar__item'>
+                        <a href="/#contact" className='navbar__link'>Contact</a>
                     </li>
                 </ul>
                 <MenuBurger/>
