@@ -1,5 +1,5 @@
 import React from 'react';
-// import Logo from './MainLogo';
+import Logo from './MainLogo';
 import MenuBurger from './MenuBurger';
 import BtnResume from './BtnResume';
 
@@ -7,7 +7,7 @@ const Navbar = () => {
     return (
         <nav className="navbar">
             <MenuBurger/>
-            {/* <Logo/> */}
+            <Logo/>
             <div className='navbar__container'>
                 <ul className='navbar__links'>
                     <li className='navbar__item'>

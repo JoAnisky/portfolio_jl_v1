@@ -2,7 +2,9 @@
     @include verticalCenter;
     -webkit-box-pack: center;
     -webkit-box-align: center;
-
+    @include phone{
+        display:none;
+    }
     a {
         width: 42px;
         height: 42px;

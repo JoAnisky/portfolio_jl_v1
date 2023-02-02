@@ -61,8 +61,9 @@
             color:map-get($colors, "green");
         }
         @include phone{
+            font-size: 1rem;
             display:block;
-            padding: 1.5rem;
+            padding: 2rem;
         }
     }
 }
