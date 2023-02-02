@@ -31,7 +31,7 @@ $font-texts: 'Poppins', sans-serif;
 $font-menu-h2-tech-regular: 'MintSans Regular', sans-serif;
 $font-menu-h2-tech-bold: 'MintSans Bold', sans-serif;
 $font-menu-h2-tech-extralight: 'MintSans ExtraLight', sans-serif;
-
+// ** Fonts map ** \\
 $font-menu-titles: (
     "regular": $font-menu-h2-tech-regular,
     "bold": $font-menu-h2-tech-bold,
@@ -51,5 +51,20 @@ $margin-menu: .9375rem;
 /* Others */
 $border-radius-size: .3125rem;
 
-/* Effects */
+// ---------- Effects ---------- \\
 $menu-transition: all 0.25s cubic-bezier(0.64, 0.05, 0.30, 1);
+
+// ---------- MediaQueries Size ---------- \\
+$media-phone : 599px;
+$media-tablet-portrait: 600px;
+$media-tablet-landscape: 900px;
+$media-desktop: 1200px;
+$media-big-desktop: 1800px;
+// MediaQueries Size Map \\
+$media-size : (
+    "phone" : $media-phone,
+    "tablet-portrait": $media-tablet-portrait,
+    "tablet-landscape" : $media-tablet-landscape,
+    "desktop" : $media-desktop,
+    "big-desktop": $media-big-desktop
+);
