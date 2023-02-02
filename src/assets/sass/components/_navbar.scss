@@ -1,11 +1,23 @@
-.header-nav__menu{
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap:nowrap;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-box-align: center;
+    position: relative;
+    width: 100%;
+    gap: 0.5rem;
+    
+}
+.nav-menu{
     display:flex;
     align-items:center;
-    li {
+    &__item {
         position: relative;
         margin: 0 $margin-menu;
     }
-    ul {
+    &__links {
         display: flex;
         -webkit-box-pack: justify;
         justify-content: space-between;

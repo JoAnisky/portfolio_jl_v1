@@ -7,7 +7,6 @@ const MenuBurger = () => {
                 <button className='menu-burger__btn'>
                     <div className='burger-box'>
                         <div className='burger-box__inner'>
-
                         </div>
                     </div>
                 </button>
