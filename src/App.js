@@ -16,18 +16,18 @@ const App = () => {
       <BrowserRouter>
       <Header/>
         <Routes>
-          <Route path="/home" exact element={<Home/>}/>
-          <Route path="/about" element={<About/>}/>
-          <Route path="/competences" element={<Knowledges/>}/>
-          <Route path="/portfolio" element={<Portfolio/>}/>
-          <Route path="/contact" element={<Contact/>}/>
-          <Route element={<NotFound/>}/>
+          <Route path="/" exact element={<Home/>}/>
+          <Route path="/#about" element={<About/>}/>
+          <Route path="/#competences" element={<Knowledges/>}/>
+          <Route path="/#portfolio" element={<Portfolio/>}/>
+          <Route path="/#contact" element={<Contact/>}/>
+          <Route path="*"element={<NotFound/>}/>
         </Routes>
       </BrowserRouter>
       <div className="layout__page">
         <div className="content">
           <main>
-            <Home/>
+            {/* <Home/> */}
             <About/>
             <Knowledges/>
             <Portfolio/>
