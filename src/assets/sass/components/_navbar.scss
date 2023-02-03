@@ -3,9 +3,6 @@
     display: flex;
     justify-content: space-between;
     flex-wrap:nowrap;
-    &.align-center{
-        align-items: center;
-    }
     -webkit-box-pack: justify;
     -webkit-box-align: center;
     position: relative;
@@ -32,7 +29,7 @@
             height: 100vh;
             visibility: hidden;
             &.show-nav{
-                width: 100vw;
+                width: 100%;
                 right: 0;
                 top: 55px;
                 visibility: visible;
@@ -93,6 +90,7 @@
     &__container{
         display: flex;
         height:100%;
+        padding:0 25px;
         align-items: center;
         justify-content: space-between;
         &.justify-end{

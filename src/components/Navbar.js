@@ -13,11 +13,11 @@ const Navbar = () => {
     }
 
     return (
-        <nav className={`navbar ${showLinks ? "align-center" : "hide-nav"}`}>
+        <nav className="navbar">
             <div className="navbar-mobile">
-                <div className={`navbar-mobile__container ${showLinks ? "justify-end" : "hide-nav"}`}>                                 
+                <div className="navbar-mobile__container">                                 
                     <MainLogo visible={showLinks}/>
-                    <MenuBurger handleShow={handleShowLinks}/>
+                    <MenuBurger visible={showLinks} handleShow={handleShowLinks}/>
                 </div>
             </div>
             <div className={`navbar__container ${showLinks ? "show-nav" : "hide-nav"}`}>
