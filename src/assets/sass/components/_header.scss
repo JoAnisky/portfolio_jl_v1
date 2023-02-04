@@ -5,13 +5,16 @@
     z-index: 11;
     padding: 0px 100px;
     width: 100%;
-    height: $size-navbar-mobile;
+    height: $size-navbar-height;
     background-color: map-get($colors, "background");
     opacity: 0.9;
+    transition: all .5s ease-in-out;
     @include phone{
         padding: 0;
-
     }
+}
+.hide-header{
+    transform: translateY(- $size-navbar-height)
 }
 
 /* PARALLAX HEADER */

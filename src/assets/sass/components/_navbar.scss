@@ -20,7 +20,7 @@
         background-color: map-get($colors, "background");
         transition: all .5s ease-in-out;
         backdrop-filter: blur(10px);
-
+        
         @include phone{
             visibility: hidden;
             position:inherit;
@@ -28,12 +28,12 @@
             justify-content: center;
             width: 100%;
             height: 100vh;
-            top: $size-navbar-mobile;
+            top: $size-navbar-height;
             transform: translateX(630px);
             &.show-nav{
                 visibility: visible;
                 width: 100%;
-                top: $size-navbar-mobile;
+                top: $size-navbar-height;
                 transform: translateX(0);
             };
         };
@@ -85,7 +85,7 @@
     @include phone {
         position:fixed;
         width:98vw;
-        height: $size-navbar-mobile;
+        height: $size-navbar-height;
         top: 0;
         background-color: rgba(20, 20, 21, .9);
     };
