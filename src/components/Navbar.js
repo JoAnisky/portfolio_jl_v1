@@ -19,7 +19,7 @@ const Navbar = () => {
     const handleShowLinks = () => {
         setShowLinks(!showLinks);
     };
-
+    // Ajoute les <li> dans un tableau de reférences (linksRef)
     const addToRefsLinks = (elem) => {
         if(elem && !linksRef.current.includes(elem)){
             linksRef.current.push(elem);

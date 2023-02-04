@@ -10,8 +10,8 @@
     gap: 0.5rem;
     @include phone{
         align-items:flex-start;
-        flex-direction: column;
-    }
+        height: 100%;
+    };
 
     // <div> container
     &__container{ 
@@ -28,22 +28,22 @@
             justify-content: center;
             width: 100%;
             height: 100vh;
-            top: 55px;
+            top: $size-navbar-mobile;
             transform: translateX(630px);
             &.show-nav{
                 visibility: visible;
                 width: 100%;
-                top: 55px;
+                top: $size-navbar-mobile;
                 transform: translateX(0);
-            }
-        }
-    }
+            };
+        };
+    };
 
     // <li>
     &__item {
         position: relative;
         margin: 0 $margin-menu;
-    }
+    };
 
     // <ul>
     &__links {
@@ -55,6 +55,7 @@
         padding: 0;
         margin: 0;
         transform: translateX(0);
+        white-space: nowrap;
         @include phone{
             flex-direction:column;
             justify-content: center;
@@ -63,8 +64,8 @@
             bottom: 0;
             height: 20vh;
             transform: translateX(650px);
-        }
-    }
+        };
+    };
     // <a>
     &__link {
         display:inline-block;
@@ -77,17 +78,17 @@
             font-size: 1rem;
             display:block;
             padding: $menu-padding-mobile;
-        }
-    }
-}
+        };
+    };
+};
 .navbar-mobile{
     @include phone {
         position:fixed;
         width:98vw;
-        height: 55px;
+        height: $size-navbar-mobile;
         top: 0;
         background-color: rgba(20, 20, 21, .9);
-    }
+    };
     
     &__container{
         display: flex;
@@ -95,8 +96,5 @@
         padding:0 25px;
         align-items: center;
         justify-content: space-between;
-        &.justify-end{
-            justify-content: flex-end;
-        }
-    }
-}
+    };
+};

@@ -5,12 +5,12 @@
     z-index: 11;
     padding: 0px 100px;
     width: 100%;
-    min-height: 80px;
+    height: $size-navbar-mobile;
     background-color: map-get($colors, "background");
     opacity: 0.9;
     @include phone{
         padding: 0;
-        background-color: transparent;
+
     }
 }
 
