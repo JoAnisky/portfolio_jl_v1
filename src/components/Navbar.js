@@ -25,13 +25,13 @@ const Navbar = () => {
             linksRef.current.push(elem);
         }
     };
-    
+
     useEffect(() => {
         let animDuration = 0.1;
         let animDelay = 0.4;
         linksRef.current.forEach(link => {        
             link.style.transition = showLinks ? `${(animDelay += 0.05)}s ${animDuration}s all ease-in-out` : `${(animDelay += 0.05)}s ${animDuration}s all in-out-back`;
-            link.style.transform = showLinks ? "translateX(0px)" : "translateX(650px)";
+            link.style.transform = showLinks ? "translateX(-650px)" : "";
         })
     })
 
