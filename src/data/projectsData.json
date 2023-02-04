@@ -1,0 +1,20 @@
+[
+    {
+        "type": "Site web",
+        "title": "Portfolio Jonathan Loré",
+        "image": "portfoliojl",
+        "description": "Première version de mon portfolio de développeur web. Site web créé en React et SASS. Présentation et galerie de réalisations.",
+        "tasks": "Design, maquettage, logo et intégration. Développement Frontend et Backend.",
+        "technos" : [
+            "React", 
+            "SASS", 
+            "Figma", 
+            "Photoshop"
+        ],
+        "github" : "https://github.com/JoAnisky/portfolio_jl_v1.git",
+        "external" : [
+            "#",
+            "Portfolio de Jonathan Loré"
+        ]            
+    }
+]
