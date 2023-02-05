@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import projectsData from '../../data/projectsData.json';
-import Project from './Project';
+import Project from './ProjectCard';
 export default class ProjectList extends Component {
 
     state = {

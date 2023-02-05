@@ -4,8 +4,8 @@ const Project = props => {
     let project = props.item;
     const workPicturePath = "./media/work/";
     return (
-        <div className='project'>
-            <div className="project__image">
+        <div className='project-card'>
+            <div className="project-card__image">
                 <div>
                     
                 </div>
@@ -20,19 +20,19 @@ const Project = props => {
                     </div>
                 </a>
             </div>
-            <div className="project__data">
+            <div className="project-card__data">
                 
-                    <p className="project__type right">{project.type}</p>
-                    <h3 className="project__title right">{project.title}</h3>
-                    <div className="project__details right">
-                        <div className="project__description right">
+                    <p className="project-card__type right">{project.type}</p>
+                    <h3 className="project-card__title right">{project.title}</h3>
+                    <div className="project-card__details right">
+                        <div className="project-card__description right">
                             <p>{project.description}</p>
                         </div>
-                        <div className="project__description-task">
+                        <div className="project-card__description-task">
                             <p>Tâches : <span className='green-texts'>{project.tasks}</span></p>
                         </div>
                     </div>
-                    <div className='project__technos'>
+                    <div className='project-card__technos'>
                         <ul>
                             {
                                 project.technos.map((techno, index) => {
@@ -42,7 +42,7 @@ const Project = props => {
                             
                         </ul>
                     </div>
-                    <div className="project__links">
+                    <div className="project-card__links">
                         <a href={project.github} title="Github">
                             <svg className="icon-github" width="20" height="19" viewBox="0 0 20 19" fill="none" aria-label={`${project.title} sur Github`} xmlns="http://www.w3.org/2000/svg" >
                                 <title>{`${project.title} sur Github`}</title>
