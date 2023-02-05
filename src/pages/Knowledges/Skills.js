@@ -5,16 +5,16 @@ import { Component } from 'react';
 export default class Skills extends Component {
 
     state = {
-        projects: skillsData
+        skills: skillsData
     }
 
     render() {
         
-        let {projects} = this.state;
+        let {skills} = this.state;
         return (
             <div className='knowledges__container'>
                 {
-                    projects.map((item, index) => {
+                    skills.map((item, index) => {
                         return (
                             <SkillComponent key={index} item={item}/>
                         )
