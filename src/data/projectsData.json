@@ -12,9 +12,9 @@
             "Photoshop"
         ],
         "github" : "https://github.com/JoAnisky/portfolio_jl_v1.git",
-        "external" : [
-            "#",
-            "Portfolio de Jonathan Loré"
-        ]            
+        "external" : {
+            "link":"#",
+            "title": "Portfolio de Jonathan Loré"
+        }                   
     }
 ]
