@@ -20,8 +20,9 @@
         background-color: map-get($colors, "background");
         transition: all .5s ease-in-out;
         backdrop-filter: blur(10px);
-        transform: translateX(630px);
+        transform: translateX(0);
         @include phone{
+            transform: translateX(630px);
             visibility: hidden;
             position:inherit;
             flex-direction:column;
