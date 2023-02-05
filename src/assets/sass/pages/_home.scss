@@ -11,7 +11,7 @@
     }
     &__main-title{
         color: map-get($colors, "titles");
-        font: bold clamp(2.5rem, 8vw, 5.625rem) $font-main-title;
+        font: bold clamp(2.3rem, 11vw, 5.625rem) $font-main-title;
         &__dot{
             color: map-get($colors, "green");
         }
