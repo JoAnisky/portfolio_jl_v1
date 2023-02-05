@@ -2,8 +2,8 @@ main {
     @media (max-width: 1080px){
         padding: 0px 6.25rem;
     }
-    @media (max-width: 768px){
-        padding: 0px 3.125rem;
+    @include phone{
+        padding: 0px $padding-navbar-main;
     }
     margin: 0px auto;
     width: 100%;

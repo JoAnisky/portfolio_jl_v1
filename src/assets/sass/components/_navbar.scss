@@ -85,7 +85,7 @@
 .navbar-mobile{
     @include phone {
         position:fixed;
-        width:98vw;
+        width:100vw;
         height: $size-navbar-height;
         top: 0;
         background-color: rgba(20, 20, 21, .9);
@@ -94,7 +94,7 @@
     &__container{
         display: flex;
         height:100%;
-        padding:0 25px;
+        padding:0 $padding-navbar-main;
         align-items: center;
         justify-content: space-between;
     };
