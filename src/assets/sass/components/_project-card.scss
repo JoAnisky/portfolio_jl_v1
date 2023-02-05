@@ -2,10 +2,18 @@
     width: 100%;
     max-width: 100%;
     vertical-align: middle;
-    img {
-        width:100%;
+    border-radius: $border-radius-size;
+}
+.work-img {
+    width:100%;
+    border-radius: $border-radius-size;
+    filter: grayscale(100%) contrast(1) brightness(90%);
+    transition: all .3s ease-in-out;
+    &:hover{
+        filter: grayscale(0) contrast(1.2);
     }
 }
+
 .project-card{
     position: relative;
     display: grid;

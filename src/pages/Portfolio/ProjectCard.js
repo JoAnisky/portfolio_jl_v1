@@ -15,7 +15,7 @@ const Project = props => {
                             <source srcset={`${workPicturePath}${project.image}-S.webp`} media="(max-width: 340px)" />
                             <source srcset={`${workPicturePath}${project.image}-M.webp`} media="(max-width: 1260px)" />
                             <source srcset={`${workPicturePath}${project.image}.webp`} />
-                            <img src={`${workPicturePath}${project.image}.webp`} alt="Un exemple" />
+                            <img className='work-img'src={`${workPicturePath}${project.image}.webp`} alt="Un exemple" />
                         </picture>
                     </div>
                 </a>
