@@ -85,7 +85,7 @@
 .navbar-mobile{
     @include phone {
         position:fixed;
-        width:100vw;
+        width:100%;
         height: $size-navbar-height;
         top: 0;
         background-color: rgba(20, 20, 21, .9);
