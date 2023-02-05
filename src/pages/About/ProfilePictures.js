@@ -7,7 +7,7 @@ const ProfilePicture = () => {
     }
 
     const images = importAll(require.context('../../assets/img/profile', false, /\.(png|jpe?g|svg|webp)$/));
-    let mediaSizes = ["(min-width: 1280px)","(max-width:767px)","(min-width: 768px) and (max-width:1279px)"];
+    let mediaSizes = ["(min-width: 1279px)","(max-width:767px)","(min-width: 768px) and (max-width:1279px)"];
 
     return (
         <picture>

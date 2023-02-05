@@ -15,8 +15,14 @@ const About = () => {
                                 (pourquoi pas autour d'un bon café ? &#9749;).</p>
                             <p>Je vous souhaite une bonne visite.</p>
                     </div>
-                    <div className="about__picture-container">
-                        <ProfilePictures/>
+                    <div className="picture">
+                        <div className='wrapper'>
+                            <div className="image-wrapper picture-overlay img">
+
+                                <ProfilePictures/>
+                                <div className='white-background'></div>
+                            </div>
+                        </div>
                     </div>
             </div>
 
