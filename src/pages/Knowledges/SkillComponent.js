@@ -2,24 +2,23 @@ import React from 'react';
 
 const SkillComponent = props => {
     const logosPath = "./media/logos/";
-    let {item} = props;
-
+    let skills = props.item;
     return (
 
         <div className="skill-category">
             <div className='skill-category__title'>
-                <h3>{item.catTitle}</h3>
+                <h3>{skills.catTitle}</h3>
             </div>
             <div className="skill-components">
             {
-                item.stack.map((logo, index) => {
+                skills.stack.map((skill, index) => {
                     return(
                         <div key={index} className="skill-components__skill">
                             <div className="skill-components__skill__logo">
-                                <img src={`${logosPath + logo.name}.svg`} className='skill-component__logo' alt={`logo ${logo.name}`} width={logo.width} />
+                                <img src={`${logosPath + skill.name}.svg`} className='skill-component__logo' alt={`logo ${skill.name}`} width={skill.width} />
                             </div>
                             <div>
-                                <p className='skill-component__value'>{logo.name}</p>
+                                <p className='skill-component__value'>{skill.name}</p>
                             </div>
                         </div>  
                     )
@@ -30,6 +29,6 @@ const SkillComponent = props => {
         </div>
 
     );
-}
+};
 
 export default SkillComponent;
