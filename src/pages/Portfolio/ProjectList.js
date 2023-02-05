@@ -4,6 +4,7 @@ import Project from './ProjectCard';
 export default class ProjectList extends Component {
 
     state = {
+        id: 0,
         projects: projectsData
     }
 
