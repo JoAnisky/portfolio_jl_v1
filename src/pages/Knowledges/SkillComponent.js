@@ -15,7 +15,7 @@ const SkillComponent = props => {
                     return(
                         <div key={index} className="skill-components__skill">
                             <div className="skill-components__skill__logo">
-                                <img src={`${logosPath + skill.name}.svg`} className='skill-component__logo' alt={`logo ${skill.name}`} width={skill.width} />
+                                <img src={`${logosPath + skill.name}.svg`} className='skill-component__logo' alt={`logo ${skill.name}`} width={skill.width} role="img" />
                             </div>
                             <div>
                                 <p className='skill-component__value'>{skill.name}</p>
