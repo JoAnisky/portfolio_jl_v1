@@ -18,6 +18,10 @@
         border-radius: 5px;
         width: $components-size;
         height: $components-size;
+        @include phone{
+            width: 5rem;
+            height:5rem;
+        }
         p {
             text-transform: capitalize;
             font: $font-size-component-skills map-get($font-menu-titles, "regular");
@@ -25,6 +29,8 @@
         &__logo{
             display:flex;
             height:70%;
+            width:100%;
+            justify-content: center;
             align-items:center;
         }
     }
