@@ -46,6 +46,13 @@ $font-size-h3 : 1.125rem;
 $font-size-component-skills: 13px;
 $components-size: 8.75rem;
 $size-navbar-height: 85px;
+
+$font-sizes: (
+    "title-h2":$font-size-h2,
+    "title-h2-clamp" : $font-size-h2-clamp,
+    "title-h3" : $font-size-h3,
+    "component-skills": $font-size-component-skills
+);
 /* Margins */
 $margin-menu: .9375rem;
 $menu-padding-mobile: 2.5rem;

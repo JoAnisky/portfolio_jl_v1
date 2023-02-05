@@ -43,3 +43,9 @@
     width: 120%;
     height: 2px;
 }
+
+@mixin green-text {
+    font:200 map-get($font-menu-titles, 'poppins');
+    font-style: italic;
+    color: map-get($colors, "green");
+}

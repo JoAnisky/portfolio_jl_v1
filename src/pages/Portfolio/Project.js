@@ -5,26 +5,41 @@ const Project = props => {
     const workPicturePath = "./media/work/";
     return (
         <div className='project'>
-            <div className="project__data">
+            <div className="project__image">
                 <div>
-                    <p className="project__type">{project.type}</p>
-                    <h3 className="project__title">{project.title}</h3>
-                    <div className="project_details">
-                        <div className="project__description">
+                    
+                </div>
+                <a href={project.external.link} title={project.external.title}>
+                <picture>
+                        <source srcset={`${workPicturePath}${project.image}-S.webp`} media="(max-width: 340px)" />
+                        <source srcset={`${workPicturePath}${project.image}-M.webp`} media="(max-width: 1260px)" />
+                        <source srcset={`${workPicturePath}${project.image}.webp`} />
+                        <img src={`${workPicturePath}${project.image}.webp`} alt="Un exemple" />
+                    </picture>
+                </a>
+            </div>
+            <div className="project__data">
+                
+                    <p className="project__type right">{project.type}</p>
+                    <h3 className="project__title right">{project.title}</h3>
+                    <div className="project__details right">
+                        <div className="project__description right">
                             <p>{project.description}</p>
                         </div>
                         <div className="project__description-task">
-                            <p><span>Tâches : </span>{project.tasks}</p>
+                            <p>Tâches : <span className='green-texts'>{project.tasks}</span></p>
                         </div>
                     </div>
-                    <ul className="project__technos">
-                        {
-                            project.technos.map((techno, index) => {
-                                return <li key={index}>{techno}</li>
-                            })
-                        }
-                        
-                    </ul>
+                    <div className='project__technos'>
+                        <ul>
+                            {
+                                project.technos.map((techno, index) => {
+                                    return <li key={index}>{techno}</li>
+                                })
+                            }
+                            
+                        </ul>
+                    </div>
                     <div className="project__links">
                         <a href={project.github} title="Github">
                             <svg className="icon-github" width="20" height="19" viewBox="0 0 20 19" fill="none" aria-label={`${project.title} sur Github`} xmlns="http://www.w3.org/2000/svg" >
@@ -43,17 +58,6 @@ const Project = props => {
                         </a>
                     </div>
 
-                </div>
-            </div>
-            <div className="project__image">
-                <a href={project.external.link} title={project.external.title}>
-                <picture>
-                        <source srcset={`${workPicturePath}${project.image}-S.webp`} media="(max-width: 340px)" />
-                        <source srcset={`${workPicturePath}${project.image}-M.webp`} media="(max-width: 1260px)" />
-                        <source srcset={`${workPicturePath}${project.image}.webp`} />
-                        <img src={`${workPicturePath}${project.image}.webp`} alt="Un exemple" />
-                    </picture>
-                </a>
             </div>
         </div>
     );

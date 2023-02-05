@@ -5,7 +5,7 @@ export default class ProjectList extends Component {
 
     state = {
         projects: projectsData
-    };
+    }
 
     render() {
         let {projects} = this.state;
@@ -17,9 +17,7 @@ export default class ProjectList extends Component {
                 return <Project key={index} item={project}/>
             })
         }
-
         </>
-
         )
     }
 }
