@@ -1,0 +1,66 @@
+.work-image-wrapper{
+    width: 100%;
+    max-width: 100%;
+    vertical-align: middle;
+    img {
+        width:100%;
+    }
+}
+.project{
+    position: relative;
+    display: grid;
+    margin-top: 90px;
+    gap: $project-gap;
+    grid-template-columns: repeat(2, 1fr);
+    -webkit-box-align: center;
+    align-items: center;
+    .right{
+        text-align:right;
+    }
+    &__type{color: map-get($colors, "green");}
+    &__title{font-weight: 600}
+    &__data{
+        position: absolute;
+        right: 0;
+        max-width: 55%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        row-gap: 15px;
+    }
+    &__details{
+        display:flex;
+        flex-direction: column;
+        gap: $project-gap;
+        padding: $project-gap 15px;
+        background-color:map-get($colors, "project-background");
+        border-radius: $border-radius-size;
+        font-size:map-get($font-sizes, "component-skills");
+    }
+    &__image{
+        a {
+            width:100%;
+            height: 100%;
+        }
+    }
+    &__technos{
+        background:url('../../../../public/media/background/tasks.svg') no-repeat center;
+        background-size: contain;
+        ul{
+            display: flex;
+            justify-content: flex-end;
+            font: $font-size-component-skills map-get($font-menu-titles, "regular");
+            color: map-get($colors, "components-stroke");
+            gap: 15px;
+            padding: $project-gap 15px;
+        }
+    }
+    &__links {
+        display: flex;
+        gap: $project-gap;
+        align-items: center;
+    }
+}
+.green-texts {
+    @include green-text;
+}
