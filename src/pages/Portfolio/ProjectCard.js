@@ -22,7 +22,7 @@ const Project = props => {
                             <source srcSet={`${workPicturePath}${image}-S.webp`} media="(max-width: 340px)" />
                             <source srcSet={`${workPicturePath}${image}-M.webp`} media="(max-width: 1260px)" />
                             <source srcSet={`${workPicturePath}${image}.webp`} />
-                            <img className='work-img'src={`${workPicturePath}${image}.webp`} alt="Un exemple de projet" />
+                            <img className='work-img'src={`${workPicturePath}${image}.webp`} alt={external.title} />
                         </picture>
                     </div>
                 </a>
