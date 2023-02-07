@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react';
 
 const SkillComponent = props => {
     const logosPath = "./media/logos/";
-    let skills = props.item;
+    const {catTitle, stack} = props.item;
 
     const [windowSize, setWindowSize] = useState({
         sizeX: 0,
@@ -33,15 +33,15 @@ const SkillComponent = props => {
     return (
         <div className="skill-category">
             <div className='skill-category__title'>
-                <h3>{skills.catTitle}</h3>
+                <h3>{catTitle}</h3>
             </div>
             <div className="skill-components">
             {
-                skills.stack.map((skill, index) => {
+                stack.map((skill, index) => {
                     return(
                         <div key={index} className="skill-components__skill">
                             <div className="skill-components__skill__logo">
-                                <img src={`${logosPath + skill.name}.svg`} className='skill-component__logo' alt={`logo ${skill.name}`} width={mobile ? Math.round((skill.width / 1.25)) : skill.width} role="img" />
+                                <img src={`${logosPath + skill.name}.svg`} className='skill-component__logo' alt={`logo ${skill.name}`} width={mobile ? Math.round((skill.width / 1.25)) : skill.width}/>
                             </div>
                             <div>
                                 <p className='skill-component__value'>{skill.name}</p>

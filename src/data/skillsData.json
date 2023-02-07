@@ -1,6 +1,5 @@
 [
     {   
-        "catId": 1,
         "catTitle": "Languages",
         "stack": [
             {"name":"javascript", "width":"37"},
@@ -9,7 +8,6 @@
         ]
     },
     {
-        "catId": 2,
         "catTitle" : "Frameworks & librairies",
         "stack": [
             {"name":"react", "width":"50"},
@@ -18,7 +16,6 @@
         ]
     },
     {
-        "catId": 2,
         "catTitle" : "logiciels",
         "stack": [
             {"name":"figma", "width":"30"},
