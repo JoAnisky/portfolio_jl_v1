@@ -16,5 +16,41 @@
             "link":"#",
             "title": "Portfolio de Jonathan Loré"
         }                   
+    },
+    {
+        "type": "Site web",
+        "title": "Christopher Nolan",
+        "image": "christopher_nolan",
+        "description": "Création d’un site web sur le thème de  Christopher Nolan. Projet dans le cadre du titre pro, “développeur web web mobile”. Créé avec les langages HTML, CSS et Javascript,  sans frameworks.",
+        "tasks": "Maquettage, design, intégration. Développement Frontend",
+        "technos" : [
+            "HTML", 
+            "CSS", 
+            "Javascript", 
+            "Figma"
+        ],
+        "github" : "https://github.com/JoAnisky/portfolio_jl_v1.git",
+        "external" : {
+            "link":"#",
+            "title": "Portfolio de Jonathan Loré"
+        }                   
+    },
+    {
+        "type": "Site web",
+        "title": "Christopher Nolan - Back",
+        "image": "christopher_nolan",
+        "description": "Création d’un Dashboard des inscrits à la newsletter. Fonctionnalités de recherche, tri, suppression et export des adresses mails en .CSV.  Pur PHP, gestion des bases de données, requêtes SQL préparées.",
+        "tasks": "Maquettage, design, intégration. Développement Front/Back",
+        "technos" : [
+            "HTML", 
+            "CSS", 
+            "PHP", 
+            "MySQL"
+        ],
+        "github" : "https://github.com/JoAnisky/portfolio_jl_v1.git",
+        "external" : {
+            "link":"#",
+            "title": "Portfolio de Jonathan Loré"
+        }                   
     }
 ]
