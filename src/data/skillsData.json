@@ -1,0 +1,26 @@
+[
+    {   
+        "catTitle": "Languages",
+        "stack": [
+            {"name":"javascript", "width":"37"},
+            {"name":"php", "width":"50"},
+            {"name":"sass", "width":"50"}
+        ]
+    },
+    {
+        "catTitle" : "Frameworks & librairies",
+        "stack": [
+            {"name":"react", "width":"50"},
+            {"name":"nodejs", "width":"75"},
+            {"name":"threejs", "width":"50"}
+        ]
+    },
+    {
+        "catTitle" : "logiciels",
+        "stack": [
+            {"name":"figma", "width":"30"},
+            {"name":"photoshop", "width":"40"},
+            {"name":"git", "width":"40"}
+        ]
+    }
+]

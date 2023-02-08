@@ -1,0 +1,33 @@
+.sections-titles-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.375rem;
+    position:relative;
+    font: 400 $font-size-h2-clamp map-get($font-menu-titles, "regular");
+    text-transform: uppercase;
+    color: map-get($colors, "titles");
+    letter-spacing: .1rem;
+    margin: .625rem 0rem 2.5rem;
+    white-space: nowrap;
+    &__line{
+        display: inline-block;
+        height: .0563rem;
+        width: 40%;
+        background:map-get($colors, "green");
+    }
+}    
+    // &::before, &::after{
+    //     content:'';
+    //     display:inline-block;
+    //     position: absolute;
+    //     width: calc(100% - ($font-size-h2 * 35));
+    //     height: .0625rem;
+    //     background:map-get($colors, "green");
+    // }
+    // &::before{
+    //     left:0;
+    // }    
+    // &::after{
+    //     right:0;
+    // }

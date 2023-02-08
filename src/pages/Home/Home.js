@@ -1,18 +1,21 @@
-// import HomeParallax from './HomeParallax';
-// import Navigation from "../../components/NavigationTop";
+import React from 'react';
 
 const Home = () => {
-
-    return (  
-        <header className='hello-container'>
-        {/* <Navigation/> */}
-            <div className="hello">
-                <p className='hello__pre'>Bonjour, je suis</p>
-                <h1 className="hello__title">Jonathan Loré<span className='hello__title__dot'>.</span></h1>
-                <p className="hello__subtitle">Développeur web Frontend</p>
+    return (
+        <section className='hello' id="home">
+            <div className="hello__container">
+                <div className="fadein-welcome">
+                    <p className='hello__hi'>Bonjour, je suis</p>
+                </div>
+                <div className="fadein-welcome">
+                    <h1 className="hello__main-title">Jonathan Loré<span className='hello__main-title__dot'>.</span></h1>
+                </div>
+                <div className="fadein-welcome">
+                    <h3 className="hello__subtitle">Développeur web Frontend</h3>
+                </div>
             </div>
-        </header>
-    )
+        </section>
+    );
 }
 
 export default Home;

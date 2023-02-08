@@ -1,0 +1,55 @@
+.menu-burger{
+    &__btn{
+        display:none;
+        @include phone{
+            
+            display:block;
+            padding: 0;
+            z-index: 10;
+            border: 0px;
+            background-color:transparent;
+            align-self: flex-end;
+        }
+    }
+}
+.burger-box {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 24px;
+    
+    &__inner{
+        position: absolute;
+        top: 50%;
+        right: 0px;
+        width: 25px;
+        height: 2px;
+        background-color: map-get($colors, "green");
+        transition: all .3s ease-in-out;
+
+    }
+    &__inner {
+        &::before{
+            @include burger-before-after;
+            top: -10px;
+            transition: all .3s ease-in-out;
+        }
+        &::after{
+            @include burger-before-after;
+            bottom: -10px;
+            transition: all .3s ease-in-out;
+        }
+    }
+}
+.opened .burger-box {
+    &__inner {
+        background:transparent;
+        transform: translateX(15px);
+        &::before{
+            transform: rotate(44deg) translateY(13px);
+        }
+        &::after{
+            transform: rotate(-42deg) translateY(-14px);
+        }
+    }
+}

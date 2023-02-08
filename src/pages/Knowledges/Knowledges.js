@@ -1,10 +1,10 @@
 import React from 'react';
-import Skills from './Skills';
 import SectionsTitles from '../../components/SectionsTitles';
+import Skills from './Skills';
 
 const Knowledges = () => {
     return (
-        <section className='knowledges'>
+        <section className='knowledges' id="knowledges">
             <SectionsTitles name="Compétences"/>
             <Skills/>
         </section>

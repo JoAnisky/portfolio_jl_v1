@@ -1,0 +1,26 @@
+.main-logo {
+    @include verticalCenter;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    @include phone{        
+        z-index:1;
+    }
+    &.hide-logo {
+        opacity: 0;
+        pointer-events: none;
+    }
+    a {
+        width: 42px;
+        height: 42px;
+        fill: transparent;
+
+    }
+    svg{
+        user-select: none;
+        fill: transparent;
+        transition: $menu-transition;
+    }
+    a svg:hover #logo-bg {
+        fill: map-get($colors, "btn-hover");
+    }
+}

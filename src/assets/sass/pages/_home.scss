@@ -1,0 +1,28 @@
+.hello {
+    @include verticalCenterColumn;
+    max-width: 62.5rem;
+    height: 100vh;
+    min-height: 100vh;
+    white-space: nowrap;
+    &__hi{
+        margin: 0 0 .5rem 0;
+        color: map-get($colors, "green");
+        font: clamp(.75rem, 2vw, 1rem) $font-texts;
+    }
+    &__main-title{
+        color: map-get($colors, "titles");
+        font: bold clamp(2.3rem, 11vw, 5.625rem) $font-main-title;
+        &__dot{
+            color: map-get($colors, "green");
+        }
+    }
+    &__subtitle{
+        color: map-get($colors, "main-sub-title");
+        font: clamp(1.25rem, 4vw, 2.8125rem) $font-texts;
+    }
+    &__container{
+        div{
+            display:flex;
+        }
+    }
+}

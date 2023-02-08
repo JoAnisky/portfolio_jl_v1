@@ -1,0 +1,18 @@
+.resume-button{
+    a{
+        color: map-get($colors, "green");
+    }
+    background-color: transparent;
+    border : 1px solid map-get($colors, "green");
+    border-radius: $border-radius-size;
+    padding: 7px 1rem;
+    margin-left: $margin-menu;
+    @include phone{
+        margin: 0;
+    }
+    cursor: pointer;
+    transition: $menu-transition;
+    &:hover{
+        background-color: map-get($colors, "btn-hover");
+    }
+}
