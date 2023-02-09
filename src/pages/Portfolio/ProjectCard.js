@@ -14,7 +14,7 @@ const Project = props => {
     }, [props.id]);
 
     return (
-        <div className={`project-card ${pair ? "droite" : ""}`}>
+        <div className={`project-card ${!pair ? "left" : ""}`}>
             <div className="project-card__image">
                 <a href={external.link} title={external.title}>
                     <div className="work-image-wrapper">
@@ -27,11 +27,11 @@ const Project = props => {
                     </div>
                 </a>
             </div>
-            <div className="project-card__data">                
-                    <p className="project-card__type right">{type}</p>
-                    <h3 className="project-card__title right">{title}</h3>
-                    <div className="project-card__details right">
-                        <div className="project-card__description right">
+            <div className={`project-card__data ${!pair ? "left" : ""}`}>                
+                    <p className="project-card__type">{type}</p>
+                    <h3 className="project-card__title">{title}</h3>
+                    <div className="project-card__details">
+                        <div className="project-card__description">
                             <p>{description}</p>
                         </div>
                         <div className="project-card__description-task">
