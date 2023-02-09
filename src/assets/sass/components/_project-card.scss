@@ -16,41 +16,77 @@
 
 .project-card{
     position: relative;
-    display: flex;
-    margin-top: 90px;
-    gap: $project-gap;
-    -webkit-box-align: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, .4fr);
+    grid-row-gap: $project-gap;
+    grid-auto-rows: 100px;
     align-items: center;
-    &.left{
-        flex-direction: row-reverse;
+
+    @include phone {
+        display:flex;
+        flex-direction: column;
+        margin-bottom: 80px;
+        &.left {
+            flex-direction: column;
+        }
     }
 
+    &__type-title{
+        text-align: right;
+        grid-column: 1 / -1;
+        justify-self: end;
+        @include phone{
+            text-align:center;
+        }  
+        &.left {
+            grid-row: 1/-4;
+            text-align: left;
+            justify-self: start;
+            @include phone{
+                text-align:center;
+            }
+        }
+    }
     &__type{color: map-get($colors, "green");}
-    &__title{font-weight: 600}
+    &__title{
+        position: relative;
+        z-index: 99;
+        font-weight: 600;
+    }
     &__data{
-        position: absolute;
-        right: 0;
-        max-width: 55%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
+        display:grid;
         row-gap: 15px;
+        justify-items: flex-end;
         &.left{
-            align-items: flex-start;
-            left: 0;
+            grid-area: 1/1/1/1;
+            justify-items: baseline;
+        }
+        @include phone {
+            display:flex;
+            flex-direction: column;
+            align-items: center;
         }
     }
     &__details{
         display:flex;
         flex-direction: column;
+        line-height: 1.5;
         gap: $project-gap;
         padding: $project-gap 15px;
         background-color:map-get($colors, "project-background");
         border-radius: $border-radius-size;
         font-size:map-get($font-sizes, "component-skills");
+        @include phone {
+            text-align: center;
+            padding: 6px 8px;
+        }
     }
     &__image{
-        width: 50%;
+        grid-area: 2 / 1 / 3 / 2;
+        &.left {
+           grid-area: 1/2/1/2;
+        }
         a {
             width:100%;
             height: 100%;
@@ -59,6 +95,7 @@
     &__technos{
         background:url('../../../../public/media/background/tasks.svg') no-repeat center;
         background-size: contain;
+
         ul{
             display: flex;
             justify-content: flex-end;
@@ -72,6 +109,7 @@
         display: flex;
         gap: $project-gap;
         align-items: center;
+        justify-content: flex-end;
     }
 }
 .green-texts {
