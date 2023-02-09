@@ -55,16 +55,16 @@
         align-items: center;
         padding: 0;
         margin: 0;
-        transform: translateX(0);
         white-space: nowrap;
+        transform: translateX(0);
         @include phone{
+            transform: translateX(650px);
             flex-direction:column;
             justify-content: center;
             left: 0;
             right: 0;
             bottom: 0;
             height: 20vh;
-            transform: translateX(650px);
         };
     };
     // <a>
