@@ -28,7 +28,7 @@ export default function useDeviceDetect(){
     useEffect(() => {
 
         windowSize.sizeX < mobileSize ? setMobile(true) : setMobile(false);
-        windowSize.lastSizeX > windowSize.sizeX ? setMobile(true) : setMobile(false);
+        // windowSize.lastSizeX > windowSize.sizeX ? setMobile(true) : setMobile(false);
         
     },[isMobile, windowSize]);
 
