@@ -1,0 +1,13 @@
+.contact-form {
+    display:flex;
+    gap: 25px;
+    label {
+        color: #fff;
+    }
+    input {
+        display: block;
+    }
+    &__fields{
+        display: block;
+    }
+}
