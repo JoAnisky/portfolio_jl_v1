@@ -6,7 +6,7 @@ import Header from './pages/Home/components/Header';
 import About from './pages/About/About';
 import Knowledges from './pages/Knowledges/Knowledges';
 import Portfolio from './pages/Portfolio/Portfolio';
-import Contact from './pages/Contact';
+import Contact from './pages/Contact/Contact';
 import Footer from './pages/Footer';
 import NotFound from './pages/NotFound';
 
