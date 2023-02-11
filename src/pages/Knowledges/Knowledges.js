@@ -1,6 +1,6 @@
 import React from 'react';
 import SectionsTitles from '../../components/SectionsTitles';
-import useDeviceDetect from '../../utils/useDeviceDetect';
+import useDeviceDetect from '../../hooks/useDeviceDetect';
 import Skills from './Skills';
 
 const Knowledges = () => {

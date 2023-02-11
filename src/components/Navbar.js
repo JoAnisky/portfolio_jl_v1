@@ -1,7 +1,7 @@
 import MainLogo from './MainLogo';
 import MenuBurger from './MenuBurger';
 import BtnResume from './BtnResume';
-import useDeviceDetect from '../utils/useDeviceDetect';
+import useDeviceDetect from '../hooks/useDeviceDetect';
 
 import { useState, useRef, useEffect } from 'react';
 
