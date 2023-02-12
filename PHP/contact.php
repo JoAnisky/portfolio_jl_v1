@@ -13,10 +13,6 @@
     $email = $data->email;
     $message = $data->message;
 
-    // ... 
-    // ici, vous pouvez effectuer les opérations nécessaires pour enregistrer ces données, telles que les stocker dans une base de données ou les envoyer par e-mail
-    // ... 
-
     echo json_encode(array("message" => "Les données ont été enregistrées avec succès."));
     echo json_encode(array("nom" => $firstName, "prénom" => $lastName, "email" => $email, "message" => $message));
 
@@ -26,7 +22,7 @@
             // Récupération des données
             $firstName = htmlspecialchars($firstName);
             $lastName  = htmlspecialchars($lastName);
-            $message   = htmlspecialchars($email);
+            $message   = htmlspecialchars($message);
 
             // Infos d'envoi
             $fromMail     = filter_var($email, FILTER_SANITIZE_EMAIL);
@@ -38,14 +34,14 @@
             $header .= 'Content-type: text/html; charset=utf-8' . "\r\n";
             $header .= 'From: '.$sender . "\r\n";
             $object  = 'Contact depuis le Portfolio';
-            $message = '
+            $emailMessage = '
                         <p>Message reçu depuis mon Portfolio le ' .$date.'</p>
                         <p><b>Nom : </b></p><span>' .$firstName . '</span>
                         <p><b>Prénom : </b><span>' .$lastName . '</span>
                         <p><b>Email</b> : ' .$fromMail. '</p>
                         <b>Message</b> : ' .$message. ' </p>';
 
-            $serverResponse = mail($toMail, $header, $object, $message);
+            $serverResponse = mail($toMail, $header, $object, $emailMessage);
             if ($serverResponse === true){
                 echo json_encode(["responseServer"=> true, "responseMail"=> true, "responseMessage" => "données reçues, mail OK"]);                
             } else {
