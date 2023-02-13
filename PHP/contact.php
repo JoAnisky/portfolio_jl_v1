@@ -4,47 +4,45 @@
     header("Content-Type: application/json; charset=UTF-8");
     header("Access-Control-Allow-Methods: POST");
     header("Access-Control-Max-Age: 3600");
-    header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+    header("Access-Control-Allow-headers: Content-Type, Access-Control-Allow-headers, Authorization, X-Requested-With");
 
     $data = json_decode(file_get_contents("php://input"));
 
-    $firstName = $data->firstname;
-    $lastName = $data->lastname;
-    $email = $data->email;
-    $message = $data->message;
-
-    echo json_encode(array("message" => "Les données ont été enregistrées avec succès."));
-    echo json_encode(array("nom" => $firstName, "prénom" => $lastName, "email" => $email, "message" => $message));
+    // Validation des entrées
+    $firstName = filter_var($data->firstname, FILTER_SANITIZE_STRING);
+    $lastName = filter_var($data->lastname, FILTER_SANITIZE_STRING);
+    $email = filter_var($data->email, FILTER_VALIDATE_EMAIL);
+    $message = filter_var($data->message, FILTER_SANITIZE_STRING);
 
     if(isset($firstName) && isset($lastName) && isset($email) && isset($email)){
         if(!empty($firstName) && !empty($lastName) && !empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL) && !empty($email)){
             
-            // Récupération des données
+            // Échappement des entrées
             $firstName = htmlspecialchars($firstName);
-            $lastName  = htmlspecialchars($lastName);
-            $message   = htmlspecialchars($message);
+            $lastName = htmlspecialchars($lastName);
+            $userEmail = filter_var($email, FILTER_SANITIZE_EMAIL);
+            $message = htmlspecialchars($message);
 
             // Infos d'envoi
-            $fromMail     = filter_var($email, FILTER_SANITIZE_EMAIL);
-            $toMail       = 'anisky5@gmail.com';
+            $receiver       = 'some@from.address';
 
             // Message
-            $sender  = $lastName . ' ' . $firstName . '< ' . $fromMail.' >';
-            $header  = 'MIME-Version: 1.0' . "\r\n";
-            $header .= 'Content-type: text/html; charset=utf-8' . "\r\n";
-            $header .= 'From: '.$sender . "\r\n";
-            $object  = 'Contact depuis le Portfolio';
+            $sender  = $lastName . ' ' . $firstName . '< ' . $userEmail.' >';
+            $headers  = 'MIME-Version: 1.0' . "\r\n";
+            $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+            $headers .= 'From: '.$sender . "\r\n";
+            $subject  = 'Contact depuis le Portfolio';
             $emailMessage = '
-                        <p>Message reçu depuis mon Portfolio le ' .$date.'</p>
-                        <p><b>Nom : </b></p><span>' .$firstName . '</span>
-                        <p><b>Prénom : </b><span>' .$lastName . '</span>
-                        <p><b>Email</b> : ' .$fromMail. '</p>
-                        <b>Message</b> : ' .$message. ' </p>';
+                        <p><b>Nom : </b></p><span>' .$firstName . '</span></p>
+                        <p><b>Prénom : </b><span>' .$lastName . '</span></p>
+                        <p><b>Email</b> : ' .$userEmail. '</p>
+                        <p><b>Message</b> : ' .$message. ' </p>';
 
-            $serverResponse = mail($toMail, $header, $object, $emailMessage);
-            if ($serverResponse === true){
-                echo json_encode(["responseServer"=> true, "responseMail"=> true, "responseMessage" => "données reçues, mail OK"]);                
+            $result = mail($receiver, $subject, $emailMessage , $headers);
+            if ($result === true){
+                echo json_encode(["responseServer"=> true, "responseMail"=> true, "responseMessage" => "Votre message a bien été envoyé, merci"]);                
             } else {
+                
                 echo json_encode(["responseServer"=> true, "responseMail"=> false, "responseMessage" => "données reçues mail NON envoyé"]);
             }
         } else {
