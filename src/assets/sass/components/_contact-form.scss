@@ -1,13 +1,71 @@
-.contact-form {
-    display:flex;
+.contact-form-container {
+    display: flex;
+    justify-content: center;
+}
+.contact-form{
+    @include verticalCenterColumn;
+    width:  80%;
     gap: 25px;
     label {
         color: #fff;
     }
     input {
-        display: block;
+        display: inline-block;
+        width: 100%;
+        color: map-get($colors, "paragraphs");
+        background-color: map-get($colors, "components-background");
+        border: 1px solid map-get($colors,"components-stroke");
+        border-radius: $border-radius-size;
+        margin: .5rem 0rem;
+        padding: .6875rem .875rem;
+
+        input::placeholder {
+            color: map-get($colors, "paragraphs");
+        }
+        &.error{
+            border: 1px solid map-get($colors,"error");
+        }
     }
+
     &__fields{
         display: block;
+        width: 100%;
     }
+ .errorMessage{
+    color: map-get($colors, "error");
+    font-size: 13px;
+    font-weight:300;
+ }
+}
+.btn {
+    display: inline-block;
+    background-color: transparent;
+    color: map-get($colors, "green");
+    text-align:center;
+    padding: 12px;
+    width: 94px;
+    cursor: pointer;
+    border: 1px solid map-get($colors, "green");
+    border-radius: $border-radius-size;
+    // &__loader {
+    //     width: 20px;
+    //     height: 20px;
+    //     border: 3px solid #FFF;
+    //     border-bottom-color: transparent;
+    //     border-radius: 50%;
+    //     display: inline-block;
+    //     box-sizing: border-box;
+    //     position: relative;
+    //     animation: rotation 1s linear infinite;
+    //     }
+    
+    //     @keyframes rotation {
+    //     0% {
+    //         transform: rotate(0deg);
+    //     }
+    //     100% {
+    //         transform: rotate(360deg);
+    //     }
+    
+    // }
 }
