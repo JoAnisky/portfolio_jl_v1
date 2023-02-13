@@ -40,10 +40,10 @@
 
             $result = mail($receiver, $subject, $emailMessage , $headers);
             if ($result === true){
-                echo json_encode(["responseServer"=> true, "responseMail"=> true, "responseMessage" => "Votre message a bien été envoyé, merci"]);                
+                echo json_encode(["responseServer"=> true, "responseMail"=> true, "responseMessage" => "Votre message a bien été envoyé, merci !"]);                
             } else {
                 
-                echo json_encode(["responseServer"=> true, "responseMail"=> false, "responseMessage" => "données reçues mail NON envoyé"]);
+                echo json_encode(["responseServer"=> true, "responseMail"=> false, "responseMessage" => "Erreur lors de l'envoi du message :("]);
             }
         } else {
             echo json_encode(["responseServer" => false, "responseMessage" => "Données vides"]);
