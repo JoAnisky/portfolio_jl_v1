@@ -8,13 +8,13 @@ const API_PATH = "http://localhost:8000/contact.php";
 const ContactForm = () => {
 
     const {register, handleSubmit, formState : {errors, isSubmitSuccessful, isValid, isSubmitting}, setError, reset} = useForm({
-        mode: "onTouched",
+        mode: "onBlur",
         resolver: yupResolver(formSchema),
         defaultValues : {
-            firstname : "lol",
-            lastname: "lol",
-            email: "jeanlasalle@gmail.com",
-            message: "love"
+            firstname : "",
+            lastname: "",
+            email: "",
+            message: ""
         }
     });
 
@@ -44,8 +44,8 @@ const ContactForm = () => {
     }
 
     const onSubmit = async data => {
-        console.log("Formulaire valide :", isValid)
         if (isValid){ 
+            errors.clearErrors();
             await sendPost(data)
             .then((response) => {
                 if (response.responseServer === true && response.responseMail === true){
@@ -70,21 +70,22 @@ const ContactForm = () => {
                 <form className="contact-form"onSubmit={handleSubmit(onSubmit)}>
                     <div className='contact-form__fields'>
                         <label htmlFor="firstname">Nom</label>
-                        <input type='text' name="firstname" placeholder="Votre nom"
+                        
+                        <input className={errors.firstname && "error"} type='text' name="firstname" placeholder="Votre nom"
                         {...register("firstname")}
                         />
                         <p className='errorMessage'>{errors.firstname?.message}</p>
                     </div>
                     <div className='contact-form__fields'>
                         <label htmlFor="lastname">Prénom</label>
-                        <input type='text' name="lastname" placeholder="Votre prénom"
+                        <input className={errors.lastname && "error"} type='text' name="lastname" placeholder="Votre prénom"
                         {...register("lastname")}
                         />
                         <p className='errorMessage'>{errors.lastname?.message}</p>
                     </div>
                     <div className='contact-form__fields'>
                         <label htmlFor="email">Email</label>
-                        <input type='text' name="email" placeholder="mail@example.com"
+                        <input className={errors.email && "error"} type='text' name="email" placeholder="mail@example.com"
                         {...register("email")}
                         />
                         {errors.email && <p className="errorMessage">{errors.email.message}</p>}
@@ -92,7 +93,7 @@ const ContactForm = () => {
                     </div>
                     <div className='contact-form__fields'>
                         <label htmlFor="message">Message</label>
-                        <input type='text' name="message" placeholder="Entrez votre message"
+                        <input className={errors.message && "error"} type='text' name="message" placeholder="Entrez votre message"
                         {...register("message")}
                         />
                         <p className='errorMessage'>{errors.message?.message}</p>
