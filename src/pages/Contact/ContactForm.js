@@ -1,4 +1,5 @@
 import {useForm} from "react-hook-form";
+import {useState} from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { formSchema } from "../../utils/formSchema";
 
@@ -6,16 +7,18 @@ const API_PATH = "http://localhost:8000/contact.php";
 
 const ContactForm = () => {
 
-    const {register, handleSubmit, formState : {errors, isSubmitSuccessful, isValid}, setError, reset} = useForm({
+    const {register, handleSubmit, formState : {errors, isSubmitSuccessful, isValid, isSubmitting}, setError, reset} = useForm({
         mode: "onTouched",
         resolver: yupResolver(formSchema),
         defaultValues : {
-            firstname : "",
-            lastname: "",
-            email: "",
-            message: ""
+            firstname : "lol",
+            lastname: "lol",
+            email: "jeanlasalle@gmail.com",
+            message: "love"
         }
     });
+
+    const [userMessage, setUserMessage]  = useState('');
 
     async function sendPost (data) {
         try {
@@ -34,28 +37,37 @@ const ContactForm = () => {
         }catch(e){
             setError('serveur', {
                 type: "server",
-                message: "Quelquechose sest mal passé sur la requete"
+                message: "Un problème est survenu durant la requête :("
             })
-            console.log(errors);
+            setUserMessage(errors.message)
         }
     }
 
-    const onSubmit = data => {
+    const onSubmit = async data => {
         console.log("Formulaire valide :", isValid)
-        if (isValid){
-            sendPost(data).then(response => console.log(response));
+        if (isValid){ 
+            await sendPost(data)
+            .then((response) => {
+                if (response.responseServer === true && response.responseMail === true){
+                    return setUserMessage(response.responseMessage)
+                }
+            });
+            
             reset();
+        }else{
+            setUserMessage('le Formulaire est invalide ')
         }
+
     }
     return (
         <>
-            {isSubmitSuccessful && 
-            <div className='contact-form__successful'>
-                <p>Votre message a bien été envoyé, merci !</p>
+            {(isSubmitSuccessful || errors) && 
+            <div className='contact-form__message'>
+                <p>{userMessage}</p>
             </div>
             }
-            <div className="contact-form">
-                <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="contact-form-container">
+                <form className="contact-form"onSubmit={handleSubmit(onSubmit)}>
                     <div className='contact-form__fields'>
                         <label htmlFor="firstname">Nom</label>
                         <input type='text' name="firstname" placeholder="Votre nom"
@@ -86,7 +98,11 @@ const ContactForm = () => {
                         <p className='errorMessage'>{errors.message?.message}</p>
                     </div>
                     <div className='contact-form__fields'>
-                        <input type="submit" value='envoyer' />                        
+                        <button className="btn" disabled={isSubmitting}>
+                            {isSubmitting && <span className="btn__loader"></span>}
+                            <span className="btn__loader"></span>
+                            Envoyer
+                        </button>                        
                     </div>
                 </form>
             </div>
