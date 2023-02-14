@@ -1,0 +1,17 @@
+.logoValid {
+
+    path{
+        fill: map-get($colors, "green");
+    }
+    defs{
+        linearGradient{
+            stop:nth-child(1){
+                stop-color: map-get($colors, "green");
+            }
+            stop:nth-child(2){
+                stop-color: darken(map-get($colors, "green"), 25)
+            }
+        }
+    }
+}
+// #2A9C06;
