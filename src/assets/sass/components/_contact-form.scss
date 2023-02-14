@@ -3,13 +3,15 @@
 }
 .contact-form{
     &__user-message {
+        @include verticalCenterColumn;
+        gap: 25px;
         margin-bottom: $menu-padding-mobile;
     }
     @include verticalCenterColumn;
     width: 60%;    
     gap: 25px;
     @include phone{
-        width: 100%;
+        width: 95%;
     }
 
     label {
@@ -22,7 +24,7 @@
         display: inline-block;
         width: 100%;
         color: map-get($colors, "paragraphs");
-        -webkit-text-fill-color: map-get($colors, "components-stroke")!important;
+        -webkit-text-fill-color: map-get($colors, "components-stroke") !important;
         -webkit-background-clip: text !important;
         background-clip:  text !important;
         border: 1px solid map-get($colors,"components-stroke");
@@ -34,9 +36,11 @@
 
         &.error{
             border: 1px solid map-get($colors,"error");
+            &:focus{
+                border: 1px solid map-get($colors, "components-stroke");
+            }
         }
     }
-
     &__fields{
         display: block;
         width: 100%;
