@@ -1,0 +1,14 @@
+footer {
+    div {
+        text-align: center;
+        background-color: map-get($colors, "project-background");
+        padding: $logos-padding-menu-mobile 0;
+        p {
+            color: map-get($colors, "components-stroke");
+            font-size: $font-size-footer;
+            span {
+                font-weight: 600;
+            }
+        }
+    }
+}
