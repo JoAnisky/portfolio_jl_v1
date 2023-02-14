@@ -1,6 +1,6 @@
 .contact-form-container {
     @include verticalCenterColumn;
-    
+    padding: 50px 0 50px;
 }
 .contact-form{
     &__user-message {
