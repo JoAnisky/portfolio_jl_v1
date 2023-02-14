@@ -2,12 +2,13 @@ import {useForm} from "react-hook-form";
 import {useState} from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { formSchema } from "../../utils/formSchema";
+import LogoValid from "../../components/LogoValid";
 
 const API_PATH = "http://localhost:8000/contact.php";
 
 const ContactForm = () => {
 
-    const {register, handleSubmit, formState : {errors, isSubmitted, isValid, isSubmitting}, setError, reset} = useForm({
+    const {register, handleSubmit, formState : {errors, isValid, isSubmitting, isSubmitSuccessful}, setError, reset} = useForm({
         mode: "onBlur",
         resolver: yupResolver(formSchema),
         // defaultValues : {
@@ -60,6 +61,7 @@ const ContactForm = () => {
             <div className="contact-form-container">
 
                 <div className='contact-form__user-message'>
+                    {isSubmitSuccessful &&<LogoValid/>}
                     <p>{userMessage}</p>
                 </div>
 
@@ -97,7 +99,6 @@ const ContactForm = () => {
                     <div className='contact-form__fields'>
                         <button className="btn-submit" disabled={isSubmitting}>
                             {isSubmitting && <span className="btn__loader"></span>}
-                            {console.log(isSubmitting)}
                             Envoyer
                         </button>                        
                     </div>
