@@ -50,8 +50,6 @@
     }
     &__type{color: map-get($colors, "green");}
     &__title{
-        position: relative;
-        z-index: 99;
         font-weight: 600;
     }
     &__data{
