@@ -1,63 +1,60 @@
 .contact-form-container {
     @include verticalCenterColumn;
-    padding: 50px 0 50px;
+    padding: 3.125rem 0 3.125rem;
 }
 .contact-form{
-    &__user-message {
-        @include verticalCenterColumn;
-        gap: 25px;
-        margin-bottom: $menu-padding-mobile;
-    }
     @include verticalCenterColumn;
     width: 60%;    
-    gap: 25px;
+    gap: $size-contact-form;
     @include phone{
         width: 95%;
+    }
+    &__user-message {
+        @include verticalCenterColumn;
+        gap: $size-contact-form;
+        margin-bottom: $menu-padding-mobile;
     }
 
     label {
         display: block;
         color: #fff;
-        margin-bottom: 7px;
+        margin-bottom: .4375rem;
+        font-size: $font-size-footer;
     }
 
     input{
         display: inline-block;
         width: 100%;
-        color: map-get($colors, "paragraphs");
+        color: map-get($colors, "components-stroke");
         -webkit-text-fill-color: map-get($colors, "components-stroke") !important;
         -webkit-background-clip: text !important;
         background-clip:  text !important;
         border: 1px solid map-get($colors,"components-stroke");
         border-radius: $border-radius-size;
         padding: .6875rem .875rem;
-        input::placeholder {
-            color: map-get($colors, "paragraphs");
-        }
 
         &.error{
             border: 1px solid map-get($colors,"error");
-            &:focus{
-                border: 1px solid map-get($colors, "components-stroke");
-            }
+
         }
     }
+    
     &__fields{
         display: block;
         width: 100%;
     }
     .errorMessage{
         color: map-get($colors, "error");
-        font-size: 13px;
+        font-size: $font-size-footer;
         font-weight: 400;
-        margin-top : 7px;
+        margin-top : .4375rem;
     }
 }
 .btn-submit {
     background-color: map-get($colors, "btn-submit");
     color: #fafafa;
     text-align:center;
-    padding: 12px 24px;
+    padding: .75rem 1.5rem;
     cursor: pointer;
     border: none;
     border-radius: $border-radius-size;
@@ -70,8 +67,8 @@
     }
     &__loader {
         display: inline-block;
-        margin-left: -12px;
-        margin-right: 8px;
+        margin-left: -.75rem;
+        margin-right: .5rem;
         width: 20px;
         height: 20px;
         border: 3px dotted map-get($colors, "green");
