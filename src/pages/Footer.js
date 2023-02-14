@@ -2,9 +2,13 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div>
-            <p>Copyright Jonathan Loré 2023</p>
-        </div>
+        <>
+            <footer>
+                <div>
+                    <p>Design & développement &copy; Jonathan Loré (JoAnisky) <span>{(new Date().getFullYear())}</span></p>
+                </div>
+            </footer>
+        </>
     );
 }
 
