@@ -2,13 +2,13 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Header from './pages/Home/Header';
-
 import About from './pages/About/About';
 import Knowledges from './pages/Knowledges/Knowledges';
 import Portfolio from './pages/Portfolio/Portfolio';
 import Contact from './pages/Contact/Contact';
 import Footer from './pages/Footer';
 import NotFound from './pages/NotFound';
+import MenuSocials from './components/MenuSocials';
 
 const App = () => {
   return (
@@ -34,6 +34,7 @@ const App = () => {
             <Contact/>
           </main>
         </div>
+        <MenuSocials/>
         <Footer/>
       </div>
     </>
