@@ -1,27 +1,37 @@
 .contact-form-container {
-    display: flex;
-    justify-content: center;
+    @include verticalCenterColumn;
 }
 .contact-form{
-    @include verticalCenterColumn;
-    width:  80%;
-    gap: 25px;
-    label {
-        color: #fff;
+    &__user-message {
+        margin-bottom: $menu-padding-mobile;
     }
-    input {
+    @include verticalCenterColumn;
+    width: 60%;    
+    gap: 25px;
+    @include phone{
+        width: 100%;
+    }
+
+    label {
+        display: block;
+        color: #fff;
+        margin-bottom: 7px;
+    }
+
+    input{
         display: inline-block;
         width: 100%;
         color: map-get($colors, "paragraphs");
-        background-color: map-get($colors, "components-background");
+        -webkit-text-fill-color: map-get($colors, "components-stroke")!important;
+        -webkit-background-clip: text !important;
+        background-clip:  text !important;
         border: 1px solid map-get($colors,"components-stroke");
         border-radius: $border-radius-size;
-        margin: .5rem 0rem;
         padding: .6875rem .875rem;
-
         input::placeholder {
             color: map-get($colors, "paragraphs");
         }
+
         &.error{
             border: 1px solid map-get($colors,"error");
         }
@@ -31,41 +41,48 @@
         display: block;
         width: 100%;
     }
- .errorMessage{
-    color: map-get($colors, "error");
-    font-size: 13px;
-    font-weight:300;
- }
+    .errorMessage{
+        color: map-get($colors, "error");
+        font-size: 13px;
+        font-weight: 400;
+        margin-top : 7px;
+    }
 }
-.btn {
-    display: inline-block;
-    background-color: transparent;
-    color: map-get($colors, "green");
+.btn-submit {
+    background-color: map-get($colors, "btn-submit");
+    color: #fafafa;
     text-align:center;
-    padding: 12px;
-    width: 94px;
+    padding: 12px 24px;
     cursor: pointer;
-    border: 1px solid map-get($colors, "green");
+    border: none;
     border-radius: $border-radius-size;
-    // &__loader {
-    //     width: 20px;
-    //     height: 20px;
-    //     border: 3px solid #FFF;
-    //     border-bottom-color: transparent;
-    //     border-radius: 50%;
-    //     display: inline-block;
-    //     box-sizing: border-box;
-    //     position: relative;
-    //     animation: rotation 1s linear infinite;
-    //     }
+    @include phone{
+        width: 100%;
+    }
+    &:hover{
+        transition: all .3s ease-in-out;
+        background-color:darken(map-get($colors, "btn-submit"), 18)
+    }
+    &__loader {
+        display: inline-block;
+        margin-left: -12px;
+        margin-right: 8px;
+        width: 20px;
+        height: 20px;
+        border: 3px dotted map-get($colors, "green");
+        border-bottom-color: transparent;
+        border-radius: 50%;
+        box-sizing: border-box;
+        animation: rotation 1.3s linear infinite;
+        }
     
-    //     @keyframes rotation {
-    //     0% {
-    //         transform: rotate(0deg);
-    //     }
-    //     100% {
-    //         transform: rotate(360deg);
-    //     }
+        @keyframes rotation {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
     
-    // }
+    }
 }

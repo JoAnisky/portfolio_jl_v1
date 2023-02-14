@@ -7,20 +7,19 @@ const API_PATH = "http://localhost:8000/contact.php";
 
 const ContactForm = () => {
 
-    const {register, handleSubmit, formState : {errors, isSubmitSuccessful, isValid, isSubmitting}, setError, reset} = useForm({
+    const {register, handleSubmit, formState : {errors, isSubmitted, isValid, isSubmitting}, setError, reset} = useForm({
         mode: "onBlur",
         resolver: yupResolver(formSchema),
-        defaultValues : {
-            firstname : "",
-            lastname: "",
-            email: "",
-            message: ""
-        }
+        // defaultValues : {
+        //     firstname : "",
+        //     lastname: "",
+        //     email: "",
+        //     message: ""
+        // }
     });
+    const [userMessage, setUserMessage]  = useState('Prenons le temps de faire connaissance !');
 
-    const [userMessage, setUserMessage]  = useState('');
-
-    async function sendPost (data) {
+    const sendPost = async (data) => {
         try {
             const request = await fetch(API_PATH, {
                 method: 'POST',
@@ -44,29 +43,26 @@ const ContactForm = () => {
     }
 
     const onSubmit = async data => {
-        if (isValid){ 
-            errors.clearErrors();
+        if (isValid){       
             await sendPost(data)
             .then((response) => {
                 if (response.responseServer === true && response.responseMail === true){
                     return setUserMessage(response.responseMessage)
                 }
-            });
-            
+            });            
             reset();
-        }else{
-            setUserMessage('le Formulaire est invalide ')
         }
-
     }
+
     return (
         <>
-            {(isSubmitSuccessful || errors) && 
-            <div className='contact-form__message'>
-                <p>{userMessage}</p>
-            </div>
-            }
+
             <div className="contact-form-container">
+
+                <div className='contact-form__user-message'>
+                    <p>{userMessage}</p>
+                </div>
+
                 <form className="contact-form"onSubmit={handleSubmit(onSubmit)}>
                     <div className='contact-form__fields'>
                         <label htmlFor="firstname">Nom</label>
@@ -99,9 +95,9 @@ const ContactForm = () => {
                         <p className='errorMessage'>{errors.message?.message}</p>
                     </div>
                     <div className='contact-form__fields'>
-                        <button className="btn" disabled={isSubmitting}>
+                        <button className="btn-submit" disabled={isSubmitting}>
                             {isSubmitting && <span className="btn__loader"></span>}
-                            <span className="btn__loader"></span>
+                            {console.log(isSubmitting)}
                             Envoyer
                         </button>                        
                     </div>
