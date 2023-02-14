@@ -9,7 +9,8 @@ $color-components-skill-stroke: #A4A4A4; // Technos/portfolio stroke, form field
 $color-components-project-background: #1B1B1C;
 $color-green: #58fd1cf0; // Dots, hello, CV, BTN
 $color-error: #E70000; // Error messages
-$color-btn-hover:rgba(88, 253, 28, 0.1);
+$color-btn-hover:#58fd1c1a;
+$color-btn-submit:#58fd1c79;
 // Colors map \\
 $colors: (
     "background": $color-background,
@@ -21,7 +22,8 @@ $colors: (
     "project-background": $color-components-project-background,
     "green": $color-green,
     "error": $color-error,
-    "btn-hover": $color-btn-hover
+    "btn-hover": $color-btn-hover,
+    "btn-submit": $color-btn-submit
 );
 
 // ---------- FONTS ---------- \\
