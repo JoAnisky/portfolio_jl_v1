@@ -2,35 +2,50 @@
     width: 40px;
     position: fixed;
     bottom: 0px;
-    right: 40px;
+    right: 54px;
     left: auto;
     z-index: 10;
+    @include phone {
+        position: inherit;
+        width: 100%;
+        max-width: 270px;
+        margin: 0px auto 10px;
+
+    }
 }
 .socials-links{
-    display: flex;
-    flex-direction: column;
+    @include verticalCenterColumn;
     -webkit-box-align: center;
-    align-items: center;
-    margin: 0px;
-    padding: 0px;
-    list-style: none;
     &::after{
         content: "";
         display: block;
         width: 1px;
-        height: 90px;
-        margin: 0px auto;
+        height: 95px;
+        margin: 0 auto;
         background-color: map-get($colors, "components-stroke");
     }
     a {
         display: inline-block;
-        padding: 10px;
+        padding: 11px;
         position: relative;
         transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
         color: inherit;
-        &:hover{
-            transform: translateY(-3px);
-            color: map-get($colors, "green");
+        opacity: 0.9;
+
+        @media all and (min-width: map-get($media-size, "phone")) {
+            &:hover{
+                transform: translateY(-3px);
+                color: map-get($colors, "green");
+            }
+        }
+
+    }
+    @include phone{
+        justify-content: space-between;
+        flex-direction: row;
+        
+        &::after{
+            content: unset;
         }
     }
 }

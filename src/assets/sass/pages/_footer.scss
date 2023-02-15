@@ -9,5 +9,14 @@ footer {
                 font-weight: 600;
             }
         }
+        @include phone {
+            max-width: 270px;
+            margin: 0 auto;
+        }
+    }
+    @include phone{
+        padding: 15px;
+        height: auto;
+        min-height: 70px;
     }
 }
