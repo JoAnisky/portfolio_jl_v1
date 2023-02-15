@@ -2,8 +2,8 @@
     width: 40px;
     position: fixed;
     bottom: 0px;
-    left: 40px;
-    right: auto;
+    right: 40px;
+    left: auto;
     z-index: 10;
 }
 .socials-links{
@@ -14,4 +14,23 @@
     margin: 0px;
     padding: 0px;
     list-style: none;
+    &::after{
+        content: "";
+        display: block;
+        width: 1px;
+        height: 90px;
+        margin: 0px auto;
+        background-color: map-get($colors, "components-stroke");
+    }
+    a {
+        display: inline-block;
+        padding: 10px;
+        position: relative;
+        transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+        color: inherit;
+        &:hover{
+            transform: translateY(-3px);
+            color: map-get($colors, "green");
+        }
+    }
 }
