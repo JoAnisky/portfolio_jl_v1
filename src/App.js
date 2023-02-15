@@ -8,7 +8,6 @@ import Portfolio from './pages/Portfolio/Portfolio';
 import Contact from './pages/Contact/Contact';
 import Footer from './pages/Footer';
 import NotFound from './pages/NotFound';
-import MenuSocials from './components/MenuSocials';
 
 const App = () => {
   return (
@@ -34,7 +33,6 @@ const App = () => {
             <Contact/>
           </main>
         </div>
-        <MenuSocials/>
         <Footer/>
       </div>
     </>
