@@ -5,6 +5,7 @@ const Portfolio = () => {
     return (
         <section className='portfolio' id="portfolio">
             <SectionsTitles name="Portfolio"/>
+            <p className='section-subtitle'>Quelques une de mes dernières réalisations</p>
             <ProjectList/>
         </section>
     );
