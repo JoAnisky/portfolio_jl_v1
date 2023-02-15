@@ -6,6 +6,7 @@ body{
     background-color: map-get($colors,"background");
     font: 300 1rem $font-texts;
     line-height: 1.3;
+    color: map-get($colors, "components-stroke")
 }
 li a {
     color: map-get($colors, "titles");
