@@ -17,11 +17,13 @@
     &__container{ 
         display:flex;
         align-items:center;
+
         transition: all .5s ease-in-out;
         backdrop-filter: blur(10px);
         transform: translateX(0);
         @include phone{
             transform: translateX(630px);
+            background-color: map-get($colors, "background");
             visibility: hidden;
             position:inherit;
             flex-direction:column;
