@@ -58,7 +58,9 @@ const Navbar = () => {
             <div className={`navbar__container ${showLinks ? "show-nav" : "hide-nav"}`}>
                 <ul className='navbar__links'>
                     {menuLinks}
-                    <BtnResume handleShow={handleShowLinks}/>
+                    <li ref={addToRefsLinks} className="btn-resume" >
+                        <BtnResume handleShow={handleShowLinks}/>
+                    </li>
                 </ul>
             </div>
         </nav>
