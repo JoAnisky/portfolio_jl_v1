@@ -1,9 +1,10 @@
+import { useState, useRef, useEffect } from 'react';
+import { HashLink } from 'react-router-hash-link';
+import useDeviceDetect from '../hooks/useDeviceDetect';
 import MainLogo from './MainLogo';
 import MenuBurger from './MenuBurger';
 import BtnResume from './BtnResume';
-import useDeviceDetect from '../hooks/useDeviceDetect';
 
-import { useState, useRef, useEffect } from 'react';
 
 const Navbar = () => {
 
@@ -42,7 +43,7 @@ const Navbar = () => {
     const menuLinks = linksList.map(link => {
         return(
             <li ref={addToRefsLinks} key={link.id} className='navbar__item'>
-                <a href={`/#${link.href}`} className='navbar__link' onClick={handleShowLinks}>{link.title}</a>
+                <HashLink smooth to={`/#${link.href}`} className='navbar__link' onClick={handleShowLinks}>{link.title}</HashLink>
             </li>
         );    
     });
