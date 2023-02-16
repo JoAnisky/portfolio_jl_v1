@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+import Loader from './pages/Loader';
 import Home from './pages/Home/Home';
 import Header from './pages/Home/Header';
 import About from './pages/About/About';
@@ -6,10 +8,20 @@ import Portfolio from './pages/Portfolio/Portfolio';
 import Contact from './pages/Contact/Contact';
 import Footer from './pages/Footer';
 
-
 const App = () => {
-  return (
+  const [loader, setLoader] = useState(true);
+
+  useEffect(() => {
+
+    setTimeout(() => {
+      setLoader(false);
+    }, 3000) //3000
+
+  }, [])
+
+  return loader ? (<Loader/>) : (
     <>
+
       <Header/>
       <div className="layout__page">
         <div className="content">
