@@ -1,6 +1,5 @@
 .about {
     max-width: 900px;
-
     &__inner{
         display: grid;
         grid-template-columns: 3fr 2fr;
@@ -10,13 +9,33 @@
             text-align: center;
         }
     }
+    &__prez{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+
     p{
         margin: 0 0 25px;
+    }
+}
+.slidein-anim{
+    animation: slide-in-anim 1s ease-out forwards;
+}
+@keyframes slide-in-anim {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
     }
 }
 .picture-wrapper {
     position: relative;
     max-width: 300px;
+    transform: translateX(100%);
+    opacity: 0;
     @include phone{
         justify-self: center;
     }
@@ -28,7 +47,6 @@
     background: -webkit-linear-gradient(-45deg, #000000 0%, #000000 25%, #1e9e57 50%, rgb(88 253 28 / 26%) 75%, #43a800 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(135deg, #000000 0%, #000000 25%, #1e9e57 50%, rgb(88 253 28 / 26%) 75%, #43a800 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     background-size: 400% 400%;
-
     transition: .5s all;
     &__container{
         height:100%;
