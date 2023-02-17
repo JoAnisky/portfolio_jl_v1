@@ -1,13 +1,12 @@
 import React from 'react';
-import SectionsTitles from '../components/SectionsTitles';
+import SectionsTitles from '../../components/SectionsTitles';
+import ContactForm from './ContactForm';
 
 const Contact = () => {
     return (
         <section className='contact' id="contact">
             <SectionsTitles name="Contact"/>
-            <div className="contact__container">
-                <p>Page de contact</p>
-            </div>
+            <ContactForm/>
         </section>
     );
 }

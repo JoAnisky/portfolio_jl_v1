@@ -6,6 +6,7 @@ body{
     background-color: map-get($colors,"background");
     font: 300 1rem $font-texts;
     line-height: 1.3;
+    color: map-get($colors, "components-stroke")
 }
 li a {
     color: map-get($colors, "titles");
@@ -30,3 +31,27 @@ h3 {
         text-decoration: underline;
     }
 }
+/* width */
+::-webkit-scrollbar {
+
+    width: 10px;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    margin-top:2px;
+    box-shadow: inset 0 0 3px rgb(32, 32, 32);
+    border-radius: 10px;
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background-color: map-get($colors, "scrollbar");
+    border-radius: 10px;
+  }
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: darken(map-get($colors, "scrollbar"), 3);
+    transition: background-color 2s ease;
+    -webkit-transition: background-color 2s ease-out;
+    -moz-transition: background-color 2s ease-out;
+    -o-transition: background-color 2s ease-out;
+  }

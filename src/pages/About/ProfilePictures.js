@@ -24,7 +24,7 @@ const ProfilePicture = () => {
                 })
 
             }     
-            <img loading='lazy' src={images[0]} alt="Jonathan Loré"/>                        
+            <img className="profile" loading='lazy' src={images[0]} alt="Jonathan Loré"/>                        
         </picture>
     );
 }

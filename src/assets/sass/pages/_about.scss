@@ -1,67 +1,77 @@
 .about {
     max-width: 900px;
+
     &__inner{
         display: grid;
         grid-template-columns: 3fr 2fr;
-        gap: 50px;
-    }
-    p{
-        margin: 0 0 15px;
-    }
-}
-
-.picture{
-    position: relative;
-    max-width: 100%;
-    .wrapper{
-        box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);;
-        //transition: blue;
-        display: block;
-        position: relative;
-        width: 100%;
-        border-radius: 5px;
-        background-color: rgb(134 251 94 / 1);
-        &::before{
-            content: "";
-            display: block;
-            position: absolute;
-            top: 15px;
-            left:25px;
-            width: 100%;
-            height: 100%;
-            border-radius: 5px;
-            border: 1px solid map-get($colors, "green")
-            //transition: var(--transition);
+        gap: 83px;
+        @include phone{
+            grid-template-columns: 1fr;
+            text-align: center;
         }
     }
-}
-
-.image-wrapper, .picture-overlay, .img {
-    position: relative;
-    border-radius: 5px;
-    mix-blend-mode: multiply;
-    filter: grayscale(100%) contrast(1);
-    //transition: var(--transition);
-}
-
-.image-wrapper{
-    width: 100%;
-    max-width: 100%;
-    vertical-align: middle;
-    img {
-        height: 100%;
-        margin: 0;
-        max-width: none;
-        padding: 0;
-        position: static;
-        width: 100%;
+    p{
+        margin: 0 0 25px;
     }
 }
-.white-background {
-    opacity: 0;
-    transition: opacity 500ms linear 0s;
-    background-color: rgb(232, 232, 232);
-    position: absolute;
-    inset: 0px;
-    object-fit: cover;
+.picture-wrapper {
+    position: relative;
+    max-width: 300px;
+    @include phone{
+        justify-self: center;
+    }
+}
+.picture{
+    display: block;
+    position: relative;
+    background: -moz-linear-gradient(-45deg, #000000 0%, #000000 25%, #1e9e57 50%, rgb(88 253 28 / 26%) 75%, #43a800 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #000000 0%, #000000 25%, #1e9e57 50%, rgb(88 253 28 / 26%) 75%, #43a800 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #000000 0%, #000000 25%, #1e9e57 50%, rgb(88 253 28 / 26%) 75%, #43a800 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background-size: 400% 400%;
+
+    transition: .5s all;
+    &__container{
+        height:100%;
+        max-height:300px;
+        width: 100%;
+    }
+    &__img{
+        display: block;
+        position: relative;
+        width:100%;
+        opacity: .8;
+    }
+    &img {
+        mix-blend-mode: multiply;
+    }
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+    }
+
+    &::after{
+        z-index: -1;
+        top: 15px;
+        left: 25px;
+        border: 1px solid map-get($colors, "green");
+        transition: .5s all;
+
+    }
+    &:hover::after{
+        top:0;
+        left: 0;
+    }
+    &:hover {
+        background-position: 100% 100%;
+    }
+
+    .profile{
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+    }
 }

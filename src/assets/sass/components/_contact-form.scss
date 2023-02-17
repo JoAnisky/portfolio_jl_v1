@@ -1,0 +1,90 @@
+.contact-form-container {
+    @include verticalCenterColumn;
+    padding: 2rem 0 3.125rem;
+}
+.contact-form{
+    @include verticalCenterColumn;
+    width: 60%;    
+    gap: $size-contact-form;
+    @include phone{
+        width: 95%;
+    }
+    &__user-message {
+        @include verticalCenterColumn;
+        gap: $size-contact-form;
+        margin-bottom: $menu-padding-mobile;
+    }
+
+    label {
+        display: block;
+        color: #fff;
+        margin-bottom: .4375rem;
+        font-size: $font-size-footer;
+    }
+
+    input{
+        display: inline-block;
+        width: 100%;
+        color: map-get($colors, "components-stroke");
+        -webkit-text-fill-color: map-get($colors, "components-stroke") !important;
+        -webkit-background-clip: text !important;
+        background-clip:  text !important;
+        border: 1px solid map-get($colors,"components-stroke");
+        border-radius: $border-radius-size;
+        padding: .6875rem .875rem;
+
+        &.error{
+            border: 1px solid map-get($colors,"error");
+
+        }
+    }
+    
+    &__fields{
+        display: block;
+        width: 100%;
+    }
+    .errorMessage{
+        color: map-get($colors, "error");
+        font-size: $font-size-footer;
+        font-weight: 400;
+        margin-top : .4375rem;
+    }
+}
+.btn-submit {
+    background-color: map-get($colors, "btn-submit");
+    color: #fafafa;
+    text-align:center;
+    padding: .75rem 1.5rem;
+    cursor: pointer;
+    border: none;
+    border-radius: $border-radius-size;
+    @include phone{
+        width: 100%;
+    }
+    &:hover{
+        transition: all .3s ease-in-out;
+        background-color:darken(map-get($colors, "btn-submit"), 18)
+    }
+    &__loader {
+        display: inline-block;
+        margin-left: -.75rem;
+        margin-right: .5rem;
+        width: 20px;
+        height: 20px;
+        border: 3px dotted map-get($colors, "green");
+        border-bottom-color: transparent;
+        border-radius: 50%;
+        box-sizing: border-box;
+        animation: rotation 1.3s linear infinite;
+        }
+    
+        @keyframes rotation {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    
+    }
+}

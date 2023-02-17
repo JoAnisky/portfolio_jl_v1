@@ -32,10 +32,16 @@
     './components/menu-burger',
     './components/sectionstitles',
     './components/skill',
-    './components/project-card';
+    './components/project-card',
+    './components/logo-valid',
+    './components/contact-form',
+    './components/menu-socials';
     
 /* PAGES */
 
-@import 
+@import
+    './pages/loader',
     './pages/home.scss',
-    './pages/about';
+    './pages/about',
+    './pages/portfolio',
+    './pages/footer';

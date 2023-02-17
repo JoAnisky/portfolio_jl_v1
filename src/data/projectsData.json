@@ -7,7 +7,8 @@
         "tasks": "Design, maquettage, logo et intégration. Développement Frontend et Backend.",
         "technos" : [
             "React", 
-            "SASS", 
+            "SASS",
+            "PHP",
             "Figma", 
             "Photoshop"
         ],
@@ -19,8 +20,8 @@
     },
     {
         "type": "Site web",
-        "title": "Christopher Nolan",
-        "image": "christopher_nolan",
+        "title": "Christopher Nolan Frontend",
+        "image": "christopher_nolan_frontend",
         "description": "Création d’un site web sur le thème de  Christopher Nolan. Projet dans le cadre du titre pro, “développeur web web mobile”. Créé avec les langages HTML, CSS et Javascript,  sans frameworks.",
         "tasks": "Maquettage, design, intégration. Développement Frontend",
         "technos" : [
@@ -29,28 +30,63 @@
             "Javascript", 
             "Figma"
         ],
-        "github" : "https://github.com/JoAnisky/portfolio_jl_v1.git",
+        "github" : "https://github.com/JoAnisky/christopher_nolan_website",
         "external" : {
             "link":"#",
-            "title": "Portfolio de Jonathan Loré"
+            "title": "Site web Christopher Nolan Frontend"
         }                   
     },
     {
         "type": "Site web",
-        "title": "Christopher Nolan - Back",
-        "image": "christopher_nolan",
+        "title": "Christopher Nolan - Dashboard",
+        "image": "christopher_nolan_backend",
         "description": "Création d’un Dashboard des inscrits à la newsletter. Fonctionnalités de recherche, tri, suppression et export des adresses mails en .CSV.  Pur PHP, gestion des bases de données, requêtes SQL préparées.",
-        "tasks": "Maquettage, design, intégration. Développement Front/Back",
+        "tasks": "Maquettage, design, intégration. Développement Backend",
         "technos" : [
             "HTML", 
             "CSS", 
             "PHP", 
             "MySQL"
         ],
+        "github" : "https://github.com/JoAnisky/christopher_nolan_website",
+        "external" : {
+            "link":"#",
+            "title": "Dashboard Christopher Nolan Backend"
+        }                   
+    },
+    {
+        "type": "Outil",
+        "title": "ThreeJS Sandbox",
+        "image": "threejs_sandbox",
+        "description": "J’ai fait la découverte de cette fantastique librairie qu’est ThreeJS, basée sur WebGL. J’ai créé ce petit bac à sable pour m’entrainer et m’amuser, le tout en TypeScript.",
+        "tasks": "Intégration d’objets 3D dans un canvas, fonctions et interactions avec les objets",
+        "technos" : [
+            "HTML", 
+            "CSS", 
+            "ThreeJS", 
+            "Typescript"
+        ],
         "github" : "https://github.com/JoAnisky/portfolio_jl_v1.git",
         "external" : {
             "link":"#",
-            "title": "Portfolio de Jonathan Loré"
+            "title": "ThreeJS Sandbox"
+        }                   
+    },
+    {
+        "type": "Outil",
+        "title": "Password Generator",
+        "image": "password_generator",
+        "description": "Création d’un outil générateur de mots de passe en Vanilla Javascript. Possibilité d’ajouter des caractères Minuscules/Maj et des caractères spéciaux. Fonction de copie.",
+        "tasks": "Intégration, code Javascript pur",
+        "technos" : [
+            "HTML", 
+            "CSS", 
+            "Javascript"
+        ],
+        "github" : "https://github.com/JoAnisky/portfolio_jl_v1.git",
+        "external" : {
+            "link":"#",
+            "title": "Générateur de mot de passe"
         }                   
     }
 ]
