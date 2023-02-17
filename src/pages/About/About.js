@@ -1,13 +1,22 @@
-import React from 'react';
+import  { useRef } from 'react';
+import useIntersectionObserver from '../../hooks/useIntersectionObserver';
 import SectionsTitles from '../../components/SectionsTitles';
 import ProfilePictures from './ProfilePictures';
 
 const About = () => {
+    const targetRef = useRef(null);
+    const isVisible = useIntersectionObserver({
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.3
+    }, targetRef);
+
     return (
-        <section className='about' id="about">
+        <>
+           <section ref={targetRef} className='about' id="about">
             <SectionsTitles name="A Propos"/>
-            <div className="about__inner">
-                    <div className='about__prez'>
+                <div className="about__inner">
+                    <div className={`about__prez ${!isVisible ? "" : "slidein-anim"}`}>
                             <p>Bonjour ! je suis <strong>Jonathan Lor&eacute;</strong>, d&eacute;veloppeur web Front end.</p>
                             <p>Tomb&eacute; dans le monde du web en 2007, j'ai d&eacute;but&eacute; avec HTML et CSS. Je suis passionn&eacute; par  les nouvelles technologies et le graphisme.</p>
                             <p>J'aime créer des sites web vivants et interactifs.</p>
@@ -15,7 +24,7 @@ const About = () => {
                                 (pourquoi pas autour d'un bon caf&eacute; ? &#9749;).</p>
                             <p>Je vous souhaite une bonne visite.</p>
                     </div>
-                    <div className='picture-wrapper'>
+                    <div className={`picture-wrapper ${!isVisible ? "" : "slidein-anim"}`}>
                         <div className="picture">
                             <div className='picture__img'>
                                 <div className='picture__container'>
@@ -24,10 +33,9 @@ const About = () => {
                             </div>
                         </div>
                     </div>
-
-            </div>
-
-        </section>
+                </div>
+            </section>
+        </>
     );
 }
 
