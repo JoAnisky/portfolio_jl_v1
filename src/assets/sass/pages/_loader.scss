@@ -1,7 +1,18 @@
 .loader{
     &__wrapper{
+        background-color:hsl(0, 0%, 5%);
         display:flex;
         @include verticalCenterColumn;
+        // background-color:rgba(10, 9, 9, 0);
+        animation: background-change 2s linear 1s both;
+    }
+    @keyframes background-change{
+        from{
+            background-color:hsl(0, 0%, 5%);
+        }
+        to {
+            background-color:hsl(240, 2%, 8%);
+        }
     }
     &__container{
         @include verticalCenterColumn;
