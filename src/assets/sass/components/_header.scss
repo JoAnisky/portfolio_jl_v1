@@ -12,6 +12,9 @@
     @include phone{
         padding: 0;
     }
+    @include tablet-desktop-min{
+        padding: 0px 22px;
+    }
 }
 .hide-header{
     transform: translateY(- $size-navbar-height)
