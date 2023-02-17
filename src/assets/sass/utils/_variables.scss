@@ -11,6 +11,7 @@ $color-green: #58fd1cf0; // Dots, hello, CV, BTN
 $color-error: #E70000; // Error messages
 $color-btn-hover:#58fd1c1a;
 $color-btn-submit:#58fd1c79;
+$color-scrollbar: #393d38;
 // Colors map \\
 $colors: (
     "background": $color-background,
@@ -23,7 +24,8 @@ $colors: (
     "green": $color-green,
     "error": $color-error,
     "btn-hover": $color-btn-hover,
-    "btn-submit": $color-btn-submit
+    "btn-submit": $color-btn-submit,
+    "scrollbar" : $color-scrollbar
 );
 
 // ---------- FONTS ---------- \\
