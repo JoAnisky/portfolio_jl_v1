@@ -4,7 +4,7 @@
 }
 .contact-form{
     @include verticalCenterColumn;
-    width: 60%;    
+    width: 60%;
     gap: $size-contact-form;
     @include phone{
         width: 95%;
@@ -21,24 +21,26 @@
         margin-bottom: .4375rem;
         font-size: $font-size-footer;
     }
-
-    input{
-        display: inline-block;
-        width: 100%;
+    input, textarea {
         color: map-get($colors, "components-stroke");
         -webkit-text-fill-color: map-get($colors, "components-stroke") !important;
         -webkit-background-clip: text !important;
         background-clip:  text !important;
+        display: inline-block;
+        width: 100%;
+        padding: .6875rem .875rem;
         border: 1px solid map-get($colors,"components-stroke");
         border-radius: $border-radius-size;
-        padding: .6875rem .875rem;
-
+    }
+    input, textarea{
         &.error{
             border: 1px solid map-get($colors,"error");
-
+        }
+        &:focus::-webkit-input-placeholder {
+            opacity: 0;
         }
     }
-    
+
     &__fields{
         display: block;
         width: 100%;
@@ -50,6 +52,14 @@
         margin-top : .4375rem;
     }
 }
+textarea{
+    font: 12px map-get($font-menu-titles, "regular");
+    resize: vertical;
+    height: 150px;
+    min-height: 150px;
+    max-height: 300px;
+}
+
 .btn-submit {
     background-color: map-get($colors, "btn-submit");
     color: #fafafa;
@@ -77,7 +87,7 @@
         box-sizing: border-box;
         animation: rotation 1.3s linear infinite;
         }
-    
+
         @keyframes rotation {
         0% {
             transform: rotate(0deg);
@@ -85,6 +95,6 @@
         100% {
             transform: rotate(360deg);
         }
-    
+
     }
 }
