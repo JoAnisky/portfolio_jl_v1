@@ -1,6 +1,6 @@
 /* UTILS */
 
-@import 
+@import
     './utils/variables',
     './utils/functions',
     './utils/mixins',
@@ -15,12 +15,12 @@
 
 /* LAYOUTS */
 
-@import 
+@import
     './layout/page',
     './layout/main',
     './layout/grid',
-    './layout/sections';
-
+    './layout/sections',
+    './layout/animations';
 
 /* COMPONENTS */
 
@@ -36,7 +36,7 @@
     './components/logo-valid',
     './components/contact-form',
     './components/menu-socials';
-    
+
 /* PAGES */
 
 @import

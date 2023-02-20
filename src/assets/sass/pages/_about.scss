@@ -28,27 +28,11 @@
 .slideup-anim{
     animation: slide-up-anim 1s ease-out forwards;
 }
-@keyframes slide-up-anim {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0%);
-    }
-}
+
 .slidein-anim{
     animation: slide-in-anim 1s ease-out forwards;
 }
-@keyframes slide-in-anim {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0%);
-    }
-}
+
 .picture-wrapper {
     position: relative;
     max-width: 300px;

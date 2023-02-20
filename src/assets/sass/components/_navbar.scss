@@ -86,15 +86,6 @@
     };
 };
 
-@keyframes slide-up-anim {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0%);
-    }
-}
 .navbar-mobile{
     @include phone {
         position:fixed;
