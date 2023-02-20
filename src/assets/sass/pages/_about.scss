@@ -1,5 +1,7 @@
 .about {
     max-width: 900px;
+    transform: translateY(80%);
+    opacity: 0;
     &__inner{
         display: grid;
         grid-template-columns: 3fr 2fr;
@@ -14,9 +16,20 @@
         opacity: 0;
     }
 
-
     p{
         margin: 0 0 25px;
+    }
+}
+.slideup-anim{
+    animation: slide-up-anim 1s ease-out forwards;
+}
+@keyframes slide-up-anim {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
     }
 }
 .slidein-anim{
@@ -52,6 +65,9 @@
         height:100%;
         max-height:300px;
         width: 100%;
+        @include phone{
+            max-height:200px
+        }
     }
     &__img{
         display: block;
