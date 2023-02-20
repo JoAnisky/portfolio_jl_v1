@@ -3,11 +3,15 @@ import {useState, useMemo, useEffect} from 'react';
 const useIntersectionObserver = (options, targetRef) => {
 
     const [isVisible, setIsVisible] = useState(false);
+    const [hasIntersected, setHasIntersected] = useState(false);
 
     const callbackFunction = entries => {
         const[entry] = entries;
-        setIsVisible(entry.isIntersecting);
-    }
+        if (entry.isIntersecting && !hasIntersected){
+            setIsVisible(true);
+            setHasIntersected(true);
+        }
+    };
 
     const optionsMemo = useMemo(() => {
         return options
@@ -21,7 +25,9 @@ const useIntersectionObserver = (options, targetRef) => {
         return() => {
             if (currentTarget) observer.unobserve(currentTarget);
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [targetRef, optionsMemo]);
+
     return isVisible;
 }
 
