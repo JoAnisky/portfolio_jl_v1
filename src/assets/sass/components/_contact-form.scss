@@ -17,21 +17,20 @@
 
     label {
         display: block;
-        color: #fff;
+        color: #fafafa;
         margin-bottom: .4375rem;
         font-size: $font-size-footer;
     }
     input, textarea {
-        color: map-get($colors, "components-stroke");
-        -webkit-text-fill-color: map-get($colors, "components-stroke") !important;
-        -webkit-background-clip: text !important;
-        background-clip:  text !important;
+        background-color: map-get($colors, "components-background");
         display: inline-block;
         width: 100%;
+        color: map-get($colors, "components-stroke");
         padding: .6875rem .875rem;
         border: 1px solid map-get($colors,"components-stroke");
         border-radius: $border-radius-size;
     }
+
     input, textarea{
         &.error{
             border: 1px solid map-get($colors,"error");
@@ -53,13 +52,20 @@
     }
 }
 textarea{
+    display: block;
+    color: #fafafa;
+    width: 100%;
+    overflow: hidden;
+    min-height: 40px;
+    line-height: 20px;
     font: 12px map-get($font-menu-titles, "regular");
     resize: vertical;
-    height: 150px;
-    min-height: 150px;
-    max-height: 300px;
+    max-height: 570px;
 }
-
+.textarea[contenteditable]:empty::before {
+    content: "Votre message";
+    color: gray;
+  }
 .btn-submit {
     background-color: map-get($colors, "btn-submit");
     color: #fafafa;
