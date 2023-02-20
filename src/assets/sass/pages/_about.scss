@@ -1,11 +1,15 @@
 .about {
+    height:600px;
     max-width: 900px;
+    max-height: auto;
     transform: translateY(80%);
     opacity: 0;
     &__inner{
         display: grid;
+        height: 100%;
         grid-template-columns: 3fr 2fr;
         gap: 83px;
+        align-items: center;
         @include phone{
             grid-template-columns: 1fr;
             text-align: center;
