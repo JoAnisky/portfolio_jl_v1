@@ -7,7 +7,7 @@ const Knowledges = () => {
     const {isMobile} = useDeviceDetect();
     return (
         <section className='knowledges' id="knowledges">
-            <SectionsTitles name="Compétences"/>
+            <SectionsTitles name="Technos"/>
             <Skills mobile={isMobile}/>
         </section>
     );
