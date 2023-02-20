@@ -49,7 +49,7 @@ const Navbar = () => {
     });
 
     return (
-        <nav className="navbar menu-slideup-anim">
+        <nav className="navbar">
             <div className="navbar-mobile">
                 <div className="navbar-mobile__container">
                     <MainLogo visible={showLinks && isMobile}/>

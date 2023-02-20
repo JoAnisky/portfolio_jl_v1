@@ -8,9 +8,8 @@
     position: relative;
     width: 100%;
     gap: 0.5rem;
-    transform: translateY(80%);
-    opacity: 0;
-
+    transform:translateY(100%);
+    animation: slide-up-anim 1s ease-out forwards;
     @include phone{
         align-items:flex-start;
         height: 100%;
@@ -20,6 +19,7 @@
     &__container{
         display:flex;
         align-items:center;
+
         transition: all .5s ease-in-out;
         backdrop-filter: blur(10px);
         transform: translateX(0);
@@ -48,6 +48,7 @@
         position: relative;
         margin: 0 $margin-menu;
     };
+
     // <ul>
     &__links {
         display: flex;
@@ -84,10 +85,8 @@
         };
     };
 };
-.menu-slideup-anim{
-    animation: menu-slide-up-anim 1s ease-out forwards;
-}
-@keyframes menu-slide-up-anim {
+
+@keyframes slide-up-anim {
     0% {
         opacity: 0;
     }
@@ -104,7 +103,7 @@
         top: 0;
         background-color: rgba(20, 20, 21, .9);
     };
-
+    
     &__container{
         display: flex;
         height:100%;

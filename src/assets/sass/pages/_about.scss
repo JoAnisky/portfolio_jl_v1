@@ -1,9 +1,11 @@
 .about {
     height:600px;
     max-width: 900px;
-    max-height: auto;
     transform: translateY(80%);
     opacity: 0;
+    @include phone {
+        height: auto;
+    }
     &__inner{
         display: grid;
         height: 100%;
@@ -19,7 +21,6 @@
         transform: translateX(-100%);
         opacity: 0;
     }
-
     p{
         margin: 0 0 25px;
     }
