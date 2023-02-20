@@ -14,6 +14,8 @@
     justify-content: space-around;
     margin: 0 0 30px;
     &__skill {
+        opacity: 0;
+        transform: translateX(0);
         @include verticalCenterColumn;
         background-color: map-get($colors, "components-background");
         border: 1px solid map-get($colors, "components-stroke");

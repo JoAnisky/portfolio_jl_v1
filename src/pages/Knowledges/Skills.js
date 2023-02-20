@@ -3,7 +3,7 @@ import skillsData from '../../data/skillsData.json';
 
 const Skills = (props) => {
     const { mobile } = props;
-    
+
     return (
         <div className='knowledges__container'>
             {
@@ -14,7 +14,7 @@ const Skills = (props) => {
                 })
             }
         </div>
-    );        
+    );
 }
 
 export default Skills;
