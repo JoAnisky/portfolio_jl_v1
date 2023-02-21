@@ -18,7 +18,7 @@ const ContactForm = () => {
         threshold: 0.2
     }, targetRef);
 
-    const {register, handleSubmit, watch, formState : {errors, isValid, isSubmitting}, reset} = useForm({
+    const {register, handleSubmit, formState : {errors, isValid, isSubmitting}, reset} = useForm({
         mode: "onBlur",
         resolver: yupResolver(formSchema)
     });
