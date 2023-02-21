@@ -6,11 +6,11 @@ const SectionsTitles = (props) => {
     const isVisible = useIntersectionObserver({
         root: null,
         rootMargin: '0px',
-        threshold: 0
+        threshold: 0.2
     }, targetRef);
 
     return (
-        <div ref={targetRef} className={`sections-titles-container ${!isVisible ? "" : "slideup-anim"}`}>
+        <div ref={targetRef} className={`sections-titles-container ${!isVisible ? "" : "slidein-anim"}`}>
             <span className="sections-titles-container__line"></span>
                 <h2 className='sections-titles-container_text'>{props.name}</h2>
             <span className="sections-titles-container__line"></span>
