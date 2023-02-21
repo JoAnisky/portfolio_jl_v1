@@ -1,7 +1,7 @@
-import  { useRef } from 'react';
+import  { useRef, lazy, Suspense } from 'react';
 import useIntersectionObserver from '../../hooks/useIntersectionObserver';
 import SectionsTitles from '../../components/SectionsTitles';
-import ProfilePictures from './ProfilePictures';
+const ProfilePictures = lazy(() => import ('./ProfilePictures'));
 
 const About = () => {
     const targetRef = useRef(null);
@@ -28,7 +28,9 @@ const About = () => {
                         <div className="picture">
                             <div className='picture__img'>
                                 <div className='picture__container'>
-                                    <ProfilePictures/>
+                                    <Suspense fallback={<div>Chargement...</div>}>
+                                        <ProfilePictures/>
+                                    </Suspense>
                                 </div>
                             </div>
                         </div>

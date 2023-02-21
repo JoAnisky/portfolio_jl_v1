@@ -44,7 +44,7 @@ const SkillComponent = props => {
                         return(
                             <div ref={addToRefsSkills} key={index} className="skill-components__skill">
                                 <div className="skill-components__skill__logo">
-                                    <img src={`${logosPath + skill.name}.svg`} className='skill-component__logo' alt={`logo ${skill.name}`} width={mobile ? Math.round((skill.width / 1.25)) : skill.width} height={skill.height} loading="lazy"/>
+                                    <img src={`${logosPath + skill.name}.svg`} className='skill-component__logo' alt={`logo ${skill.name}`} width={mobile ? Math.round((skill.width / 1.25)) : skill.width} height={skill.height} loading={"lazy"}/>
                                 </div>
                                 <div>
                                     <p className='skill-component__value'>{skill.name}</p>
