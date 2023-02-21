@@ -1,6 +1,6 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Portfolio Jonathan Loré",
+    "short_name": "Portfolio",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -11,9 +11,15 @@
             "src": "/android-chrome-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
+        },
+        {
+            "src": "/maskable_icon.png",
+            "sizes": "196x196",
+            "type": "image/png",
+            "purpose": "any maskable"
         }
     ],
-    "start_url": ".",
+    "start_url": "./index.html",
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
     "display": "standalone"
