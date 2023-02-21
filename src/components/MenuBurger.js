@@ -5,7 +5,7 @@ const MenuBurger = (props) => {
     
     return (
         <div>
-            <button className={`menu-burger__btn ${visible ? "opened" : "closed"}`} onClick={props.handleShow}>
+            <button className={`menu-burger__btn ${visible ? "opened" : "closed"}`} aria-label="Menu toggle" title="Menu toggle" onClick={props.handleShow}>
                 <div className='burger-box'>
                     <div className='burger-box__inner'>
                     </div>
