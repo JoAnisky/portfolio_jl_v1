@@ -3,6 +3,7 @@ import {useEffect, useState, useRef} from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { formSchema } from "../../utils/formSchema";
 import LogoValid from "../../components/LogoValid";
+import useIntersectionObserver from '../../hooks/useIntersectionObserver';
 
 const API_PATH = "http://localhost:8000/PHP/contact.php";
 
@@ -10,6 +11,12 @@ const ContactForm = () => {
     const [successful, setSuccessful] = useState(false);
     const [userMessage, setUserMessage] = useState('Prenons le temps de faire connaissance !');
     const textareaRef = useRef(null);
+    const targetRef = useRef(null);
+    const isVisible = useIntersectionObserver({
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.2
+    }, targetRef);
 
     const {register, handleSubmit, watch, formState : {errors, isValid, isSubmitting}, reset} = useForm({
         mode: "onBlur",
@@ -69,7 +76,7 @@ const ContactForm = () => {
 
     return (
         <>
-            <div className="contact-form-container">
+            <div ref={targetRef} className={`contact-form-container ${!isVisible ? "" : "slidein-anim"}`}>
                 <div className='contact-form__user-message'>
                     {successful && <LogoValid/>}
                     <p>{userMessage}</p>
