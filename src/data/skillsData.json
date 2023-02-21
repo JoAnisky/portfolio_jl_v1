@@ -2,25 +2,25 @@
     {   
         "catTitle": "Languages",
         "stack": [
-            {"name":"javascript", "width":"37"},
-            {"name":"php", "width":"50"},
-            {"name":"sass", "width":"50"}
+            {"name":"javascript", "width":"37", "height":"50"},
+            {"name":"php", "width":"50", "height":"40"},
+            {"name":"sass", "width":"50", "height":"45"}
         ]
     },
     {
         "catTitle" : "Frameworks & librairies",
         "stack": [
-            {"name":"react", "width":"50"},
-            {"name":"nodejs", "width":"75"},
-            {"name":"threejs", "width":"50"}
+            {"name":"react", "width":"50", "height":"63"},
+            {"name":"nodejs", "width":"75", "height":"26"},
+            {"name":"threejs", "width":"50", "height":"60"}
         ]
     },
     {
         "catTitle" : "logiciels",
         "stack": [
-            {"name":"figma", "width":"30"},
-            {"name":"photoshop", "width":"40"},
-            {"name":"git", "width":"40"}
+            {"name":"figma", "width":"30", "height":"54"},
+            {"name":"photoshop", "width":"40", "height":"58"},
+            {"name":"git", "width":"40", "height":"49"}
         ]
     }
 ]

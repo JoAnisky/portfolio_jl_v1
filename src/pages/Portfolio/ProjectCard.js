@@ -4,7 +4,7 @@ const Project = props => {
     const {type, title, image, description, tasks, technos, github, external} = props.item;
     const workPicturePath = "./media/work/";
     const [pair, setIsPair] = useState(false);
-    
+
     useEffect(() => {
         const checkPair = () => {
             const id = props.id;
@@ -16,9 +16,9 @@ const Project = props => {
     return (
         <div className={`project-card ${!pair ? "left" : ""}`}>
             <div className={`project-card__type-title ${!pair ? "left" : ""}`}>
-                    <p className="project-card__type">{type}</p>
-                    <h3 className="project-card__title">{title}</h3>
-            </div> 
+                <p className="project-card__type">{type}</p>
+                <h3 className="project-card__title">{title}</h3>
+            </div>
             <div className={`project-card__image ${!pair ? "left" : ""}`}>
                 <a href={external.link} target="_blank" rel='noreferrer' aria-label={external.title}>
                     <div className="work-image-wrapper">
@@ -26,14 +26,13 @@ const Project = props => {
                             <source srcSet={`${workPicturePath}${image}-S.webp`} media="(max-width: 340px)" />
                             <source srcSet={`${workPicturePath}${image}-M.webp`} media="(max-width: 1260px)" />
                             <source srcSet={`${workPicturePath}${image}.webp`} />
-                            <img className='work-img'src={`${workPicturePath}${image}.webp`} alt={external.title} />
+                            <img className='work-img'src={`${workPicturePath}${image}.webp`} width="800" height="401" alt={external.title} loading="lazy"/>
                         </picture>
                     </div>
                 </a>
             </div>
 
             <div className={`project-card__data ${!pair ? "left" : ""}`}>
-           
                     <div className="project-card__details">
                         <div className="project-card__description">
                             <p>{description}</p>
@@ -49,7 +48,7 @@ const Project = props => {
                                     return <li key={index}>{techno}</li>
                                 })
                             }
-                            
+
                         </ul>
                     </div>
                     <div className="project-card__links">
@@ -59,7 +58,7 @@ const Project = props => {
                             <path fillRule="evenodd" clipRule="evenodd" d="M21 11.2535C21 15.7811 18.1374 19.6215 14.1665 20.9811C13.6585 21.0815 13.4792 20.762 13.4792 20.4877C13.4792 20.1514 13.4917 19.0449 13.4917 17.6747C13.4917 16.7172 13.1709 16.0919 12.8124 15.777C15.0395 15.5215 17.3792 14.6557 17.3792 10.7174C17.3792 9.59821 16.9918 8.68089 16.3499 7.96424C16.4541 7.7046 16.7957 6.66402 16.25 5.25119C16.25 5.25119 15.4124 4.97681 13.5041 6.30242C12.7062 6.07473 11.8501 5.9617 11 5.95761C10.1499 5.9617 9.29384 6.07473 8.49589 6.30242C6.58763 4.97681 5.74598 5.25119 5.74598 5.25119C5.20225 6.66402 5.54589 7.7046 5.65015 7.96424C5.00818 8.68089 4.61883 9.59821 4.61883 10.7174C4.61883 14.6451 6.95413 15.526 9.17515 15.7831C8.88965 16.0407 8.63142 16.492 8.5396 17.1534C7.9686 17.4175 6.52067 17.8704 5.6293 16.3024C5.6293 16.3024 5.1 15.3196 4.09796 15.2471C4.09796 15.2471 3.12077 15.2344 4.02899 15.8704C4.02899 15.8704 4.68539 16.1853 5.1397 17.3684C5.1397 17.3684 5.72513 19.3644 8.50832 18.7431C8.51233 19.6002 8.52075 20.2452 8.52075 20.4877C8.52075 20.76 8.33951 21.0749 7.83949 20.9811C3.86459 19.626 1 15.7831 1 11.2535C1 5.58945 5.47692 1 11 1C16.5231 1 21 5.58945 21 11.2535Z" />
                         </svg>
                         </a>
-                        <a href={external.link} target="_blank" rel='noreferrer' aria-label={external.title}> 
+                        <a href={external.link} target="_blank" rel='noreferrer' aria-label={external.title}>
                             <svg className="icon-external" width="22" height="22" viewBox="0 0 18 17" fill="none" strokeWidth="1" stroke="currentColor" role="img"
                             xmlns="http://www.w3.org/2000/svg">
                                 <title>{external.title}</title>
@@ -68,7 +67,6 @@ const Project = props => {
                             </svg>
                         </a>
                     </div>
-
             </div>
         </div>
     );
