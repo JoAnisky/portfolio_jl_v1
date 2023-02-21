@@ -1,6 +1,5 @@
 import { lazy, Suspense } from 'react';
 import projectsData from '../../data/projectsData.json';
-
 const Project = lazy(() => import('./ProjectCard'));
 
 const ProjectList = () => {

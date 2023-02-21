@@ -1,9 +1,16 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useRef} from 'react';
+import useIntersectionObserver from '../../hooks/useIntersectionObserver';
 
 const Project = props => {
     const {type, title, image, description, tasks, technos, github, external} = props.item;
     const workPicturePath = "./media/work/";
     const [pair, setIsPair] = useState(false);
+    const targetRef = useRef(null);
+    const isVisible = useIntersectionObserver({
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.2
+    }, targetRef);
 
     useEffect(() => {
         const checkPair = () => {
@@ -14,7 +21,7 @@ const Project = props => {
     }, [props.id]);
 
     return (
-        <div className={`project-card ${!pair ? "left" : ""}`}>
+        <div ref={targetRef} className={`project-card ${!isVisible ? "" : "slideup-anim"} ${!pair ? "left" : ""}`}>
             <div className={`project-card__type-title ${!pair ? "left" : ""}`}>
                 <p className="project-card__type">{type}</p>
                 <h3 className="project-card__title">{title}</h3>
