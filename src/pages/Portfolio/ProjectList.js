@@ -10,7 +10,7 @@ const ProjectList = () => {
             {
                 projectsData.map((project, index) => {
                     return (
-                        <Suspense fallback={<div>Chargement...</div>}>
+                        <Suspense key={index} fallback={<div>Chargement...</div>}>
                             <Project key={index} id={index} item={project}/>
                         </Suspense>
                     )
