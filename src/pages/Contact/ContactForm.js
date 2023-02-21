@@ -85,21 +85,21 @@ const ContactForm = () => {
                     <div className='contact-form__fields'>
                         <label htmlFor="firstname">Nom</label>
 
-                        <input className={errors.firstname && "error"} type='text' name="firstname" placeholder="Smith"
+                        <input className={errors.firstname && "error"} type='text' id="firstname" name="firstname" placeholder="Smith"
                         {...register("firstname")}
                         />
                         <p className='errorMessage'>{errors.firstname?.message}</p>
                     </div>
                     <div className='contact-form__fields'>
                         <label htmlFor="lastname">Prénom</label>
-                        <input className={errors.lastname && "error"} type='text' name="lastname" placeholder="Stan"
+                        <input className={errors.lastname && "error"} type='text' id="lastname" name="lastname" placeholder="Stan"
                         {...register("lastname")}
                         />
                         <p className='errorMessage'>{errors.lastname?.message}</p>
                     </div>
                     <div className='contact-form__fields'>
                         <label htmlFor="email">Email</label>
-                        <input className={errors.email && "error"} type='text' name="email" placeholder="mail@example.com"
+                        <input className={errors.email && "error"} type='text' id="email" name="email" placeholder="mail@example.com"
                         {...register("email")}
                         />
                         {errors.email && <p className="errorMessage">{errors.email.message}</p>}
@@ -107,7 +107,7 @@ const ContactForm = () => {
                     </div>
                     <div className='contact-form__fields'>
                         <label htmlFor="message">Message</label>
-                        <textarea ref={textareaRef} className={errors.message && "error"} type='text' name="message" placeholder="Dites-moi tout" 
+                        <textarea ref={textareaRef} className={errors.message && "error"} id="message" name="message" placeholder="Dites-moi tout"
                          {...register("message")}/>
                         <p className='errorMessage'>{errors.message?.message}</p>
                     </div>

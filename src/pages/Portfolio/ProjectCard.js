@@ -33,7 +33,7 @@ const Project = props => {
                             <source srcSet={`${workPicturePath}${image}-S.webp`} media="(max-width: 340px)" />
                             <source srcSet={`${workPicturePath}${image}-M.webp`} media="(max-width: 1260px)" />
                             <source srcSet={`${workPicturePath}${image}.webp`} />
-                            <img className='work-img'src={`${workPicturePath}${image}.webp`} width="800" height="401" alt={external.title} loading="lazy"/>
+                            <img className='work-img'src={`${workPicturePath}${image}.webp`} width="800" height="401" alt={external.title} title={title} loading={"lazy"}/>
                         </picture>
                     </div>
                 </a>
