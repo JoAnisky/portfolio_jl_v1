@@ -5,7 +5,8 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-headers: Content-Type, Access-Control-Allow-headers, Authorization, X-Requested-With");
-
+ini_set("SMTP","mail.jonathanlore.fr");
+ini_set("smtp_port","465");
     $data = json_decode(file_get_contents("php://input"));
 
     if(empty($data)){

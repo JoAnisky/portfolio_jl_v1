@@ -46,7 +46,7 @@ const ContactForm = () => {
     const onSubmit = async data => {
 
         if (isValid){
-                    console.log(data)
+            console.log(data)
             try {
                 const response = await sendPost(data)
                 if (response.responseServer === true && response.responseMail === true){
@@ -54,6 +54,7 @@ const ContactForm = () => {
                     return setUserMessage(response.responseMessage)
                 }
             }catch (error) {
+                console.log(error)
                 setUserMessage("Erreur du serveur... Réessayez ultérieurement")
             }
             reset();
