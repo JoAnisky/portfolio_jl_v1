@@ -15,7 +15,7 @@ const ContactForm = () => {
     const isVisible = useIntersectionObserver({
         root: null,
         rootMargin: '0px',
-        threshold: 0.2
+        threshold: 0.3
     }, targetRef);
 
     const {register, handleSubmit, formState : {errors, isValid, isSubmitting}, reset} = useForm({
@@ -24,7 +24,6 @@ const ContactForm = () => {
     });
 
     const sendPost = async (data) => {
-
         try {
             const request = await fetch(API_PATH, {
                 method: 'POST',
@@ -39,6 +38,7 @@ const ContactForm = () => {
               }
               throw new Error("impossible d'effectuer la requête");
         }catch(e){
+            console.log(e);
             setUserMessage(e.message)
         }
     }
