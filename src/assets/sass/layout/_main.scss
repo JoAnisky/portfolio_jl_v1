@@ -5,6 +5,7 @@ main {
     @include phone{
         padding: 0px $padding-navbar-main;
     }
+    position:relative;
     margin: 0px auto;
     width: 100%;
     max-width: 100rem;

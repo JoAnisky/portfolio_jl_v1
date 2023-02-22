@@ -23,8 +23,8 @@ const ProfilePicture = () => {
                     )
                 })
 
-            }     
-            <img className="profile" loading='lazy' src={images[0]} alt="Jonathan Loré"/>                        
+            }
+            <img className="profile" width="400" height="400" loading={'lazy'} src={images[0]} alt="Jonathan Loré" title="Photo de Jonathan Loré" />
         </picture>
     );
 }

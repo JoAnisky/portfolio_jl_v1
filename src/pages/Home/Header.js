@@ -36,7 +36,7 @@ const Header = () => {
 
     return (
         <header className={hideHeader ? `header-nav hide-header` : `header-nav`}>
-            <Navbar/>                     
+            <Navbar/>
         </header>
     );
 }

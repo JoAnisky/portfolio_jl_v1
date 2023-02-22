@@ -12,6 +12,7 @@
     &__main-title{
         color: map-get($colors, "titles");
         font: bold clamp(2.3rem, 11vw, 5.625rem) $font-main-title;
+        line-height: 77px;
         &__dot{
             color: map-get($colors, "green");
         }
@@ -24,5 +25,9 @@
         div{
             display:flex;
         }
+    }
+    .slidein-welcome-anim{
+        transform: translateY($slide-in-y);
+        animation: slide-in-anim 1s ease-out forwards;
     }
 }

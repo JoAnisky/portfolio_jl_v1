@@ -5,12 +5,14 @@
     right: 34px;
     left: auto;
     z-index: 10;
+    transform: translateX(150px);
+    opacity: 0;
+    animation: slide-up-anim 1.8s ease-out forwards;
     @include phone {
         position: inherit;
         width: 100%;
         max-width: 270px;
         margin: 0px auto 10px;
-
     }
 }
 .socials-links{
@@ -42,7 +44,6 @@
     @include phone{
         justify-content: space-between;
         flex-direction: row;
-        
         &::after{
             content: unset;
         }

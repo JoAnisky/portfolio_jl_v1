@@ -11,7 +11,7 @@ header("Access-Control-Allow-headers: Content-Type, Access-Control-Allow-headers
     if(empty($data)){
         exit();
     }
-    
+
     // Validation des entrées
     $firstName = filter_var($data->firstname, FILTER_SANITIZE_STRING);
     $lastName = filter_var($data->lastname, FILTER_SANITIZE_STRING);
@@ -19,7 +19,7 @@ header("Access-Control-Allow-headers: Content-Type, Access-Control-Allow-headers
     $message = filter_var($data->message, FILTER_SANITIZE_STRING);
 
     if(!empty($firstName) && !empty($lastName) && !empty($email) && !empty($message)){
-            
+
         // Échappement des entrées
         $firstName = htmlspecialchars($firstName);
         $lastName = htmlspecialchars($lastName);
@@ -27,7 +27,7 @@ header("Access-Control-Allow-headers: Content-Type, Access-Control-Allow-headers
         $message = htmlspecialchars($message);
 
         // Infos d'envoi
-        $receiver       = 'some@from.address';
+        $receiver       = 'webmaster@jonathanlore.fr';
 
         // Message
         $sender  = $lastName . ' ' . $firstName . '< ' . $userEmail.' >';
@@ -42,10 +42,10 @@ header("Access-Control-Allow-headers: Content-Type, Access-Control-Allow-headers
                     <p><b>Message</b> : ' .$message. ' </p>';
 
         $result = mail($receiver, $subject, $emailMessage , $headers);
-        
+
         if ($result){
-            echo json_encode(["responseServer"=> true, "responseMail"=> true, "responseMessage" => "Votre message a bien été envoyé, merci !"]);                
-        } else {                
+            echo json_encode(["responseServer"=> true, "responseMail"=> true, "responseMessage" => "Votre message a bien été envoyé, merci !"]);
+        } else {
             echo json_encode(["responseServer"=> true, "responseMail"=> false, "responseMessage" => "Erreur lors de l'envoi du message :("]);
         }
 

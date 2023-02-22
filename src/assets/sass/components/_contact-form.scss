@@ -1,11 +1,17 @@
 .contact-form-container {
     @include verticalCenterColumn;
     padding: 2rem 0 3.125rem;
+    transform: translateY($slide-in-y);
+    opacity: 0;
+    .slidein-anim{
+        animation: slide-in-anim 14s 4s ease-out forwards;
+    }
 }
 .contact-form{
     @include verticalCenterColumn;
-    width: 60%;    
+    width: 60%;
     gap: $size-contact-form;
+
     @include phone{
         width: 95%;
     }
@@ -17,28 +23,29 @@
 
     label {
         display: block;
-        color: #fff;
+        color: #fafafa;
         margin-bottom: .4375rem;
         font-size: $font-size-footer;
     }
-
-    input{
+    input, textarea {
+        background-color: map-get($colors, "components-background");
         display: inline-block;
         width: 100%;
         color: map-get($colors, "components-stroke");
-        -webkit-text-fill-color: map-get($colors, "components-stroke") !important;
-        -webkit-background-clip: text !important;
-        background-clip:  text !important;
+        padding: .6875rem .875rem;
         border: 1px solid map-get($colors,"components-stroke");
         border-radius: $border-radius-size;
-        padding: .6875rem .875rem;
+    }
 
+    input, textarea{
         &.error{
             border: 1px solid map-get($colors,"error");
-
+        }
+        &:focus::-webkit-input-placeholder {
+            opacity: 0;
         }
     }
-    
+
     &__fields{
         display: block;
         width: 100%;
@@ -50,6 +57,21 @@
         margin-top : .4375rem;
     }
 }
+textarea{
+    display: block;
+    color: #fafafa;
+    width: 100%;
+    overflow: hidden;
+    min-height: 40px;
+    line-height: 20px;
+    font: 12px map-get($font-menu-titles, "regular");
+    resize: vertical;
+    max-height: 570px;
+}
+.textarea[contenteditable]:empty::before {
+    content: "Votre message";
+    color: gray;
+  }
 .btn-submit {
     background-color: map-get($colors, "btn-submit");
     color: #fafafa;
@@ -77,7 +99,7 @@
         box-sizing: border-box;
         animation: rotation 1.3s linear infinite;
         }
-    
+
         @keyframes rotation {
         0% {
             transform: rotate(0deg);
@@ -85,6 +107,6 @@
         100% {
             transform: rotate(360deg);
         }
-    
+
     }
 }

@@ -1,14 +1,19 @@
+import { lazy, Suspense } from 'react';
 import projectsData from '../../data/projectsData.json';
-import Project from './ProjectCard';
+const Project = lazy(() => import('./ProjectCard'));
 
 const ProjectList = () => {
 
-    return (        
+    return (
     // Projects component begin
         <>
             {
                 projectsData.map((project, index) => {
-                    return <Project key={index} id={index} item={project}/>
+                    return (
+                        <Suspense key={index} fallback={<div>Chargement...</div>}>
+                            <Project key={index} id={index} item={project}/>
+                        </Suspense>
+                    )
                 })
             }
         </>

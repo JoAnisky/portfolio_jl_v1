@@ -32,7 +32,9 @@
 @mixin big-desktop-up {
     @media (min-width: map-get($media-size, "big-desktop")) { @content; }
 }
-
+@mixin tablet-desktop-min {
+    @media (min-width:map-get($media-size, "phone")) and (max-width:map-get($media-size, "desktop")){ @content; }
+}
 @mixin burger-before-after {
     background-color: map-get($colors, "green");
     content:" ";
@@ -45,7 +47,8 @@
 }
 
 @mixin green-text {
-    font:200 map-get($font-menu-titles, 'poppins');
+    font-family: map-get($font-menu-titles, 'poppins');
+    font-weight: 200;
     font-style: italic;
     color: map-get($colors, "green");
 }

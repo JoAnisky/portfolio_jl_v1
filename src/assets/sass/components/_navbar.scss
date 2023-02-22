@@ -1,5 +1,5 @@
 // <nav>
-.navbar{ 
+.navbar{
     display: flex;
     justify-content: space-between;
     flex-wrap:nowrap;
@@ -8,13 +8,15 @@
     position: relative;
     width: 100%;
     gap: 0.5rem;
+    transform:translateY(100%);
+    animation: slide-up-anim 1s ease-out forwards;
     @include phone{
         align-items:flex-start;
         height: 100%;
     };
 
     // <div> container
-    &__container{ 
+    &__container{
         display:flex;
         align-items:center;
 
@@ -83,6 +85,7 @@
         };
     };
 };
+
 .navbar-mobile{
     @include phone {
         position:fixed;

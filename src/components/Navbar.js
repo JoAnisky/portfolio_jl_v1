@@ -14,13 +14,14 @@ const Navbar = () => {
 
     const linksList  = [
         {id:1, href:"about", title:"A propos"},
-        {id:2, href:"knowledges", title:"Compétences"},
+        {id:2, href:"knowledges", title:"Technos"},
         {id:3, href:"portfolio", title:"Portfolio"},
         {id:4, href:"contact", title:"Contact"}
-    ];      
-    
+    ];
+
     const handleShowLinks = () => {
         setShowLinks(!showLinks);
+        document.body.style.overflow = showLinks ?  "inherit" : "hidden";
     };
     // Ajoute les <li> dans un tableau de reférences (linksRef)
     const addToRefsLinks = (elem) => {
@@ -33,11 +34,11 @@ const Navbar = () => {
         let animDuration = 0.1;
         let animDelay = 0.4;
 
-        linksRef.current.forEach(link => {        
+        linksRef.current.forEach(link => {
             link.style.transition = showLinks && isMobile ? `${(animDelay += 0.05)}s ${animDuration}s all ease-in-out` : `${(animDelay += 0.05)}s ${animDuration}s all in-out-back`;
-            link.style.transform = showLinks && isMobile ? "translateX(-650px)" : "";            
+            link.style.transform = showLinks && isMobile ? "translateX(-650px)" : "";
         })
-        
+
     })
 
     const menuLinks = linksList.map(link => {
@@ -45,13 +46,13 @@ const Navbar = () => {
             <li ref={addToRefsLinks} key={link.id} className='navbar__item'>
                 <HashLink smooth to={`/#${link.href}`} className='navbar__link' onClick={handleShowLinks}>{link.title}</HashLink>
             </li>
-        );    
+        );
     });
 
     return (
-        <nav className="navbar">
+        <nav className="navbar menu-slideup-anim">
             <div className="navbar-mobile">
-                <div className="navbar-mobile__container">                                 
+                <div className="navbar-mobile__container">
                     <MainLogo visible={showLinks && isMobile}/>
                     <MenuBurger visible={showLinks} handleShow={handleShowLinks}/>
                 </div>

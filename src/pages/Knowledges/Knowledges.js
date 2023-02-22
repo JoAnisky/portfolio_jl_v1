@@ -1,14 +1,16 @@
-import React from 'react';
+import { lazy, Suspense } from 'react';
 import SectionsTitles from '../../components/SectionsTitles';
 import useDeviceDetect from '../../hooks/useDeviceDetect';
-import Skills from './Skills';
+const Skills = lazy(() => import  ('./Skills'));
 
 const Knowledges = () => {
     const {isMobile} = useDeviceDetect();
     return (
         <section className='knowledges' id="knowledges">
-            <SectionsTitles name="Compétences"/>
-            <Skills mobile={isMobile}/>
+            <SectionsTitles name="Technos"/>
+            <Suspense fallback={<div>Chargement...</div>}>
+                <Skills mobile={isMobile}/>
+            </Suspense>
         </section>
     );
 }
