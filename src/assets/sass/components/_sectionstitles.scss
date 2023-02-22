@@ -3,13 +3,14 @@
     justify-content: space-between;
     align-items: center;
     gap: 1.375rem;
+
     font: 400 $font-size-h2-clamp map-get($font-menu-titles, "regular");
     text-transform: uppercase;
     color: map-get($colors, "titles");
     letter-spacing: .1rem;
     margin: .625rem 0rem 2.5rem;
     white-space: nowrap;
-    transform: translateY(80%);
+    transform: translateY($slide-in-y);
     opacity: 0;
     &__line{
         display: inline-block;

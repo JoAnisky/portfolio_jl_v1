@@ -1,7 +1,7 @@
 .about {
     height:600px;
     max-width: 900px;
-    transform: translateY(80%);
+    transform: translateY($slide-in-y);
     opacity: 0;
     @include phone {
         height: auto;
@@ -36,7 +36,7 @@
 .picture-wrapper {
     position: relative;
     max-width: 300px;
-    transform: translateX(100%);
+    transform: translateX($slide-in-y);
     opacity: 0;
     @include phone{
         justify-self: center;

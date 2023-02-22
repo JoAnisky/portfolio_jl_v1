@@ -1,7 +1,7 @@
 .contact-form-container {
     @include verticalCenterColumn;
     padding: 2rem 0 3.125rem;
-    transform: translateY(80%);
+    transform: translateY($slide-in-y);
     opacity: 0;
     .slidein-anim{
         animation: slide-in-anim 14s 4s ease-out forwards;

@@ -27,7 +27,7 @@
         }
     }
     .slidein-welcome-anim{
-        transform: translateY(-100%);
+        transform: translateY($slide-in-y);
         animation: slide-in-anim 1s ease-out forwards;
     }
 }
