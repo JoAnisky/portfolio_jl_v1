@@ -11,7 +11,7 @@ const SkillComponent = props => {
     const isVisible = useIntersectionObserver({
         root: null,
         rootMargin: '0px',
-        threshold: 0.2
+        threshold: 0
     }, targetRef);
 
     const addToRefsSkills = (elem) => {

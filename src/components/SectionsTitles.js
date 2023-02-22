@@ -5,8 +5,8 @@ const SectionsTitles = (props) => {
     const targetRef = useRef(null);
     const isVisible = useIntersectionObserver({
         root: null,
-        rootMargin: '0px',
-        threshold: 0.2
+        rootMargin: '-120px',
+        threshold: 0
     }, targetRef);
 
     return (

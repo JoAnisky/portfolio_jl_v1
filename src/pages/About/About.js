@@ -7,8 +7,8 @@ const About = () => {
     const targetRef = useRef(null);
     const isVisible = useIntersectionObserver({
         root: null,
-        rootMargin: '0px',
-        threshold: 0
+        rootMargin: '-120px',
+        threshold: 0.3
     }, targetRef);
 
     return (
