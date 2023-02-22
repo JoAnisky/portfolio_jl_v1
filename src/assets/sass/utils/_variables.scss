@@ -51,6 +51,7 @@ $font-size-h2-clamp: clamp(1.125rem, 3vw, $font-size-h2);
 $font-size-h3 : 1.125rem;
 $font-size-component-skills: .8125rem;
 $font-size-footer: .875rem;
+$font-size-menu-mobile: 1.4rem;
 $size-contact-form: 1.5625rem;
 $components-size: 8.75rem;
 $size-navbar-height: 85px;
@@ -59,7 +60,8 @@ $font-sizes: (
     "title-h2":$font-size-h2,
     "title-h2-clamp" : $font-size-h2-clamp,
     "title-h3" : $font-size-h3,
-    "component-skills": $font-size-component-skills
+    "component-skills": $font-size-component-skills,
+    "menu-mobile" : $font-size-menu-mobile
 );
 /* Margins */
 $margin-menu: .9375rem;

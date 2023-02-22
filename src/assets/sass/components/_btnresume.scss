@@ -1,6 +1,9 @@
 .btn-resume{
     a{
         color: map-get($colors, "green");
+        @include phone{
+            font-size: map-get($font-sizes, "menu-mobile");
+        }
     }
     background-color: transparent;
     border : 1px solid map-get($colors, "green");
