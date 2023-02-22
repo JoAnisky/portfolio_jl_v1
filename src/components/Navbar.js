@@ -21,7 +21,7 @@ const Navbar = () => {
 
     const handleShowLinks = () => {
         setShowLinks(!showLinks);
-        document.body.style.overflow = showLinks ?  "inherit" : "hidden";
+        document.body.style.overflow = !showLinks && isMobile ?  "hidden" : "auto";
     };
     // Ajoute les <li> dans un tableau de reférences (linksRef)
     const addToRefsLinks = (elem) => {
