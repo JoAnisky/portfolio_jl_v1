@@ -5,7 +5,7 @@ import { formSchema } from "../../utils/formSchema";
 import LogoValid from "../../components/LogoValid";
 import useIntersectionObserver from '../../hooks/useIntersectionObserver';
 
-const API_PATH = "https://jonathanlore.fr/contact.php";
+const API_PATH = "https://api.jonathanlore.fr/sendemail/index.php";
 
 const ContactForm = () => {
     const [successful, setSuccessful] = useState(false);
