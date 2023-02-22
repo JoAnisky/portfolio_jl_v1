@@ -5,7 +5,7 @@ import { formSchema } from "../../utils/formSchema";
 import LogoValid from "../../components/LogoValid";
 import useIntersectionObserver from '../../hooks/useIntersectionObserver';
 
-const API_PATH = "http://localhost:8000/PHP/contact.php";
+const API_PATH = "https://jonathanlore.fr/contact.php";
 
 const ContactForm = () => {
     const [successful, setSuccessful] = useState(false);
@@ -69,8 +69,6 @@ const ContactForm = () => {
             textarea.style.height = 'auto';
             textarea.style.height = `${textarea.scrollHeight}px`;
           }, false);
-        }else{
-            console.log('dtc')
         }
       }, [textareaRef]);
 
