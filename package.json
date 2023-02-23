@@ -1,6 +1,5 @@
 {
   "name": "portfolio_jl_v1",
-  "homepage": "https://www.jonathanlore.fr",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
