@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import MenuSocials from '../components/MenuSocials';
-const footerMenuLinks = [{name:"Mentions légales", url:"legals"},{name:"Sitemap", url:"/sitemap"}];
+const footerMenuLinks = [{name:"Mentions légales", url:"legals/#top"},{name:"Sitemap", url:"/sitemap"}];
 
 const Footer = () => {
     return (
@@ -9,7 +9,7 @@ const Footer = () => {
             <MenuSocials/>
                 <div>
                     <ul className='menu-footer'>
-                        {footerMenuLinks.map((link, index) => <li key={index}><Link to={link.url}>{link.name}</Link></li>)}
+                        {footerMenuLinks.map((link, index) => <li key={index}><HashLink to={link.url} className="green-texts">{link.name}</HashLink></li>)}
                     </ul>
                     <p>Design & développement &copy; Jonathan Loré (JoAnisky) <span>{(new Date().getFullYear())}</span></p>
 

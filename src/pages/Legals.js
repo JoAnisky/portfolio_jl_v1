@@ -5,9 +5,9 @@ export default function Legals() {
   return (
     <>
     <Header/>
-    <main>
+    <main id="top">
         <div className="legals">
-            <h1>Mentions l&eacute;gales</h1>
+            <h1 >Mentions l&eacute;gales</h1>
             <div>
                 <h2>1 - &Eacute;dition du site<span className='hello__main-title__dot'>.</span></h2>
                 <p>En vertu de <a href="https://www.legifrance.gouv.fr/affichTexte.do?cidTexte=JORFTEXT000000801164#LEGIARTI000042038977" className="green-texts">l'article 6 de la loi n° 2004-575 du 21 juin 2004</a> pour la confiance dans l'&eacute;conomie num&eacute;rique, il est pr&eacute;cis&eacute; aux utilisateurs du site internet <span className="bold-text">https://www.jonathanlore.fr</span> l'identit&eacute; des diff&eacute;rents intervenants dans le cadre de sa r&eacute;alisation et de son suivi:</p>
