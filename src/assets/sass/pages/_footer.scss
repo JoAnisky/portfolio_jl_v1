@@ -2,16 +2,10 @@ footer {
     div {
         @include verticalCenterColumn;
         text-align: center;
-        padding: $logos-padding-menu-mobile 0;
-        p {
-            color: map-get($colors, "components-stroke");
-            font-size: $font-size-footer;
-            span {
-                font-weight: 600;
-            }
-        }
+        padding: 0;
+        gap: 25px;
+
         @include phone {
-            max-width: 270px;
             margin: 0 auto;
         }
     }
@@ -23,5 +17,16 @@ footer {
     .menu-footer{
         display:flex;
         gap : 15px;
+        font-size: .9rem;
+    }
+    .copyright{
+        padding: 0 0 0;
+        p {
+            color: map-get($colors, "components-stroke");
+            font-size: $font-size-footer;
+            span {
+                font-weight: 600;
+            }
+        }
     }
 }
