@@ -15,7 +15,7 @@ const ContactForm = () => {
     const isVisible = useIntersectionObserver({
         root: null,
         rootMargin: '0px',
-        threshold: 0.3
+        threshold: 0.1
     }, targetRef);
 
     const {register, handleSubmit, formState : {errors, isValid, isSubmitting}, reset} = useForm({
