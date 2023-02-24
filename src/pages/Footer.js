@@ -1,6 +1,6 @@
 import { HashLink } from 'react-router-hash-link';
 import MenuSocials from '../components/MenuSocials';
-const footerMenuLinks = [{name:"Mentions légales", url:"legals/#top"},{name:"Sitemap", url:"/sitemap"}];
+const footerMenuLinks = [{name:"Mentions légales", url:"legals/#top"},{name:"Sitemap", url:"sitemap"}];
 
 const Footer = () => {
     return (
