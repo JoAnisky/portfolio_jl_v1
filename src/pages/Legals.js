@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from './Home/Header'
 
-export default function Legals() {
+const Legals = () => {
   return (
     <>
     <Header/>
@@ -10,7 +10,7 @@ export default function Legals() {
             <h1 >Mentions l&eacute;gales</h1>
             <div>
                 <h2>1 - &Eacute;dition du site<span className='hello__main-title__dot'>.</span></h2>
-                <p>En vertu de <a href="https://www.legifrance.gouv.fr/affichTexte.do?cidTexte=JORFTEXT000000801164#LEGIARTI000042038977" className="green-texts">l'article 6 de la loi n° 2004-575 du 21 juin 2004</a> pour la confiance dans l'&eacute;conomie num&eacute;rique, il est pr&eacute;cis&eacute; aux utilisateurs du site internet <span className="bold-text">https://www.jonathanlore.fr</span> l'identit&eacute; des diff&eacute;rents intervenants dans le cadre de sa r&eacute;alisation et de son suivi:</p>
+                <p>En vertu de <a href="https://www.legifrance.gouv.fr/affichTexte.do?cidTexte=JORFTEXT000000801164#LEGIARTI000042038977" className="green-texts" target="_blank" rel="noreferrer">l'article 6 de la loi n° 2004-575 du 21 juin 2004</a> pour la confiance dans l'&eacute;conomie num&eacute;rique, il est pr&eacute;cis&eacute; aux utilisateurs du site internet <span className="bold-text">https://www.jonathanlore.fr</span> l'identit&eacute; des diff&eacute;rents intervenants dans le cadre de sa r&eacute;alisation et de son suivi:</p>
 
                 <p><span className="bold-text">Propri&eacute;taire du site</span> : Mr LOR&Eacute; Jonathan  - Contact : <a href="mailto:webmaster@jonathanlore.fr" className="green-texts">webmaster@jonathanlore.fr</a></p>
 
@@ -25,7 +25,7 @@ export default function Legals() {
 
                 <p>Toute reproduction, repr&eacute;sentation, modification, publication, adaptation de tout ou partie des &eacute;l&eacute;ments du site, quel que soit le moyen ou le proc&eacute;d&eacute; utilis&eacute;, est interdite, sauf autorisation &eacute;crite pr&eacute;alable de <span className="bold-text">Jonathan LOR&Eacute;</span>.</p>
 
-                <p>Toute exploitation non autoris&eacute;e du site ou de l’un quelconque des &eacute;l&eacute;ments qu’il  contient sera consid&eacute;r&eacute;e comme constitutive d’une contrefaçon et poursuivie conform&eacute;ment aux dispositions des articles <a href="https://www.legifrance.gouv.fr/affichCodeArticle.do?idArticle=LEGIARTI000032655082&cidTexte=LEGITEXT000006069414&dateTexte=20160605" className="green-texts" target="_blank">L.335-2 et suivants du Code de Propri&eacute;t&eacute; Intellectuelle</a>.</p>
+                <p>Toute exploitation non autoris&eacute;e du site ou de l’un quelconque des &eacute;l&eacute;ments qu’il  contient sera consid&eacute;r&eacute;e comme constitutive d’une contrefaçon et poursuivie conform&eacute;ment aux dispositions des articles <a href="https://www.legifrance.gouv.fr/affichCodeArticle.do?idArticle=LEGIARTI000032655082&cidTexte=LEGITEXT000006069414&dateTexte=20160605" className="green-texts" target="_blank" rel="noreferrer">L.335-2 et suivants du Code de Propri&eacute;t&eacute; Intellectuelle</a>.</p>
             </div>
             <div>
                 <h2>3 - Limitations de responsabilit&eacute;<span className='hello__main-title__dot'>.</span></h2>
@@ -41,7 +41,7 @@ export default function Legals() {
             </div>
             <div>
                 <h2>4 - CNIL et gestion des donn&eacute;es personnelles<span className='hello__main-title__dot'>.</span></h2>
-                <p>Conform&eacute;ment aux dispositions de  <a href="https://www.legifrance.gouv.fr/affichTexte.do?cidTexte=JORFTEXT000000886460 " className="green-texts" target="_blank"> la loi 78-17 du 6 janvier 1978 modifi&eacute;e</a>, l’utilisateur du site <span className="bold-text">https://www.jonathanlore.fr</span> dispose d’un droit d’acc&egrave;s, de modification et de suppression des informations collect&eacute;es. Pour exercer ce droit, envoyez un message au webmaster du site &agrave; l'adresse <a href="mailto:webmaster@jonathanlore.fr"><span className="green-texts">webmaster@jonathanlore.fr</span></a>.</p>
+                <p>Conform&eacute;ment aux dispositions de  <a href="https://www.legifrance.gouv.fr/affichTexte.do?cidTexte=JORFTEXT000000886460 " className="green-texts" target="_blank" rel="noreferrer"> la loi 78-17 du 6 janvier 1978 modifi&eacute;e</a>, l’utilisateur du site <span className="bold-text">https://www.jonathanlore.fr</span> dispose d’un droit d’acc&egrave;s, de modification et de suppression des informations collect&eacute;es. Pour exercer ce droit, envoyez un message au webmaster du site &agrave; l'adresse <a href="mailto:webmaster@jonathanlore.fr"><span className="green-texts">webmaster@jonathanlore.fr</span></a>.</p>
             </div>
             <div>
                 <h2>5 - Liens hypertextes et cookies<span className='hello__main-title__dot'>.</span></h2>
@@ -63,3 +63,4 @@ export default function Legals() {
     </>
   )
 }
+export default Legals;
