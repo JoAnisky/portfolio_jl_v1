@@ -8,12 +8,11 @@ const Footer = () => {
             <footer>
             <MenuSocials/>
                 <div>
-                    <p>Design & développement &copy; Jonathan Loré (JoAnisky) <span>{(new Date().getFullYear())}</span></p>
-                </div>
-                <div>
-                    <ul>
+                    <ul className='menu-footer'>
                         {footerMenuLinks.map((link, index) => <li key={index}><Link to={link.url}>{link.name}</Link></li>)}
                     </ul>
+                    <p>Design & développement &copy; Jonathan Loré (JoAnisky) <span>{(new Date().getFullYear())}</span></p>
+
                 </div>
             </footer>
         </>
