@@ -4,20 +4,13 @@ import useDeviceDetect from '../hooks/useDeviceDetect';
 import MainLogo from './MainLogo';
 import MenuBurger from './MenuBurger';
 import BtnResume from './BtnResume';
-
+import menuList from '../data/menuLinksList.json';
 
 const Navbar = () => {
 
     const [showLinks, setShowLinks] = useState(false);
     const linksRef = useRef([]);
     const {isMobile} = useDeviceDetect();
-
-    const linksList  = [
-        {id:1, href:"about", title:"A propos"},
-        {id:2, href:"knowledges", title:"Technos"},
-        {id:3, href:"portfolio", title:"Portfolio"},
-        {id:4, href:"contact", title:"Contact"}
-    ];
 
     const handleShowLinks = () => {
         setShowLinks(!showLinks);
@@ -41,7 +34,7 @@ const Navbar = () => {
 
     })
 
-    const menuLinks = linksList.map(link => {
+    const menuLinks = menuList.map(link => {
         return(
             <li ref={addToRefsLinks} key={link.id} className='navbar__item'>
                 <HashLink smooth to={`/#${link.href}`} className='navbar__link' onClick={handleShowLinks}>{link.title}</HashLink>
