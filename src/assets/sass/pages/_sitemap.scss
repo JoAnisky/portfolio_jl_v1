@@ -1,0 +1,26 @@
+.sitemap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: ($size-navbar-height + 20);
+    padding: 40px 0;
+    &__heading{
+        font-size: 2rem;
+        font-weight : 400;
+        color: map-get($colors, "paragraphs")
+    }
+    &__list{
+        //background-color: map-get($colors, "project-background");
+        padding: 30px;
+        border-radius: $border-radius-size;
+        border-bottom: 1px dotted rgba(88, 253, 28, 0.4);
+        border-top: 1px dotted rgba(88, 253, 28, 0.4);
+        box-shadow: inset 0px 0px 0px 3px rgba(0, 0, 0, 15%);
+        ul{
+            @include verticalCenterColumn;
+            gap: 20px;
+        }
+
+    }
+}
