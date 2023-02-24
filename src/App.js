@@ -21,7 +21,6 @@ const App = () => {
 
   return loader ? (<Loader/>) : (
     <>
-
       <Header/>
       <div className="layout__page">
         <div className="content">
