@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-router-hash-link": "^2.4.5",
     "eslint-plugin-react-hooks": "^4.6.0"
   }
 }
