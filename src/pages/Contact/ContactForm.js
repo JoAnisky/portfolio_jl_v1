@@ -5,7 +5,7 @@ import { formSchema } from "../../utils/formSchema";
 import LogoValid from "../../components/LogoValid";
 import useIntersectionObserver from '../../hooks/useIntersectionObserver';
 
-const API_PATH = "https://api.jonathanlore.fr/sendemail/index.php";
+const API_PATH = "https://api.jonathanlore.fr/index.php";
 
 const ContactForm = () => {
     const [successful, setSuccessful] = useState(false);
@@ -27,7 +27,6 @@ const ContactForm = () => {
         try {
             const request = await fetch(API_PATH, {
                 method: 'POST',
-                mode:"no-cors",
                 headers: {
                     "Accept": "application/json",
                     "Content-Type": "application/json",
@@ -39,7 +38,6 @@ const ContactForm = () => {
               }
               throw new Error("impossible d'effectuer la requête");
         }catch(e){
-            console.log(e);
             setUserMessage(e.message)
         }
     }
@@ -47,7 +45,6 @@ const ContactForm = () => {
     const onSubmit = async data => {
 
         if (isValid){
-            console.log(data)
             try {
                 const response = await sendPost(data)
                 if (response.responseServer === true && response.responseMail === true){
@@ -55,7 +52,6 @@ const ContactForm = () => {
                     return setUserMessage(response.responseMessage)
                 }
             }catch (error) {
-                console.log(error)
                 setUserMessage("Erreur du serveur... Réessayez ultérieurement")
             }
             reset();
