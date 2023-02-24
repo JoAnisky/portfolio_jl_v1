@@ -11,8 +11,9 @@ const Footer = () => {
                     <ul className='menu-footer'>
                         {footerMenuLinks.map((link, index) => <li key={index}><HashLink to={link.url} className="green-texts">{link.name}</HashLink></li>)}
                     </ul>
-                    <p>Design & développement &copy; Jonathan Loré (JoAnisky) <span>{(new Date().getFullYear())}</span></p>
-
+                    <div className='copyright'>
+                        <p>Design & développement &copy; Jonathan Loré (JoAnisky) <span>{(new Date().getFullYear())}</span></p>
+                    </div>
                 </div>
             </footer>
         </>
