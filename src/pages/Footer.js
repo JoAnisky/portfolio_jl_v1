@@ -8,9 +8,12 @@ const Footer = () => {
             <footer>
             <MenuSocials/>
                 <div>
-                    <ul className='menu-footer'>
-                        {footerMenuLinks.map((link, index) => <li key={index}><HashLink to={link.url} className="green-texts">{link.name}</HashLink></li>)}
-                    </ul>
+                    <div className='menu-footer'>
+                        <ul className='menu-footer__links'>
+                            {footerMenuLinks.map((link, index) => <li key={index}><HashLink to={link.url} className="green-texts">{link.name}</HashLink></li>)}
+                        </ul>
+                    </div>
+
                     <div className='copyright'>
                         <p>Design & développement &copy; Jonathan Loré (JoAnisky) <span>{(new Date().getFullYear())}</span></p>
                     </div>
