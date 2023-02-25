@@ -2,6 +2,9 @@
     width: 40px;
     position: fixed;
     bottom: 0px;
+    @include tablet-desktop-min {
+        right: 10px;
+    }
     right: 34px;
     left: auto;
     z-index: 10;

@@ -37,7 +37,7 @@
             &.show-nav{
                 visibility: visible;
                 width: 100%;
-                top: $size-navbar-height;
+                top: 0;
                 transform: translateX(0);
             };
         };
@@ -79,7 +79,7 @@
             color:map-get($colors, "green");
         }
         @include phone{
-            font-size: 1rem;
+            font-size: map-get($font-sizes, "menu-mobile");
             display:block;
             padding: $menu-padding-mobile;
         };
@@ -89,12 +89,12 @@
 .navbar-mobile{
     @include phone {
         position:fixed;
+        z-index: 999;
         width:100%;
         height: $size-navbar-height;
         top: 0;
         background-color: rgba(20, 20, 21, .9);
     };
-    
     &__container{
         display: flex;
         height:100%;

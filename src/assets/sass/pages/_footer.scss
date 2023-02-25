@@ -1,16 +1,11 @@
 footer {
     div {
+        @include verticalCenterColumn;
         text-align: center;
-        padding: $logos-padding-menu-mobile 0;
-        p {
-            color: map-get($colors, "components-stroke");
-            font-size: $font-size-footer;
-            span {
-                font-weight: 600;
-            }
-        }
+        padding: 0;
+        gap: 10px;
+
         @include phone {
-            max-width: 270px;
             margin: 0 auto;
         }
     }
@@ -18,5 +13,26 @@ footer {
         padding: 15px;
         height: auto;
         min-height: 70px;
+    }
+    .menu-footer{
+        padding: 0 0 10px;
+        border-bottom: 1px solid grey;
+        &__links{
+            display:flex;
+            gap : 15px;
+            font-size: .9rem;
+        }
+    }
+
+    .copyright{
+        padding: 0 0 20px;
+        p {
+            position: relative;
+            color: map-get($colors, "components-stroke");
+            font-size: $font-size-footer;
+            span {
+                font-weight: 600;
+            }
+        }
     }
 }

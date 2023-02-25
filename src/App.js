@@ -7,6 +7,9 @@ import Knowledges from './pages/Knowledges/Knowledges';
 import Portfolio from './pages/Portfolio/Portfolio';
 import Contact from './pages/Contact/Contact';
 import Footer from './pages/Footer';
+import ReactGA from 'react-ga';
+const TRACKING_ID = "G-K9JTEQ96LB";
+ReactGA.initialize(TRACKING_ID);
 
 const App = () => {
   const [loader, setLoader] = useState(true);
@@ -21,7 +24,6 @@ const App = () => {
 
   return loader ? (<Loader/>) : (
     <>
-
       <Header/>
       <div className="layout__page">
         <div className="content">

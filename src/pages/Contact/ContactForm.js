@@ -5,7 +5,7 @@ import { formSchema } from "../../utils/formSchema";
 import LogoValid from "../../components/LogoValid";
 import useIntersectionObserver from '../../hooks/useIntersectionObserver';
 
-const API_PATH = "https://jonathanlore.fr/contact.php";
+const API_PATH = "https://api.jonathanlore.fr/index.php";
 
 const ContactForm = () => {
     const [successful, setSuccessful] = useState(false);
@@ -15,7 +15,7 @@ const ContactForm = () => {
     const isVisible = useIntersectionObserver({
         root: null,
         rootMargin: '0px',
-        threshold: 0.2
+        threshold: 0.1
     }, targetRef);
 
     const {register, handleSubmit, formState : {errors, isValid, isSubmitting}, reset} = useForm({
@@ -24,7 +24,6 @@ const ContactForm = () => {
     });
 
     const sendPost = async (data) => {
-
         try {
             const request = await fetch(API_PATH, {
                 method: 'POST',
@@ -46,7 +45,6 @@ const ContactForm = () => {
     const onSubmit = async data => {
 
         if (isValid){
-                    console.log(data)
             try {
                 const response = await sendPost(data)
                 if (response.responseServer === true && response.responseMail === true){
