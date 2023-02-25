@@ -18,7 +18,7 @@
 @keyframes slide-up-anim {
     0% {
         opacity: 0;
-        transform: translateX($slide-in-y   );
+        transform: translateX($slide-in-y);
     }
     20% {
         opacity: 0;
@@ -30,5 +30,13 @@
     100% {
         opacity: 1;
         transform: translateX(0%);
+    }
+}
+@keyframes btn-reveal{
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1)
     }
 }
