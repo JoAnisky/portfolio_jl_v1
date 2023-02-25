@@ -23,7 +23,7 @@
     grid-row-gap: $project-gap;
     grid-auto-rows: 100px;
     align-items: center;
-    transform: translateY($slide-in-y);
+    transform: translateX($slide-in-y);
     opacity: 0;
     .slidein-anim{
         animation: slide-in-anim 14s 4s ease-out forwards;
