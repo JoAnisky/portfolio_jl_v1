@@ -7,10 +7,8 @@ import Knowledges from './pages/Knowledges/Knowledges';
 import Portfolio from './pages/Portfolio/Portfolio';
 import Contact from './pages/Contact/Contact';
 import Footer from './pages/Footer';
-import ReactGA from 'react-ga';
 import BtnUp from './components/BtnUp';
-const TRACKING_ID = "G-K9JTEQ96LB";
-ReactGA.initialize(TRACKING_ID);
+
 
 const App = () => {
   const [loader, setLoader] = useState(true);
