@@ -5,8 +5,10 @@ import MainLogo from './MainLogo';
 import MenuBurger from './MenuBurger';
 import BtnResume from './BtnResume';
 import menuList from '../data/menuLinksList.json';
+import useAnalyticsEventTracker from '../hooks/useAnalyticsEventTracker';
 
 const Navbar = () => {
+    const gaEventTracker = useAnalyticsEventTracker('CV');
 
     const [showLinks, setShowLinks] = useState(false);
     const linksRef = useRef([]);
@@ -14,6 +16,7 @@ const Navbar = () => {
 
     const handleShowLinks = () => {
         setShowLinks(!showLinks);
+        gaEventTracker('menu element');
         document.body.style.overflow = !showLinks && isMobile ?  "hidden" : "auto";
     };
     // Ajoute les <li> dans un tableau de reférences (linksRef)
