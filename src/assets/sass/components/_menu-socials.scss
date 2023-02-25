@@ -3,10 +3,10 @@
     position: fixed;
     bottom: 0px;
     @include tablet-desktop-min {
-        right: 10px;
+        left: 5px;
     }
-    right: 34px;
-    left: auto;
+    left: 34px;
+    right: auto;
     z-index: 10;
     transform: translateX(150px);
     opacity: 0;

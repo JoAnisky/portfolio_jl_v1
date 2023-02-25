@@ -1,0 +1,27 @@
+.btn-up{
+    position: fixed;
+    z-index: 9999;
+    bottom: 14px;
+    right: 14px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity .6s ease-in-out;
+    animation: btn-reveal .4s ease-out forwards ;
+    &:hover{
+        opacity: 1;
+    }
+    svg{
+        display: inline-block;
+        @include phone{
+            width: 33px;
+        }
+        circle{
+            fill: hsl(108, 4%, 23%);//map-get($colors, "components-background");
+        }
+        path{
+            stroke: map-get($colors, "components-stroke");
+        }
+    }
+}

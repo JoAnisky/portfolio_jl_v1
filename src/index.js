@@ -6,6 +6,9 @@ import App from './App';
 import NotFound from './pages/NotFound';
 import Legals from './pages/Legals';
 import Sitemap from './pages/Sitemap';
+import ReactGA from 'react-ga';
+const TRACKING_ID = "G-K9JTEQ96LB";
+ReactGA.initialize(TRACKING_ID);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
