@@ -1,5 +1,6 @@
 .btn-up{
     position: fixed;
+    z-index: 9999;
     bottom: 14px;
     right: 14px;
     background-color: transparent;
@@ -12,6 +13,10 @@
         opacity: 1;
     }
     svg{
+        display: inline-block;
+        @include phone{
+            width: 33px;
+        }
         circle{
             fill: hsl(108, 4%, 23%);//map-get($colors, "components-background");
         }
