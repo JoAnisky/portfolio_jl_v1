@@ -15,7 +15,7 @@ const About = () => {
     return (
         <>
            <section ref={targetRef} className={`about ${!isVisible ? "" : "slideup-anim"}`} id="about">
-            <SectionsTitles name="A Propos"/>
+            <SectionsTitles name="À Propos"/>
                 <div className="about__inner">
                     <div className={`about__prez ${!isVisible ? "" : "slidein-anim"}`}>
                             <p>Bonjour ! je suis <strong>Jonathan Lor&eacute;</strong>, d&eacute;veloppeur web Front end.</p>
