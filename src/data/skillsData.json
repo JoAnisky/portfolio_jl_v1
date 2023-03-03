@@ -1,5 +1,5 @@
 [
-    {   
+    {
         "catTitle": "Languages",
         "stack": [
             {"name":"javascript", "width":"37", "height":"50"},
@@ -11,7 +11,7 @@
         "catTitle" : "Frameworks & librairies",
         "stack": [
             {"name":"react", "width":"50", "height":"63"},
-            {"name":"nodejs", "width":"75", "height":"26"},
+            {"name":"express", "width":"45", "height":"31"},
             {"name":"threejs", "width":"50", "height":"60"}
         ]
     },

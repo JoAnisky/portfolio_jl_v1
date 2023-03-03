@@ -9,7 +9,7 @@ const API_PATH = "https://api.jonathanlore.fr/index.php";
 
 const ContactForm = () => {
     const [successful, setSuccessful] = useState(false);
-    const [userMessage, setUserMessage] = useState('Prenons le temps de faire connaissance !');
+    const [userMessage, setUserMessage] = useState("N'hésitez pas à prendre contact pour toute demande d'informations");
     const textareaRef = useRef(null);
     const targetRef = useRef(null);
     const isVisible = useIntersectionObserver({
@@ -49,12 +49,13 @@ const ContactForm = () => {
                 const response = await sendPost(data)
                 if (response.responseServer === true && response.responseMail === true){
                     setSuccessful(true);
+                    reset();
                     return setUserMessage(response.responseMessage)
                 }
             }catch (error) {
                 setUserMessage("Erreur du serveur... Réessayez ultérieurement")
             }
-            reset();
+
         }
     }
 

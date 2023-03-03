@@ -9,7 +9,7 @@ const Project = props => {
     const isVisible = useIntersectionObserver({
         root: null,
         rootMargin: '-50px',
-        threshold: 0.6
+        threshold: 0.3
     }, targetRef);
 
     useEffect(() => {
