@@ -1,26 +1,34 @@
 [
-    {
-        "catTitle": "Languages",
-        "stack": [
-            {"name":"javascript", "width":"37", "height":"50"},
-            {"name":"php", "width":"50", "height":"40"},
-            {"name":"sass", "width":"50", "height":"45"}
-        ]
-    },
-    {
-        "catTitle" : "Frameworks & librairies",
-        "stack": [
-            {"name":"react", "width":"50", "height":"63"},
-            {"name":"express", "width":"45", "height":"31"},
-            {"name":"threejs", "width":"50", "height":"60"}
-        ]
-    },
-    {
-        "catTitle" : "logiciels",
-        "stack": [
-            {"name":"figma", "width":"30", "height":"54"},
-            {"name":"photoshop", "width":"40", "height":"58"},
-            {"name":"git", "width":"40", "height":"49"}
-        ]
-    }
+  {
+    "catTitle": "Languages",
+    "stack": [
+      { "name": "php", "width": "50", "height": "40" },
+      { "name": "typescript", "width": "37", "height": "50" },
+      { "name": "sass", "width": "50", "height": "45" }
+    ]
+  },
+  {
+    "catTitle": "Frameworks & librairies",
+    "stack": [
+      { "name": "react", "width": "50", "height": "63" },
+      { "name": "materialUI", "width": "45", "height": "60" },
+      { "name": "symfony", "width": "57", "height": "43" }
+    ]
+  },
+  {
+    "catTitle": "logiciels",
+    "stack": [
+      { "name": "figma", "width": "26", "height": "51" },
+      { "name": "photoshop", "width": "40", "height": "58" },
+      { "name": "illustrator", "width": "40", "height": "58" }
+    ]
+  },
+  {
+    "catTitle": "gestion de projet",
+    "stack": [
+      { "name": "docker", "width": "78", "height": "54" },
+      { "name": "notion", "width": "40", "height": "58" },
+      { "name": "git", "width": "40", "height": "49" }
+    ]
+  }
 ]
