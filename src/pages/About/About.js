@@ -18,12 +18,13 @@ const About = () => {
             <SectionsTitles name="À Propos"/>
                 <div className="about__inner">
                     <div className={`about__prez ${!isVisible ? "" : "slidein-anim"}`}>
-                            <p>Bonjour ! Je suis <strong>Jonathan Lor&eacute;</strong>, d&eacute;veloppeur web Front end.</p>
-                            <p>Tomb&eacute; dans le monde du web en 2007, j'ai d&eacute;but&eacute; avec HTML et CSS. Je suis passionn&eacute; par  les nouvelles technologies et le graphisme.</p>
-                            <p>J'aime cr&eacute;er des sites web vivants et interactifs.</p>
-                            <p>Vous trouverez ici mes diff&eacute;rentes <HashLink className="links" smooth to="/#portfolio">r&eacute;alisations</HashLink> et un formulaire de <HashLink className="links" smooth to="/#contact">contact</HashLink> pour faire connaissance
-                                (pourquoi pas autour d'un bon caf&eacute; ? &#9749;).</p>
-                            <p>Je vous souhaite une bonne visite.</p>
+                        <p>Bonjour ! Je suis <strong>Jonathan Lor&eacute;</strong>, d&eacute;veloppeur web fullStack.</p>
+                        <p>Passionné par l'informatique, les nouvelles technos et le graphisme, je crée des applications web innovantes avec React et Symfony.</p>
+                        <p>Mon expertise couvre le back-end (PHP, MySQL) et le front-end (HTML/CSS, SCSS, TypeScript).</p>
+                        <p>Je suis à l'écoute d'opportunités pour concevoir des solutions web toujours plus performantes et centrées sur l'utilisateur.</p>
+                        <p>Vous trouverez ici mes diff&eacute;rentes <HashLink className="links" smooth to="/#portfolio">r&eacute;alisations</HashLink> et un formulaire de <HashLink className="links" smooth to="/#contact">contact</HashLink> pour faire connaissance
+                            (autour d'un bon caf&eacute;/th&eacute; ? &#9749;).</p>
+                        <p>Je vous souhaite une bonne visite.</p>
                     </div>
                     <div className={`picture-wrapper ${!isVisible ? "" : "slidein-anim"}`}>
                         <div className="picture">
