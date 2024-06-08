@@ -4,7 +4,8 @@
     "stack": [
       { "name": "php", "width": "50", "height": "40" },
       { "name": "typescript", "width": "37", "height": "50" },
-      { "name": "sass", "width": "50", "height": "45" }
+      { "name": "sass", "width": "50", "height": "45" },
+      { "name": "sql", "width": "50", "height": "45" }
     ]
   },
   {
@@ -12,7 +13,8 @@
     "stack": [
       { "name": "react", "width": "50", "height": "63" },
       { "name": "materialUI", "width": "45", "height": "60" },
-      { "name": "symfony", "width": "57", "height": "43" }
+      { "name": "symfony", "width": "57", "height": "43" },
+      { "name": "threejs", "width": "57", "height": "43" }
     ]
   },
   {
