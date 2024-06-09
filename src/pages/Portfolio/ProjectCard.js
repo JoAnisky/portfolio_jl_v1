@@ -38,7 +38,7 @@ const ProjectCard = props => {
         <h3 className="project-card__title">{title}</h3>
       </div>
       <div className={`project-card__image ${!pair ? "left" : ""}`}>
-        <div role="button" aria-label={external.title} onClick={handleOpenLightBox} style={{ cursor: "pointer" }}>
+        <div role="button" onClick={handleOpenLightBox} style={{ cursor: "pointer" }}>
           <div className="work-image-wrapper">
             <picture>
               <source srcSet={`${workPicturePath}${image}/${image}-S.webp`} media="(max-width: 340px)" />
@@ -55,38 +55,38 @@ const ProjectCard = props => {
               />
             </picture>
             <svg
-              class="galery-logo"
+              className="galery-logo"
               xmlns="http://www.w3.org/2000/svg"
-              width="2em"
-              height="2em"
+              width="1.5em"
+              height="1.5em"
               viewBox="0 0 36 36"
               style={{
-                left: pair ? "15px" : undefined, // Set left to 15px when !pair
-                right: !pair ? "15px" : undefined
+                left: !pair ? "15px" : undefined, // Set left to 15px when !pair
+                right: pair ? "15px" : undefined
               }} // Template literal with conditional string
             >
               <path
-                fill="currentColor"
+                fill="currentcolor"
                 d="M32.12 10H3.88A1.88 1.88 0 0 0 2 11.88v18.24A1.88 1.88 0 0 0 3.88 32h28.24A1.88 1.88 0 0 0 34 30.12V11.88A1.88 1.88 0 0 0 32.12 10M32 30H4V12h28Z"
                 class="clr-i-outline clr-i-outline-path-1"
               />
               <path
-                fill="currentColor"
+                fill="currentcolor"
                 d="M8.56 19.45a3 3 0 1 0-3-3a3 3 0 0 0 3 3m0-4.6A1.6 1.6 0 1 1 7 16.45a1.6 1.6 0 0 1 1.56-1.6"
                 class="clr-i-outline clr-i-outline-path-2"
               />
               <path
-                fill="currentColor"
+                fill="currentcolor"
                 d="m7.9 28l6-6l3.18 3.18L14.26 28h2l7.46-7.46L30 26.77v-2L24.2 19a.71.71 0 0 0-1 0l-5.16 5.16l-3.67-3.66a.71.71 0 0 0-1 0L5.92 28Z"
                 class="clr-i-outline clr-i-outline-path-3"
               />
               <path
-                fill="currentColor"
+                fill="currentcolor"
                 d="M30.14 3a1 1 0 0 0-1-1h-22a1 1 0 0 0-1 1v1h24Z"
                 class="clr-i-outline clr-i-outline-path-4"
               />
               <path
-                fill="currentColor"
+                fill="currentcolor"
                 d="M32.12 7a1 1 0 0 0-1-1h-26a1 1 0 0 0-1 1v1h28Z"
                 class="clr-i-outline clr-i-outline-path-5"
               />
@@ -136,9 +136,10 @@ const ProjectCard = props => {
                   d="M21 11.2535C21 15.7811 18.1374 19.6215 14.1665 20.9811C13.6585 21.0815 13.4792 20.762 13.4792 20.4877C13.4792 20.1514 13.4917 19.0449 13.4917 17.6747C13.4917 16.7172 13.1709 16.0919 12.8124 15.777C15.0395 15.5215 17.3792 14.6557 17.3792 10.7174C17.3792 9.59821 16.9918 8.68089 16.3499 7.96424C16.4541 7.7046 16.7957 6.66402 16.25 5.25119C16.25 5.25119 15.4124 4.97681 13.5041 6.30242C12.7062 6.07473 11.8501 5.9617 11 5.95761C10.1499 5.9617 9.29384 6.07473 8.49589 6.30242C6.58763 4.97681 5.74598 5.25119 5.74598 5.25119C5.20225 6.66402 5.54589 7.7046 5.65015 7.96424C5.00818 8.68089 4.61883 9.59821 4.61883 10.7174C4.61883 14.6451 6.95413 15.526 9.17515 15.7831C8.88965 16.0407 8.63142 16.492 8.5396 17.1534C7.9686 17.4175 6.52067 17.8704 5.6293 16.3024C5.6293 16.3024 5.1 15.3196 4.09796 15.2471C4.09796 15.2471 3.12077 15.2344 4.02899 15.8704C4.02899 15.8704 4.68539 16.1853 5.1397 17.3684C5.1397 17.3684 5.72513 19.3644 8.50832 18.7431C8.51233 19.6002 8.52075 20.2452 8.52075 20.4877C8.52075 20.76 8.33951 21.0749 7.83949 20.9811C3.86459 19.626 1 15.7831 1 11.2535C1 5.58945 5.47692 1 11 1C16.5231 1 21 5.58945 21 11.2535Z"
                 />
               </svg>
+
             </a>
           )}
-          {external.link && (
+          {external && external.link  && (
             <a href={external.link} target="_blank" rel="noreferrer" aria-label={external.title}>
               <svg
                 className="icon-external"
