@@ -48,9 +48,8 @@
             "PHP",
             "MySQL"
         ],
-        "github" : "https://github.com/JoAnisky/christopher_nolan_website",
+        "github" : "https://github.com/JoAnisky/christopher_nolan_website/tree/main/php",
         "external" : {
-            "link":"https://christophernolanwebsite.netlify.app/",
             "title": "Dashboard Christopher Nolan Backend"
         }
     },
