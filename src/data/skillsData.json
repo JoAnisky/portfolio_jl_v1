@@ -22,7 +22,8 @@
     "stack": [
       { "name": "figma", "width": "26", "height": "51" },
       { "name": "photoshop", "width": "40", "height": "58" },
-      { "name": "illustrator", "width": "40", "height": "58" }
+      { "name": "illustrator", "width": "40", "height": "58" },
+      { "name": "postman", "width": "40", "height": "58" }
     ]
   },
   {
@@ -30,7 +31,8 @@
     "stack": [
       { "name": "docker", "width": "78", "height": "54" },
       { "name": "notion", "width": "40", "height": "58" },
-      { "name": "git", "width": "40", "height": "49" }
+      { "name": "git", "width": "40", "height": "49" },
+      { "name": "staruml", "width": "40", "height": "49" }
     ]
   }
 ]
