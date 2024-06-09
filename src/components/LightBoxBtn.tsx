@@ -32,8 +32,6 @@ const LightBoxBtn: FC<LightBoxBtnProps> = ({ workImage, open, onClose }) => {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const data = await response.json();
-        console.log("workImage :" , workImage);
-        console.log('File count:', data.fileCount); // Affiche le nombre de fichiers
         setImagesCount(data.fileCount)
       } catch (error) {
         console.error('Error fetching images:', error);
