@@ -1,5 +1,19 @@
 [
     {
+        "type": "Refonte",
+        "title": "Refonte intranet 10Torsions",
+        "image": "refonte_intranet_10torsions",
+        "description": "Lors de mon alternance de Concepteur développeur d'applications, une de mes tâches a été de faire une refonte graphique complète de l'entreprise",
+        "tasks": "Design, maquettage, intégration. Développement Frontend et Backend.",
+        "technos" : [
+            "HTML",
+            "CSS",
+            "PHP",
+            "Figma",
+            "Photoshop"
+        ]
+    },
+    {
         "type": "Site web",
         "title": "Portfolio Jonathan Loré",
         "image": "portfoliojl",
