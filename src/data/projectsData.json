@@ -1,5 +1,20 @@
 [
     {
+        "type": "Refonte",
+        "title": "Refonte intranet 10Torsions",
+        "image": "refonte_intranet_10torsions",
+        "description": "Lors de mon alternance de Concepteur Développeur d'Applications, une de mes tâches a été de faire une refonte graphique complète de l'intranet de l'entreprise. L'objectif étant de moderniser et ludifier l'outil pour le rendre plus agréable et facile à utiliser.",
+        "tasks": "Design, maquettage, intégration. Développement Frontend et Backend.",
+        "technos" : [
+            "HTML",
+            "CSS",
+            "PHP",
+            "Figma",
+            "Photoshop",
+            "Javascript"
+        ]
+    },
+    {
         "type": "Site web",
         "title": "Portfolio Jonathan Loré",
         "image": "portfoliojl",
@@ -48,9 +63,8 @@
             "PHP",
             "MySQL"
         ],
-        "github" : "https://github.com/JoAnisky/christopher_nolan_website",
+        "github" : "https://github.com/JoAnisky/christopher_nolan_website/tree/main/php",
         "external" : {
-            "link":"https://christophernolanwebsite.netlify.app/",
             "title": "Dashboard Christopher Nolan Backend"
         }
     },

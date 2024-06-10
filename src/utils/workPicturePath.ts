@@ -1,0 +1,1 @@
+export const workPicturePath: string = "./media/work/";
