@@ -23,6 +23,9 @@ FROM nginx:alpine
 COPY --from=builder /app/build /usr/share/nginx/html
 COPY --from=builder /app/docker-compose.yml ./
 
+# Copier la configuration de redirection dans le dossier Nginx
+COPY conf/redirect.conf /etc/nginx/conf.d/
+
 # Exposer le port 80
 EXPOSE 80
 
