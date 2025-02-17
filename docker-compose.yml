@@ -11,6 +11,16 @@ services:
       - "traefik.http.routers.portfolio.tls=true"
       - "traefik.http.routers.portfolio.tls.certresolver=myresolver"
       - "traefik.http.services.portfolio.loadbalancer.server.port=80"
+
+      # Ajout de la redirection de www vers jonathanlore.fr
+      - "traefik.http.routers.www-portfolio.rule=Host(`www.jonathanlore.fr`)"
+      - "traefik.http.routers.www-portfolio.entrypoints=web"
+      - "traefik.http.routers.www-portfolio.middlewares=redirect-to-www"
+
+      # Middleware pour rediriger vers jonathanlore.fr
+      - "traefik.http.middlewares.redirect-to-www.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.redirect-to-www.redirectscheme.permanent=true"
+
     networks:
       - web
 
