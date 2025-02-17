@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  portfolio:
+    build: .
+    container_name: portfolio_jl
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.app.rule=Host(`jonathanlore.fr`)"
+      - "traefik.http.routers.app.entrypoints=websecure"
+      - "traefik.http.routers.app.tls=true"
+      - "traefik.http.routers.app.tls.certresolver=myresolver"
+      - "traefik.http.services.app.loadbalancer.server.port=8080"
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
