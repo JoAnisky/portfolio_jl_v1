@@ -6,11 +6,11 @@ services:
     container_name: portfolio_jl
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.app.rule=Host(`jonathanlore.fr`)"
-      - "traefik.http.routers.app.entrypoints=websecure"
-      - "traefik.http.routers.app.tls=true"
-      - "traefik.http.routers.app.tls.certresolver=myresolver"
-      - "traefik.http.services.app.loadbalancer.server.port=8080"
+      - "traefik.http.routers.portfolio.rule=Host(`jonathanlore.fr`)"
+      - "traefik.http.routers.portfolio.entrypoints=websecure"
+      - "traefik.http.routers.portfolio.tls=true"
+      - "traefik.http.routers.portfolio.tls.certresolver=myresolver"
+      - "traefik.http.services.portfolio.loadbalancer.server.port=8080"
     networks:
       - web
 
