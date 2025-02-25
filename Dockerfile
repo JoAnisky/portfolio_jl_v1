@@ -1,7 +1,5 @@
 # Étape 1 : Build de l'application
 FROM node:16 AS builder
-
-# Répertoire de travail
 WORKDIR /app
 
 # Copier les fichiers package.json et package-lock.json
@@ -10,8 +8,9 @@ COPY package*.json ./
 # Installer les dépendances
 RUN npm install
 
-# Copier le reste des fichiers de l'application
-COPY . .
+# Copier le reste des fichiers de l'application (nouvelle couche pour les assets)
+COPY public ./public
+COPY src ./src
 
 # Build de l'application React
 RUN npm run build
