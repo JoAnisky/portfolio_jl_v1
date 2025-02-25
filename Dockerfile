@@ -8,9 +8,8 @@ COPY package*.json ./
 # Installer les dépendances
 RUN npm install
 
-# Copier le reste des fichiers de l'application (nouvelle couche pour les assets)
-COPY public ./public
-COPY src ./src
+# Copier le reste des fichiers de l'application
+COPY . .
 
 # Build de l'application React
 RUN npm run build
