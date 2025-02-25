@@ -9,7 +9,7 @@ const Home = () => {
                 </div>
                 <div className="slidein-welcome-anim">
                     <h1 className="hello__main-title">Jonathan Loré<span className='hello__main-title__dot'>.</span><br/>
-                    <span className='hello__subtitle'>Développeur web fullstack BOSS</span></h1>
+                    <span className='hello__subtitle'>Développeur web fullstack</span></h1>
                 </div>
             </div>
         </section>
