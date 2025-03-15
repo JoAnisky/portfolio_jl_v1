@@ -4,6 +4,7 @@ services:
   portfolio:
     build: .
     container_name: portfolio_jl
+    restart: always
     labels:
       - "traefik.enable=true"
 
