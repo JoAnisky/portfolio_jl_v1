@@ -24,12 +24,19 @@ pipeline {
             steps {
                 script {
                     withCredentials([usernamePassword(credentialsId: 'jenkins-dockerhub', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
-                        sh '''
-                            docker login -u $DOCKER_USER -p $DOCKER_PASS
-                            docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} .
-                            docker push ${DOCKER_IMAGE}:${DOCKER_TAG}
-                            docker push ${DOCKER_IMAGE}:${DOCKER_TAG_BUILD}
-                        '''
+						sh '''
+							docker login -u $DOCKER_USER -p $DOCKER_PASS
+
+							# Builder avec le tag latest
+							docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} .
+
+							# Tagger avec le numéro de build
+							docker tag ${DOCKER_IMAGE}:${DOCKER_TAG} ${DOCKER_IMAGE}:${DOCKER_TAG_BUILD}
+
+							# Pousher les deux
+							docker push ${DOCKER_IMAGE}:${DOCKER_TAG}
+							docker push ${DOCKER_IMAGE}:${DOCKER_TAG_BUILD}
+						'''
                     }
                 }
             }
