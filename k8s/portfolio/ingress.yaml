@@ -1,16 +1,17 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: portfolio-ingress
+  name: portfolio
+  namespace: portfolio
   annotations:
-    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    traefik.ingress.kubernetes.io/router.entrypoints: web,websecure
     traefik.ingress.kubernetes.io/router.tls: "true"
-    traefik.ingress.kubernetes.io/router.tls.certresolver: myresolver
+    traefik.ingress.kubernetes.io/router.tls.certresolver: letsencrypt
 spec:
   tls:
     - hosts:
         - jonathanlore.fr
-        - www.jonathanlore.fr
+      secretName: portfolio-tls
   rules:
     - host: jonathanlore.fr
       http:
@@ -19,16 +20,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: portfolio-service
+                name: portfolio
                 port:
-                  number: 80
-    - host: www.jonathanlore.fr
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: portfolio-service
-                port:
-                  number: 80
+                  number: 3000
