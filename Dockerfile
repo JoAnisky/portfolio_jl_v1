@@ -19,9 +19,10 @@ FROM nginx:alpine
 
 # Copier les fichiers générés dans l'image nginx
 COPY --from=builder /app/build /usr/share/nginx/html
-COPY --from=builder /app/docker-compose.yml ./
 
-# Exposer le port 80
+RUN sed -i 's/listen 80;/listen 3000;/g' /etc/nginx/conf.d/default.conf
+
+# Exposer le port 3000
 EXPOSE 3000
 
 # Démarrer nginx
