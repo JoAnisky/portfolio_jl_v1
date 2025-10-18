@@ -1,9 +1,5 @@
 pipeline {
-    agent {
-        node {
-            label 'node-agent'  // Utilisation du Node Docker Agent de mon repo Docker Hub
-        }
-    }
+    agent any
 
     environment {
         DOCKER_IMAGE = "joanisky/portfolio_v1"
@@ -27,10 +23,13 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.withRegistry("https://${REGISTRY}/v1/", 'joanisky-dockerhub') {
-                        def image = docker.build("${DOCKER_IMAGE}:${DOCKER_TAG}")
-                        image.push()
-                        image.push("${DOCKER_TAG_BUILD}")
+                    withCredentials([usernamePassword(credentialsId: 'joanisky-dockerhub', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+                        sh '''
+                            docker login -u $DOCKER_USER -p $DOCKER_PASS
+                            docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} .
+                            docker push ${DOCKER_IMAGE}:${DOCKER_TAG}
+                            docker push ${DOCKER_IMAGE}:${DOCKER_TAG_BUILD}
+                        '''
                     }
                 }
             }
@@ -72,9 +71,9 @@ pipeline {
         }
 
         stage('Verify Deployment') {
-            when {
-                branch 'main'
-            }
+			when {
+			   expression { env.GIT_BRANCH == 'origin/main' }
+			}
             steps {
                 script {
                     withCredentials([file(credentialsId: 'kubeconfig', variable: 'KUBECONFIG_FILE')]) {
