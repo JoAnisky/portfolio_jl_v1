@@ -15,7 +15,6 @@ pipeline {
             steps {
                 checkout scm
                 script {
-                    echo "Branch: ${BRANCH_NAME}"
                     echo "Build: ${BUILD_NUMBER}"
                 }
             }
@@ -35,7 +34,7 @@ pipeline {
 
         stage('Deploy to Kubernetes') {
             when {
-                branch 'main'
+                expression { env.GIT_BRANCH == 'origin/main' }
             }
             steps {
                 script {
