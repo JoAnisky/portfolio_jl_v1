@@ -22,7 +22,7 @@ COPY --from=builder /app/build /usr/share/nginx/html
 COPY --from=builder /app/docker-compose.yml ./
 
 # Exposer le port 80
-EXPOSE 80
+EXPOSE 3000
 
 # Démarrer nginx
 CMD ["nginx", "-g", "daemon off;"]
