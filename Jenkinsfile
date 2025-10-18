@@ -1,9 +1,5 @@
 pipeline {
-    agent {
-        node {
-            label 'docker-agent'
-        }
-    }
+    agent any
 
     environment {
         DOCKER_IMAGE = "joanisky/portfolio_v1"
