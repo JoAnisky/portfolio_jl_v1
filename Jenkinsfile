@@ -51,24 +51,18 @@ pipeline {
                     withCredentials([file(credentialsId: 'kubeconfig', variable: 'KUBECONFIG_FILE')]) {
                         sh '''
                             # Copier le kubeconfig
-                            mkdir -p ~/.kube
-                            cp $KUBECONFIG_FILE ~/.kube/config
-                            chmod 600 ~/.kube/config
+							mkdir -p ~/.kube
+							cp $KUBECONFIG_FILE ~/.kube/config
+							chmod 600 ~/.kube/config
 
-                            # Vérifier la connexion K3s
-                            kubectl cluster-info
+							# Appliquer les fichiers K8s depuis le workspace
+							kubectl apply -k k8s/
 
-                            # S'assurer que le namespace existe
-                            kubectl create namespace ${KUBE_NAMESPACE} --dry-run=client -o yaml | kubectl apply -f -
+							# Mettre à jour l'image
+							kubectl set image deployment/portfolio portfolio=${DOCKER_IMAGE}:${DOCKER_TAG} -n ${KUBE_NAMESPACE}
 
-                            # Update l'image dans le deployment
-                            kubectl set image deployment/${KUBE_DEPLOYMENT} \
-                                ${KUBE_DEPLOYMENT}=${DOCKER_IMAGE}:${DOCKER_TAG} \
-                                -n ${KUBE_NAMESPACE} \
-                                --record
-
-                            # Attendre que le rollout soit complet
-                            kubectl rollout status deployment/${KUBE_DEPLOYMENT} -n ${KUBE_NAMESPACE}
+							# Attendre le rollout
+							kubectl rollout status deployment/${KUBE_DEPLOYMENT} -n ${KUBE_NAMESPACE}
 
                             echo "✓ Deployment successful!"
                         '''
