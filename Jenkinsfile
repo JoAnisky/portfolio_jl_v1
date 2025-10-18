@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent {
+        node {
+            label 'node-agent'  // Utilisation du Node Docker Agent de mon repo Docker Hub
+        }
+    }
 
     environment {
         DOCKER_IMAGE = "joanisky/portfolio_v1"
