@@ -20,7 +20,7 @@ FROM nginx:alpine
 # Copier les fichiers générés dans l'image nginx
 COPY --from=builder /app/build /usr/share/nginx/html
 
-RUN sed -i 's/listen 80;/listen 3000;/g' /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Exposer le port 3000
 EXPOSE 3000
