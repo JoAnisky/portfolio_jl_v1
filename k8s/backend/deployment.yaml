@@ -20,6 +20,32 @@ spec:
           ports:
             - containerPort: 80
               name: http
+          env:
+            - name: SMTP_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: api-smtp
+                  key: SMTP_HOST
+            - name: SMTP_USER
+              valueFrom:
+                secretKeyRef:
+                  name: api-smtp
+                  key: SMTP_USER
+            - name: SMTP_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: api-smtp
+                  key: SMTP_PASSWORD
+            - name: SMTP_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: api-smtp
+                  key: SMTP_PORT
+            - name: CONTACT_EMAIL
+              valueFrom:
+                secretKeyRef:
+                  name: api-smtp
+                  key: CONTACT_EMAIL
           resources:
             requests:
               memory: "64Mi"
