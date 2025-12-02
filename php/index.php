@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 
 $workImage = $_GET['workImage'] ?? '';
-$dirPath = "../public/media/work/$workImage/screens";
+$dirPath = "./media/work/$workImage/screens";
 
 // Vérification du répertoire
 if (!is_dir($dirPath)) {

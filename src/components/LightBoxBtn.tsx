@@ -20,7 +20,7 @@ const LightBoxBtn: FC<LightBoxBtnProps> = ({ workImage, open, onClose }) => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const response = await fetch(`./php/workimages.php?workImage=${workImage}`, {
+        const response = await fetch(`https://api.jonathanlore.fr/index.php?workImage=${workImage}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
