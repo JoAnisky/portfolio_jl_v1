@@ -10,6 +10,9 @@ pipeline {
 
         FRONT_DEPLOY = "portfolio"
         BACK_DEPLOY  = "portfolio-api"
+
+		// Définir un tag unique basé sur le numéro de build Jenkins
+        IMAGE_TAG = "${BUILD_NUMBER}"
     }
 
     stages {
@@ -26,12 +29,12 @@ pipeline {
                             docker login -u $DOCKER_USER -p $DOCKER_PASS
 
                             echo "=== Build Front ==="
-                            docker build -t ${FRONT_IMAGE}:latest .
-                            docker push ${FRONT_IMAGE}:latest
+                            docker build -t ${FRONT_IMAGE}:${IMAGE_TAG} .
+                            docker push ${FRONT_IMAGE}:${IMAGE_TAG}
 
                             echo "=== Build Backend ==="
-                            docker build -f k8s/backend/Dockerfile -t ${BACK_IMAGE}:latest .
-                            docker push ${BACK_IMAGE}:latest
+                            docker build -f k8s/backend/Dockerfile -t ${BACK_IMAGE}:${IMAGE_TAG} .
+                            docker push ${BACK_IMAGE}:${IMAGE_TAG}
                         '''
                     }
                 }
@@ -51,11 +54,12 @@ pipeline {
 
 							# Appliquer les fichiers K8s depuis le workspace
 							kubectl apply -k k8s/
+							echo "Updating images with unique tag ${IMAGE_TAG}..."
+							# Utiliser le tag unique pour forcer le changement
+							kubectl set image deployment/${FRONT_DEPLOY} portfolio=${FRONT_IMAGE}:${IMAGE_TAG} -n ${KUBE_NAMESPACE}
+							kubectl set image deployment/${BACK_DEPLOY}  portfolio-api=${BACK_IMAGE}:${IMAGE_TAG} -n ${KUBE_NAMESPACE}
 
-							echo "Updating images..."
-							kubectl set image deployment/${FRONT_DEPLOY} portfolio=${FRONT_IMAGE}:latest -n ${KUBE_NAMESPACE}
-							kubectl set image deployment/${BACK_DEPLOY}  portfolio-api=${BACK_IMAGE}:latest  -n ${KUBE_NAMESPACE}
-
+							# Le rollout est garanti de se produire
 							kubectl rollout status deployment/${FRONT_DEPLOY} -n ${KUBE_NAMESPACE}
 							kubectl rollout status deployment/${BACK_DEPLOY}  -n ${KUBE_NAMESPACE}
                         '''
