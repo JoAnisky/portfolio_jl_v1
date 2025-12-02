@@ -1,7 +1,11 @@
 <?php
 declare(strict_types=1);
 
-header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: https://www.jonathanlore.fr');
+header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type');
+header('Access-Control-Max-Age: 3600');
+header('Content-Type: application/json; charset=utf-8');
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     // Répondre aux requêtes OPTIONS pour les pré-vérifications CORS
