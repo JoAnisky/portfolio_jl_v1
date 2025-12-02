@@ -2,50 +2,44 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "joanisky/portfolio_v1"
-        DOCKER_TAG = "latest"
-        DOCKER_TAG_BUILD = "${BUILD_NUMBER}"
         REGISTRY = "index.docker.io"
         KUBE_NAMESPACE = "portfolio"
-        KUBE_DEPLOYMENT = "portfolio"
+
+        FRONT_IMAGE = "joanisky/portfolio_v1"
+        BACK_IMAGE  = "joanisky/portfolio_api"
+
+        FRONT_DEPLOY = "portfolio"
+        BACK_DEPLOY  = "portfolio-api"
     }
 
     stages {
         stage('Checkout') {
             steps {
                 checkout scm
-                script {
-                    echo "Build: ${BUILD_NUMBER}"
-                }
             }
         }
-
-        stage('Build Docker Image') {
+        stage('Build Docker Images') {
             steps {
                 script {
                     withCredentials([usernamePassword(credentialsId: 'jenkins-dockerhub', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
-						sh '''
-							docker login -u $DOCKER_USER -p $DOCKER_PASS
+                        sh '''
+                            docker login -u $DOCKER_USER -p $DOCKER_PASS
 
-							# Builder avec le tag latest
-							docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} .
+                            echo "=== Build Front ==="
+                            docker build -t ${FRONT_IMAGE}:latest .
+                            docker push ${FRONT_IMAGE}:latest
 
-							# Tagger avec le numéro de build
-							docker tag ${DOCKER_IMAGE}:${DOCKER_TAG} ${DOCKER_IMAGE}:${DOCKER_TAG_BUILD}
-
-							# Pousher les deux
-							docker push ${DOCKER_IMAGE}:${DOCKER_TAG}
-							docker push ${DOCKER_IMAGE}:${DOCKER_TAG_BUILD}
-						'''
+                            echo "=== Build Backend ==="
+                            docker build -t ${BACK_IMAGE}:latest ./backend
+                            docker push ${BACK_IMAGE}:latest
+                        '''
                     }
                 }
             }
         }
 
         stage('Deploy to Kubernetes') {
-            when {
-                expression { env.GIT_BRANCH == 'origin/main' }
-            }
+            when { expression { env.GIT_BRANCH == 'origin/main' } }
             steps {
                 script {
                     withCredentials([file(credentialsId: 'kubeconfig', variable: 'KUBECONFIG_FILE')]) {
@@ -58,13 +52,12 @@ pipeline {
 							# Appliquer les fichiers K8s depuis le workspace
 							kubectl apply -k k8s/
 
-							# Mettre à jour l'image
-							kubectl set image deployment/portfolio portfolio=${DOCKER_IMAGE}:${DOCKER_TAG} -n ${KUBE_NAMESPACE}
+							echo "Updating images..."
+							kubectl set image deployment/${FRONT_DEPLOY} portfolio=${FRONT_IMAGE}:latest -n ${KUBE_NAMESPACE}
+							kubectl set image deployment/${BACK_DEPLOY}  portfolio-api=${BACK_IMAGE}:latest  -n ${KUBE_NAMESPACE}
 
-							# Attendre le rollout
-							kubectl rollout status deployment/${KUBE_DEPLOYMENT} -n ${KUBE_NAMESPACE}
-
-                            echo "✓ Deployment successful!"
+							kubectl rollout status deployment/${FRONT_DEPLOY} -n ${KUBE_NAMESPACE}
+							kubectl rollout status deployment/${BACK_DEPLOY}  -n ${KUBE_NAMESPACE}
                         '''
                     }
                 }
