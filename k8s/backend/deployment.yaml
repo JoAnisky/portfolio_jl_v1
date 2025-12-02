@@ -18,7 +18,7 @@ spec:
           image: joanisky/portfolio_api:latest
           imagePullPolicy: Always
           ports:
-            - containerPort: 8080
+            - containerPort: 80
               name: http
           resources:
             requests:
@@ -30,12 +30,12 @@ spec:
           livenessProbe:
             httpGet:
               path: /health
-              port: 8080
+              port: 80
             initialDelaySeconds: 20
             periodSeconds: 10
           readinessProbe:
             httpGet:
               path: /health
-              port: 8080
+              port: 80
             initialDelaySeconds: 10
             periodSeconds: 5
