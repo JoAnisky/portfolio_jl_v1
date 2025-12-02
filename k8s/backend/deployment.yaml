@@ -29,13 +29,14 @@ spec:
               cpu: "250m"
           livenessProbe:
             httpGet:
-              path: /health
+              path: /health.php
               port: 80
             initialDelaySeconds: 20
             periodSeconds: 10
+
           readinessProbe:
             httpGet:
-              path: /health
+              path: /health.php
               port: 80
             initialDelaySeconds: 10
             periodSeconds: 5
