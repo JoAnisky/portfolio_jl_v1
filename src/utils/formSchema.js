@@ -23,5 +23,6 @@ export const formSchema = yup
 ,
         message: yup
         .string()
-        .required("Veuillez entrer votre message"),
+        .required("Veuillez entrer votre message")
+        .min(10, "Le message doit contenir au moins 10 caractères"),
     });

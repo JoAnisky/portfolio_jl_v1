@@ -1,7 +1,7 @@
 import {useForm} from "react-hook-form";
-import {useEffect, useState, useRef} from 'react';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { formSchema } from "../../utils/formSchema";
+import {useEffect, useRef, useState} from 'react';
+import {yupResolver} from '@hookform/resolvers/yup';
+import {formSchema} from "../../utils/formSchema";
 import LogoValid from "../../components/LogoValid";
 import useIntersectionObserver from '../../hooks/useIntersectionObserver';
 
@@ -38,10 +38,9 @@ const ContactForm = () => {
                 }),
             });
 
-            if (request.ok === true) {
-                return request.json();
-            }
-            throw new Error("Impossible d'effectuer la requête");
+            // Retourner la réponse peu importe le status code
+            // (elle contient soit 'message' soit 'error'/'errors')
+            return await request.json();
         } catch (e) {
             throw e;
         }
