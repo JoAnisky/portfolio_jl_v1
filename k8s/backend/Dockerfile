@@ -4,7 +4,7 @@ FROM php:8.2-apache
 RUN a2enmod rewrite
 
 # Copie du code PHP
-COPY . /var/www/html/
+COPY ./php /var/www/html/
 
 # Droits
 RUN chown -R www-data:www-data /var/www/html/
