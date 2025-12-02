@@ -5,7 +5,7 @@ import { formSchema } from "../../utils/formSchema";
 import LogoValid from "../../components/LogoValid";
 import useIntersectionObserver from '../../hooks/useIntersectionObserver';
 
-const API_PATH = "https://api.jonathanlore.fr/index.php";
+const CONTACT_FORM_SCRIPT = "https://api.jonathanlore.fr/contact.php";
 
 const ContactForm = () => {
     const [successful, setSuccessful] = useState(false);
@@ -25,51 +25,72 @@ const ContactForm = () => {
 
     const sendPost = async (data) => {
         try {
-            const request = await fetch(API_PATH, {
+            const request = await fetch(CONTACT_FORM_SCRIPT, {
                 method: 'POST',
                 headers: {
                     "Accept": "application/json",
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(data),
-              })
-              if(request.ok === true){
-                  return request.json();
-              }
-              throw new Error("impossible d'effectuer la requête");
-        }catch(e){
-            setUserMessage(e.message)
+                body: JSON.stringify({
+                    name: data.firstname + ' ' + data.lastname,  // Combiner nom + prénom
+                    email: data.email,
+                    message: data.message
+                }),
+            });
+
+            if (request.ok === true) {
+                return request.json();
+            }
+            throw new Error("Impossible d'effectuer la requête");
+        } catch (e) {
+            throw e;
         }
-    }
+    };
 
     const onSubmit = async data => {
-
-        if (isValid){
+        if (isValid) {
             try {
-                const response = await sendPost(data)
-                if (response.responseServer === true && response.responseMail === true){
+                const response = await sendPost(data);
+
+                // Vérifier si la réponse contient un message (succès)
+                if (response.message) {
                     setSuccessful(true);
                     reset();
-                    return setUserMessage(response.responseMessage)
+                    setUserMessage(response.message);
+                    return;
                 }
-            }catch (error) {
-                setUserMessage("Erreur du serveur... Réessayez ultérieurement")
-            }
 
+                // Vérifier s'il y a des erreurs
+                if (response.error) {
+                    setUserMessage(response.error);
+                    return;
+                }
+
+                if (response.errors && Array.isArray(response.errors)) {
+                    setUserMessage(response.errors[0]);
+                    return;
+                }
+
+                setUserMessage("Erreur inconnue");
+            } catch (error) {
+                setUserMessage(error.message || "Erreur du serveur... Réessayez ultérieurement");
+            }
         }
-    }
+    };
 
     useEffect(() => {
         if (textareaRef.current) {
-          const textarea = textareaRef.current;
-          textarea.style.height = 'auto';
-          textarea.style.height = `${textarea.scrollHeight}px`;
-          textarea.addEventListener('input', () => {
+            const textarea = textareaRef.current;
             textarea.style.height = 'auto';
             textarea.style.height = `${textarea.scrollHeight}px`;
-          }, false);
+            const handleInput = () => {
+                textarea.style.height = 'auto';
+                textarea.style.height = `${textarea.scrollHeight}px`;
+            };
+            textarea.addEventListener('input', handleInput);
+            return () => textarea.removeEventListener('input', handleInput);
         }
-      }, [textareaRef]);
+    }, [textareaRef]);
 
     return (
         <>
