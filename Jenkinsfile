@@ -30,7 +30,7 @@ pipeline {
                             docker push ${FRONT_IMAGE}:latest
 
                             echo "=== Build Backend ==="
-                            docker build -t ${BACK_IMAGE}:latest ./backend
+                            docker build -t ${BACK_IMAGE}:latest ./k8s/backend
                             docker push ${BACK_IMAGE}:latest
                         '''
                     }
