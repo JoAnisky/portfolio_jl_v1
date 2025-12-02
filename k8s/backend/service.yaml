@@ -8,6 +8,6 @@ spec:
     app: portfolio-api
   ports:
     - port: 80
-      targetPort: 8080
+      targetPort: 80
       name: http
   type: ClusterIP
