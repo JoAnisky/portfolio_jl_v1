@@ -1,7 +1,11 @@
 FROM php:8.2-apache
 
-# Active mod_rewrite
-RUN a2enmod rewrite
+# Active les modules
+RUN a2enmod rewrite && \
+    a2enmod headers
+
+# Copie de la config Apache
+COPY ./k8s/backend/000-default.conf /etc/apache2/sites-available/000-default.conf
 
 # Copie du code PHP
 COPY ./php /var/www/html/
