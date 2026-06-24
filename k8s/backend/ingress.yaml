@@ -10,10 +10,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - api.jonathanlore.fr
+        - api.portfoliov2.jonathanlore.fr
       secretName: portfolio-api-tls
   rules:
-    - host: api.jonathanlore.fr
+    - host: api.portfoliov2.jonathanlore.fr
       http:
         paths:
           - path: /

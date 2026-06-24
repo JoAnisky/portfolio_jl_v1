@@ -10,21 +10,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - jonathanlore.fr
-        - www.jonathanlore.fr
+        - portfoliov2.jonathanlore.fr
       secretName: portfolio-tls
   rules:
-    - host: jonathanlore.fr
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: portfolio
-                port:
-                  number: 3000
-    - host: www.jonathanlore.fr
+    - host: portfoliov2.jonathanlore.fr
       http:
         paths:
           - path: /

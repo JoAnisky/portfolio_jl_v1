@@ -9,7 +9,7 @@ services:
       - "traefik.enable=true"
 
       # Définir les routes HTTPS
-      - "traefik.http.routers.portfolio.rule=Host(`jonathanlore.fr`) || Host(`www.jonathanlore.fr`)"
+      - "traefik.http.routers.portfolio.rule=Host(`portfoliov2.jonathanlore.fr`)"
       - "traefik.http.routers.portfolio.entrypoints=websecure"
       - "traefik.http.routers.portfolio.tls=true"
       - "traefik.http.routers.portfolio.tls.certresolver=myresolver"
@@ -18,7 +18,7 @@ services:
       - "traefik.http.services.portfolio.loadbalancer.server.port=80"
 
       # Appliquer les middlewares pour gérer la redirection HTTP → HTTPS et www → non-www
-      - "traefik.http.routers.portfolio-http.rule=Host(`jonathanlore.fr`) || Host(`www.jonathanlore.fr`)"
+      - "traefik.http.routers.portfolio-http.rule=Host(`portfoliov2.jonathanlore.fr`)"
       - "traefik.http.routers.portfolio-http.entrypoints=web"
       - "traefik.http.routers.portfolio-http.middlewares=redirect-http-www,redirect-to-https"
 
